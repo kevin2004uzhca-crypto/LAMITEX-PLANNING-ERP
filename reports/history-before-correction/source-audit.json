@@ -1,0 +1,1949 @@
+{
+  "Arbol_estructura_lamitex.xlsx": {
+    "sha256": "53f25072fcf6fefc78dac2a0e21f5dd4beda68b5f5f79d0d5a8a3364aac7293c",
+    "sheets": [
+      {
+        "sheet": "Hoja1",
+        "rows_nonempty": 1843,
+        "max_row": 1843,
+        "max_column": 8,
+        "sample": [
+          [
+            1,
+            [
+              "bom_id",
+              "componente_id",
+              "colchon_id",
+              "nombre_componente",
+              "padre_id",
+              "nivel",
+              "cantidad",
+              "lead_time"
+            ]
+          ],
+          [
+            2,
+            [
+              1,
+              1,
+              101,
+              "Panel Completo",
+              "NULL",
+              1,
+              1,
+              0.3
+            ]
+          ],
+          [
+            3,
+            [
+              2,
+              2,
+              101,
+              "Falda",
+              "NULL",
+              1,
+              1,
+              0.3
+            ]
+          ],
+          [
+            4,
+            [
+              3,
+              3,
+              101,
+              "Forro acolchado",
+              "NULL",
+              1,
+              2,
+              0.3
+            ]
+          ],
+          [
+            5,
+            [
+              4,
+              4,
+              101,
+              "Capa aislante",
+              1,
+              2,
+              2,
+              0.3
+            ]
+          ]
+        ],
+        "rows_101": [
+          [
+            2,
+            [
+              1,
+              1,
+              101,
+              "Panel Completo",
+              "NULL",
+              1,
+              1,
+              0.3
+            ]
+          ],
+          [
+            3,
+            [
+              2,
+              2,
+              101,
+              "Falda",
+              "NULL",
+              1,
+              1,
+              0.3
+            ]
+          ],
+          [
+            4,
+            [
+              3,
+              3,
+              101,
+              "Forro acolchado",
+              "NULL",
+              1,
+              2,
+              0.3
+            ]
+          ],
+          [
+            5,
+            [
+              4,
+              4,
+              101,
+              "Capa aislante",
+              1,
+              2,
+              2,
+              0.3
+            ]
+          ],
+          [
+            6,
+            [
+              5,
+              5,
+              101,
+              "Panel",
+              1,
+              2,
+              1,
+              0.3
+            ]
+          ],
+          [
+            7,
+            [
+              6,
+              6,
+              101,
+              "Flexi Fit Foam",
+              1,
+              2,
+              2,
+              0.3
+            ]
+          ],
+          [
+            8,
+            [
+              7,
+              7,
+              101,
+              "Latex F + Convoluted Foam + Latex F",
+              1,
+              2,
+              2,
+              0.3
+            ]
+          ],
+          [
+            9,
+            [
+              8,
+              8,
+              101,
+              "Resortes Pocket Coil",
+              5,
+              3,
+              1,
+              0.25
+            ]
+          ],
+          [
+            10,
+            [
+              9,
+              9,
+              101,
+              "Foam Encased",
+              5,
+              3,
+              2,
+              0.25
+            ]
+          ],
+          [
+            11,
+            [
+              10,
+              10,
+              101,
+              "Foam Encased Head",
+              5,
+              3,
+              2,
+              0.25
+            ]
+          ],
+          [
+            426,
+            [
+              425,
+              425,
+              101,
+              "Panel Completo",
+              "NULL",
+              1,
+              1,
+              0.3
+            ]
+          ],
+          [
+            427,
+            [
+              426,
+              426,
+              101,
+              "Falda",
+              "NULL",
+              1,
+              1,
+              0.3
+            ]
+          ],
+          [
+            428,
+            [
+              427,
+              427,
+              101,
+              "Forro acolchado multicapa",
+              "NULL",
+              1,
+              2,
+              0.3
+            ]
+          ],
+          [
+            429,
+            [
+              428,
+              428,
+              101,
+              "Capa aislante",
+              425,
+              2,
+              2,
+              0.3
+            ]
+          ],
+          [
+            430,
+            [
+              429,
+              429,
+              101,
+              "Panel",
+              425,
+              2,
+              1,
+              0.3
+            ]
+          ],
+          [
+            431,
+            [
+              430,
+              430,
+              101,
+              "Ergo Support Foam",
+              425,
+              2,
+              2,
+              0.3
+            ]
+          ],
+          [
+            432,
+            [
+              431,
+              431,
+              101,
+              "Pillow Top Ergo Support Foam",
+              425,
+              2,
+              2,
+              0.3
+            ]
+          ],
+          [
+            433,
+            [
+              432,
+              432,
+              101,
+              "Transfer",
+              429,
+              3,
+              1,
+              0.25
+            ]
+          ],
+          [
+            434,
+            [
+              433,
+              433,
+              101,
+              "Marco",
+              429,
+              3,
+              2,
+              0.25
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "Base_de_datos_modelos_Resorpedic_2025.xlsx": {
+    "sha256": "c813944fa35b882d15a765ef296b403d11b5fcb4ebaf4cdbaa362b74d0c748e1",
+    "sheets": [
+      {
+        "sheet": "Modelos Resorpedic",
+        "rows_nonempty": 240,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "Nombre",
+              "Medida",
+              "Ancho (cm)",
+              "Largo (cm)",
+              "Alto (cm)"
+            ]
+          ],
+          [
+            2,
+            [
+              "POCKET BOREAL MEMORY FOAM",
+              "1½ PLAZAS",
+              105,
+              190,
+              38
+            ]
+          ],
+          [
+            3,
+            [
+              "POCKET BOREAL MEMORY FOAM",
+              "2 PLAZAS",
+              135,
+              190,
+              38
+            ]
+          ],
+          [
+            4,
+            [
+              "POCKET BOREAL MEMORY FOAM",
+              "2½ PLAZAS",
+              160,
+              200,
+              38
+            ]
+          ],
+          [
+            5,
+            [
+              "POCKET BOREAL MEMORY FOAM",
+              "3 PLAZAS",
+              200,
+              200,
+              38
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "Control",
+        "rows_nonempty": 52,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            2,
+            [
+              "Control de extracción"
+            ]
+          ],
+          [
+            5,
+            [
+              "Fuente",
+              "CATÁLOGO RESORPEDIC (1).pptx, edición 2025"
+            ]
+          ],
+          [
+            6,
+            [
+              "Alcance",
+              "Modelos de colchón incluidos en el índice del catálogo"
+            ]
+          ],
+          [
+            7,
+            [
+              "Modelos",
+              45
+            ]
+          ],
+          [
+            8,
+            [
+              "Registros",
+              239
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "Componentes_arbol_lamitex.xlsx": {
+    "sha256": "13385a116169d858309bf0613dcdab919296339634c79e46be3a18a42b45ef66",
+    "sheets": [
+      {
+        "sheet": "Hoja1",
+        "rows_nonempty": 1843,
+        "max_row": 1843,
+        "max_column": 4,
+        "sample": [
+          [
+            1,
+            [
+              "componente_id",
+              "colchon_id",
+              "nombre_componente",
+              "tipo"
+            ]
+          ],
+          [
+            2,
+            [
+              1,
+              101,
+              "Panel Completo",
+              "Subensamble"
+            ]
+          ],
+          [
+            3,
+            [
+              2,
+              101,
+              "Falda",
+              "Material"
+            ]
+          ],
+          [
+            4,
+            [
+              3,
+              101,
+              "Forro acolchado",
+              "Material"
+            ]
+          ],
+          [
+            5,
+            [
+              4,
+              101,
+              "Capa aislante",
+              "Material"
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "Datos_iniciales_lamitex.xlsx": {
+    "sha256": "8c118348b9017068f0f8d0805e888844052be4c4a6d046eff946c4167e4bc4b0",
+    "sheets": [
+      {
+        "sheet": "Hoja1",
+        "rows_nonempty": 196,
+        "max_row": 196,
+        "max_column": 10,
+        "sample": [
+          [
+            1,
+            [
+              "colchon_id",
+              "Material",
+              "Texto breve material_x",
+              "INVENTRARIO_INICIAL",
+              "COSTO_DE_INVENTARIO",
+              "TIPO_DE_COLCHON",
+              "MEDIDA",
+              "DEMANDA_MENSUAL",
+              "COSTO",
+              "Moneda"
+            ]
+          ],
+          [
+            2,
+            [
+              101,
+              "3C83010",
+              "RESORPEDIC POCKET BOREAL MF 105X190X38",
+              1,
+              1.02713805,
+              "X",
+              105,
+              5,
+              102.713805,
+              "USDN"
+            ]
+          ],
+          [
+            3,
+            [
+              102,
+              "3C83011",
+              "RESORPEDIC POCKET BOREAL MF 135X190X38",
+              0,
+              1.2243015,
+              "X",
+              135,
+              59,
+              122.43015,
+              "USDN"
+            ]
+          ],
+          [
+            4,
+            [
+              103,
+              "3C83012",
+              "RESORPEDIC POCKET BOREAL MF 160X200X38",
+              0,
+              1.41713415,
+              "X",
+              160,
+              36,
+              141.713415,
+              "USDN"
+            ]
+          ],
+          [
+            5,
+            [
+              104,
+              "3C83013",
+              "RESORPEDIC POCKET BOREAL MF 200X200X38",
+              0,
+              1.7407953,
+              "X",
+              200,
+              20,
+              174.07953,
+              "USDN"
+            ]
+          ]
+        ],
+        "rows_101": [
+          [
+            2,
+            [
+              101,
+              "3C83010",
+              "RESORPEDIC POCKET BOREAL MF 105X190X38",
+              1,
+              1.02713805,
+              "X",
+              105,
+              5,
+              102.713805,
+              "USDN"
+            ]
+          ],
+          [
+            35,
+            [
+              101,
+              "3C81021",
+              "RESORPED INFINITUS DOB PTOP 135X190X35",
+              0,
+              1.02258045,
+              "P",
+              135,
+              6,
+              102.258045,
+              "USDN"
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "EXPORT_ListasMateriales3001_3034.xlsx": {
+    "sha256": "22be9b82a23aac70fab6513b7bc5a16695c44c9a7b5d8203202ec8e1d3775c32",
+    "sheets": [
+      {
+        "sheet": "Data",
+        "rows_nonempty": 18200,
+        "max_row": 18200,
+        "max_column": 12,
+        "sample": [
+          [
+            1,
+            [
+              "Centro",
+              "LMat alternativa",
+              "Material",
+              "Texto de alternativa",
+              "Cantidad base",
+              "Unidad medida base",
+              "Núm.posición",
+              "Componente",
+              "Cantidad componente",
+              "Un.medida componente",
+              "LMat alternativa",
+              "Texto breve material"
+            ]
+          ],
+          [
+            2,
+            [
+              "3001",
+              "1",
+              "1PL0001",
+              "RP14460 ETIQUETA IZQ BLANCO BOTAS RESORP",
+              2,
+              "KG",
+              "0010",
+              "RP14460",
+              3,
+              "KG",
+              "1",
+              "ETIQUETA IZQ BLANCO BOTAS RESORPEDIC 25\""
+            ]
+          ],
+          [
+            3,
+            [
+              "3001",
+              "2",
+              "1PL0001",
+              "RP14454 ETIQUETA BLANCO BOTAS RESORPEDIC",
+              2,
+              "KG",
+              "0010",
+              "RP14454",
+              3,
+              "KG",
+              "2",
+              "ETIQUETA BLANCO BOTAS RESORPEDIC 25\" X0,"
+            ]
+          ],
+          [
+            4,
+            [
+              "3001",
+              "3",
+              "1PL0001",
+              "RP1431W BOTA HARMONY 25\" GRAND ORTOPEDIC",
+              2,
+              "KG",
+              "0010",
+              "RP1431W",
+              3,
+              "KG",
+              "3",
+              "BOTA HARMONY 25\" GRAND ORTOPEDICO"
+            ]
+          ],
+          [
+            5,
+            [
+              "3001",
+              "4",
+              "1PL0001",
+              "RP14331 PLASTICO NATURAL 21\"X0.04MM",
+              2,
+              "KG",
+              "0010",
+              "RP14331",
+              3,
+              "KG",
+              "4",
+              "PLASTICO NATURAL 21\"X0.04MM"
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "Plantilla_BOM_Padre_Hijo_Lamitex.xlsx": {
+    "sha256": "d39dc6978948d0e89fa2c3eb1ed269ee726910016241cfb5f8d8cb2311104006",
+    "sheets": [
+      {
+        "sheet": "BOM_PADRE_HIJO",
+        "rows_nonempty": 11,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "bom_id",
+              "sku_id",
+              "colchon_id_legacy",
+              "componente_id",
+              "nombre_componente",
+              "padre_id",
+              "nivel",
+              "cantidad",
+              "unidad",
+              "lead_time",
+              "tipo",
+              "estado",
+              "observacion"
+            ]
+          ],
+          [
+            2,
+            [
+              "BOM-ENG-0101",
+              "SKU-000001",
+              101,
+              1,
+              "Panel Completo",
+              null,
+              1,
+              1,
+              "UN",
+              0.3,
+              "SUBENSAMBLE",
+              "VALID",
+              "Nodo raíz de nivel 1"
+            ]
+          ],
+          [
+            3,
+            [
+              "BOM-ENG-0101",
+              "SKU-000001",
+              101,
+              2,
+              "Falda",
+              null,
+              1,
+              1,
+              "UN",
+              0.3,
+              "SUBENSAMBLE",
+              "VALID",
+              "Nodo raíz de nivel 1"
+            ]
+          ],
+          [
+            4,
+            [
+              "BOM-ENG-0101",
+              "SKU-000001",
+              101,
+              3,
+              "Forro acolchado",
+              null,
+              1,
+              2,
+              "UN",
+              0.3,
+              "SUBENSAMBLE",
+              "VALID",
+              "Nodo raíz de nivel 1"
+            ]
+          ],
+          [
+            5,
+            [
+              "BOM-ENG-0101",
+              "SKU-000001",
+              101,
+              4,
+              "Capa aislante",
+              1,
+              2,
+              2,
+              "UN",
+              0.3,
+              "MATERIAL_INGENIERIA",
+              "VALID",
+              "Hijo de componente 1"
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "REGLAS",
+        "rows_nonempty": 10,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "REGLAS PARA RECONSTRUIR EL ÁRBOL BOM",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          [
+            3,
+            [
+              "1",
+              "Identidad del nodo",
+              "La PK lógica heredada es (bom_id o sku_id, componente_id). No usar componente_id globalmente."
+            ]
+          ],
+          [
+            4,
+            [
+              "2",
+              "Padre",
+              "padre_id referencia componente_id dentro del MISMO bom_id/sku_id."
+            ]
+          ],
+          [
+            5,
+            [
+              "3",
+              "Nivel 1",
+              "padre_id vacío/NULL."
+            ]
+          ],
+          [
+            6,
+            [
+              "4",
+              "Nivel N",
+              "nivel_hijo = nivel_padre + 1."
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "Plantilla_Maestra_Datos_ERP_Lamitex.xlsx": {
+    "sha256": "bef7efea66120a111f40da77f5f6f98d692cb4cdcbef3d2ef0effd104ad59f0e",
+    "sheets": [
+      {
+        "sheet": "00_LEEME",
+        "rows_nonempty": 10,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "KIT DE DATOS ERP LAMITEX · LÍNEA RESORPEDIC",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          [
+            3,
+            [
+              "Objetivo",
+              "Estructurar las fuentes para Catálogo → SKU → BOM Ingeniería → BOM SAP → Inventario/Demanda → MPS → MRP.",
+              null,
+              "FLUJO MAESTRO",
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          [
+            4,
+            [
+              "Regla 1",
+              "Los archivos originales son de solo lectura. Los datos se cargan y se transforman en tablas reconstruidas con trazabilidad.",
+              null,
+              "1",
+              "CATÁLOGO",
+              "Modelo + medida + dimensiones + imagen"
+            ]
+          ],
+          [
+            5,
+            [
+              "Regla 2",
+              "BOM Ingeniería y BOM SAP NO son lo mismo. Ingeniería muestra la estructura funcional; SAP aporta todos los materiales y consumos.",
+              null,
+              "2",
+              "RECONCILIACIÓN",
+              "SKU interno + código SAP + alias"
+            ]
+          ],
+          [
+            6,
+            [
+              "Regla 3",
+              "La relación padre-hijo se resuelve dentro de un BOM/SKU. Nunca se cruza un padre con otro colchón.",
+              null,
+              "3",
+              "BOM INGENIERÍA",
+              "Árbol padre-hijo + cantidades + lead time"
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "01_PRODUCTOS_SKU",
+        "rows_nonempty": 2,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "sku_id",
+              "modelo_id",
+              "linea",
+              "nombre_catalogo_original",
+              "nombre_canonico",
+              "medida_comercial",
+              "ancho_cm",
+              "largo_cm",
+              "alto_cm",
+              "material_sap",
+              "nombre_sap_original",
+              "legacy_colchon_id",
+              "imagen_url",
+              "estado_reconciliacion",
+              "estado_bom_ingenieria",
+              "estado_bom_sap",
+              "activo",
+              "source_file",
+              "source_row",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          [
+            2,
+            [
+              "SKU-000001",
+              "MOD-000001",
+              "RESORPEDIC",
+              "POCKET BOREAL MEMORY FOAM",
+              "RESORPEDIC | POCKET BOREAL MEMORY FOAM | 105x190x38",
+              "1½ PLAZAS",
+              105,
+              190,
+              38,
+              "3C83010",
+              "RESORPEDIC POCKET BOREAL MF 105X190X38",
+              101,
+              null,
+              "CONFIRMED",
+              "PENDING",
+              "AVAILABLE",
+              true,
+              "Datos_iniciales_lamitex.xlsx",
+              2
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "02_BOM_INGENIERIA",
+        "rows_nonempty": 11,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "bom_id",
+              "sku_id",
+              "legacy_colchon_id",
+              "componente_id",
+              "nombre_componente_original",
+              "nombre_componente_canonico",
+              "padre_id",
+              "nivel_declarado",
+              "nivel_calculado",
+              "cantidad",
+              "unidad",
+              "lead_time",
+              "tipo_nodo",
+              "orden",
+              "estado_validacion",
+              "imagen_url",
+              "source_file",
+              "source_row",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          [
+            2,
+            [
+              "BOM-ENG-0101",
+              "SKU-000001",
+              101,
+              1,
+              "Panel Completo",
+              "PANEL COMPLETO",
+              null,
+              1,
+              1,
+              1,
+              "UN",
+              0.3,
+              "SUBENSAMBLE",
+              1,
+              "VALID",
+              null,
+              "Arbol_estructura_Lamitex.xlsx",
+              2
+            ]
+          ],
+          [
+            3,
+            [
+              "BOM-ENG-0101",
+              "SKU-000001",
+              101,
+              2,
+              "Falda",
+              "FALDA",
+              null,
+              1,
+              1,
+              1,
+              "UN",
+              0.3,
+              "SUBENSAMBLE",
+              2,
+              "VALID",
+              null,
+              "Arbol_estructura_Lamitex.xlsx",
+              3
+            ]
+          ],
+          [
+            4,
+            [
+              "BOM-ENG-0101",
+              "SKU-000001",
+              101,
+              3,
+              "Forro acolchado",
+              "FORRO ACOLCHADO",
+              null,
+              1,
+              1,
+              2,
+              "UN",
+              0.3,
+              "SUBENSAMBLE",
+              3,
+              "VALID",
+              null,
+              "Arbol_estructura_Lamitex.xlsx",
+              4
+            ]
+          ],
+          [
+            5,
+            [
+              "BOM-ENG-0101",
+              "SKU-000001",
+              101,
+              4,
+              "Capa aislante",
+              "CAPA AISLANTE",
+              1,
+              2,
+              2,
+              2,
+              "UN",
+              0.3,
+              "MATERIAL_INGENIERIA",
+              4,
+              "VALID",
+              null,
+              "Arbol_estructura_Lamitex.xlsx",
+              5
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "03_MAESTRO_MATERIALES",
+        "rows_nonempty": 4,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "material_id",
+              "codigo_sap",
+              "descripcion_sap_original",
+              "descripcion_canonica",
+              "familia",
+              "subfamilia",
+              "unidad_base",
+              "naturaleza",
+              "comprado_fabricado",
+              "lead_time_dias",
+              "stock_seguridad",
+              "lote_minimo",
+              "activo",
+              "imagen_url",
+              "estado_clasificacion",
+              "source_file",
+              "source_row",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          [
+            2,
+            [
+              "MAT-000001",
+              "8H10101",
+              "HILO BLANCO",
+              "HILO BLANCO",
+              "HILOS",
+              "HILO POLIÉSTER",
+              "DCM",
+              "CONSUMO",
+              "COMPRADO",
+              null,
+              null,
+              null,
+              true,
+              null,
+              "VALIDADO",
+              "EXPORT_ListasMateriales3001_3034.xlsx",
+              0
+            ]
+          ],
+          [
+            3,
+            [
+              "MAT-000002",
+              "9A10185",
+              "PEGAMENTO HOT MELT",
+              "PEGAMENTO HOT MELT",
+              "ADHESIVOS",
+              "HOT MELT",
+              "KG",
+              "CONSUMO",
+              "COMPRADO",
+              null,
+              null,
+              null,
+              true,
+              null,
+              "VALIDADO",
+              "EXPORT_ListasMateriales3001_3034.xlsx",
+              0
+            ]
+          ],
+          [
+            4,
+            [
+              "MAT-000003",
+              "3C80700",
+              "ESTRUCTURA METAL POCKET 85X170",
+              "ESTRUCTURA METAL POCKET 85X170",
+              "ESTRUCTURAS",
+              "POCKET COIL",
+              "UN",
+              "CONSUMO",
+              "FABRICADO",
+              null,
+              null,
+              null,
+              true,
+              null,
+              "POR_REVISAR",
+              "EXPORT_ListasMateriales3001_3034.xlsx",
+              0
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "04_BOM_SAP_RAW",
+        "rows_nonempty": 1,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "import_id",
+              "fecha_importacion",
+              "centro",
+              "alternativa",
+              "material_padre",
+              "texto_alternativa",
+              "cantidad_base",
+              "unidad_base",
+              "posicion",
+              "componente",
+              "cantidad_componente",
+              "unidad_componente",
+              "texto_breve_material",
+              "archivo_origen",
+              "fila_origen",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "05_BOM_SAP_NORMALIZADO",
+        "rows_nonempty": 1,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "sap_bom_id",
+              "sku_id",
+              "centro",
+              "material_padre",
+              "alternativa",
+              "cantidad_base",
+              "unidad_base",
+              "posicion",
+              "componente",
+              "descripcion_componente",
+              "cantidad_original",
+              "unidad_original",
+              "consumo_unitario",
+              "naturaleza_movimiento",
+              "familia",
+              "es_subensamble",
+              "estado_validacion",
+              "import_id",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "06_INVENTARIO",
+        "rows_nonempty": 1,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "snapshot_id",
+              "fecha",
+              "material_sap",
+              "descripcion",
+              "familia",
+              "unidad",
+              "stock_disponible",
+              "stock_comprometido",
+              "stock_seguridad",
+              "recepciones_programadas",
+              "almacen",
+              "source_file",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "07_DEMANDA_HISTORICA",
+        "rows_nonempty": 1,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "fecha_periodo",
+              "sku_id",
+              "material_sap",
+              "modelo",
+              "medida",
+              "demanda_unidades",
+              "tipo_demanda",
+              "cliente_canal",
+              "source_file",
+              "observacion",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "08_PLAN_DIARIO_TUTOR",
+        "rows_nonempty": 1,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "plan_id",
+              "fecha_plan",
+              "fecha_produccion",
+              "sku_id",
+              "material_sap",
+              "modelo",
+              "medida",
+              "cantidad_planificada",
+              "prioridad",
+              "turno",
+              "linea",
+              "observacion_programador",
+              "programador",
+              "archivo_origen",
+              "estado_aprendizaje",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "09_PLAN_MAESTRO",
+        "rows_nonempty": 1,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "mps_id",
+              "version",
+              "fecha_creacion",
+              "periodo",
+              "fecha_produccion",
+              "sku_id",
+              "material_sap",
+              "modelo",
+              "medida",
+              "cantidad_programada",
+              "tiempo_estimado_min",
+              "estado",
+              "creado_por",
+              "observacion",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "10_MRP_RESULTADOS",
+        "rows_nonempty": 1,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "mrp_run_id",
+              "periodo",
+              "material_sap",
+              "descripcion",
+              "familia",
+              "unidad",
+              "requerimiento_bruto",
+              "stock_disponible",
+              "recepciones_programadas",
+              "stock_seguridad",
+              "requerimiento_neto",
+              "fecha_necesidad",
+              "fecha_liberacion",
+              "lead_time_dias",
+              "origen_skus",
+              "estado",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "11_FAMILIAS",
+        "rows_nonempty": 9,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "familia_id",
+              "familia",
+              "subfamilia",
+              "descripcion",
+              "unidad_preferida",
+              "regla_clasificacion",
+              "activo",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ],
+          [
+            2,
+            [
+              "FAM-01",
+              "TELAS",
+              "ACOLCHADOS",
+              "Telas, gobelinos, no tejidos y acolchados",
+              "M2",
+              "Manual/por código",
+              true
+            ]
+          ],
+          [
+            3,
+            [
+              "FAM-02",
+              "ESPUMAS",
+              "ESPUMA/FOAM",
+              "Espumas, viscoelásticas, látex, foam",
+              "CM",
+              "Manual/por código",
+              true
+            ]
+          ],
+          [
+            4,
+            [
+              "FAM-03",
+              "ESTRUCTURAS",
+              "RESORTES",
+              "Marcos, estructuras y sistemas de resortes",
+              "UN",
+              "Manual/por código",
+              true
+            ]
+          ],
+          [
+            5,
+            [
+              "FAM-04",
+              "HILOS",
+              "HILOS",
+              "Hilos de costura",
+              "DCM",
+              "Manual/por código",
+              true
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "12_IMPORTACIONES",
+        "rows_nonempty": 1,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "import_id",
+              "tipo_fuente",
+              "archivo",
+              "fecha_carga",
+              "usuario",
+              "hash_archivo",
+              "registros",
+              "validos",
+              "warnings",
+              "errores",
+              "estado",
+              "version_fuente",
+              "observaciones",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        ]
+      },
+      {
+        "sheet": "13_VALIDACIONES",
+        "rows_nonempty": 1,
+        "max_row": null,
+        "max_column": null,
+        "sample": [
+          [
+            1,
+            [
+              "issue_id",
+              "entidad",
+              "entidad_id",
+              "tipo",
+              "severidad",
+              "mensaje",
+              "campo",
+              "valor_actual",
+              "valor_esperado",
+              "estado",
+              "usuario_revision",
+              "fecha_revision",
+              "comentario",
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "BOM - LAMITEX CATALOGO.docx": {
+    "sha256": "1dda77c1a3f01e9956ba1b90a980f033ccf185c207424c2200d327fd563d0402",
+    "parts": [
+      {
+        "part": "word/document.xml",
+        "text": "          LAMITEX - CUENCA             CONTROL Y PLANIFICACIÓN DE LA PRODUCCIÓN          INFORME TÉCNICO 1 Practicante : Kevin Uzhca TUTOR : Phd . Pablo Flores FECHA: 1 - 09- 202 5 TEMA: BOM  – LAMITEX INFORME TÉCNICO 1 Practicante : Kevin Uzhca TUTOR : Phd . Pablo Flores FECHA: 1 - 09- 202 5 TEMA: BOM  – LAMITEX     BOM – LAMITEX – CATALOGO LINEA POOKET COIL LINEA MEMORY FOAM     LINEA HOTELERA                                            . ORTOPEDICOS DE LUJO LINEA CLOUD                                   ORTOPEDICOS DE LUJO                                     ORTOPEDICOS TRADICIONALES  SEMI ORTPPEDICOS INFANTIL PRENSADO CLINICO"
+      }
+    ]
+  },
+  "CATÁLOGO RESORPEDIC (1).pptx": {
+    "sha256": "0425bc1ec6caea485a65ac8afe39006513219fbb303d2866573bcf7bd60920a8",
+    "parts": [
+      {
+        "part": "ppt/slides/slide1.xml",
+        "text": "Resorpedic Alcanza   tus   sueños CATALOGO 2025"
+      },
+      {
+        "part": "ppt/slides/slide10.xml",
+        "text": "Tolerancia 220   lbs.   POR   PERSONA EXCLUSIVO 10   cm   DE   MEMORY   FOAM   -   BOX   TOP ESTRUCTURA   INTERNA Forro   acolchado   tack   &   jump Latex   F.   +   Convoluted   foam   +   Latex   F. Box   Top   10cm   de   Memory   Foam Pro   Support   Foam   Top Capa   aislante Sistema   Foam   Encasement Panel   de   resortes   de  alto   calibre Capa   aislante Pro   Support   Foam   Back Forro   acolchado Supreme MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO PLAZAS 2½   PLAZAS PLAZAS 135   cm 160   cm 200   cm 190   cm 200   cm 200   cm 39   cm 39   cm 39   cm 15 años GARANTÍA ALTURA:   39   cm Ideal  para  personas   con   dolor   en   las   articulaciones. Recomendado   para   aplacar  dolores   cervicales. Mejora   la   circulación. Máxima   adaptación   corporal. 1.   Cloud Mandala Gris   Oscuro 2.   Cloud Mandala Gris   Claro OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 2 *IMÁGENES   REFERENCIALES LINEA Memory   Foam MEMORY BOX   TOP DUAL ACOLCHADO MARCO   DE PANEL   DE \t ANTIÁCAROS FIBRAS   DE FOAM 10   cm SYSTEM TACK&JUMP ESPONJA RESORTES ALOE  VERA 1 2 3 4 5 6 7 8 9 10 (MÁXIMO   CONFORT) (FOAM  ENCASEMENT)  SOPORTE   LATERAL CAPA   SUPERIOR INTEGRADA AMBOS   LADOS  FUNCIONALES ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 18 19"
+      },
+      {
+        "part": "ppt/slides/slide11.xml",
+        "text": "Tolerancia 220   lbs.   POR   PERSONA Pillow   Top 5   cm   de   MEMORY   FOAM ESTRUCTURA   INTERNA Forro   acolchado   tack   &   jump Latex   F.   +   Convoluted   foam   +   Latex   F. Pillow   Top   Memory   Foam   5   cm Pro   Support   Foam   Top Capa   aislante Sistema   Foam   Encasement Panel   de   resortes   de  alto   calibre Capa   aislante Pro   Support   Foam   Back Forro   acolchado Frizante MEDIDAS   DISPONIBLES 1½   PLAZAS PLAZAS 2½   PLAZAS PLAZAS 105   cm 135   cm 160   cm 200   cm 190   cm 190   cm 200   cm 200   cm 31   cm 31   cm 31   cm 31   cm 15 años GARANTÍA ALTURA:   31  cm Ideal  para  personas   con   dolor   en   las   articulaciones. Recomendado   para   aplacar  dolores   cervicales. Mejora   la   circulación. Excelente   adaptación   corporal MEMORY  FOAM PILLOW   TOP 5   cm 1.   Cloud Mandala Gris   Oscuro 2.   Cloud Mandala Gris   Claro OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 2 *IMÁGENES   REFERENCIALES MEDIDA \t ANCHO \t LARGO \t ALTO (MÁXIMO   CONFORT) (FOAM  ENCASEMENT)  SOPORTE   LATERAL CAPA   SUPERIOR \t AMBOS   LADOS INTEGRADA \t   FUNCIONALES ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 20 21 LINEA Memory   Foam MARCO   DE  ESPONJA DUAL  SYSTEM PANEL   DE \t ANTIÁCAROS \t   FIBRAS   DE  RESORTES \t\tALOE  VERA ACOLCHADO TACK&JUMP 1 2 3 4 5 6 7 8 9 10"
+      },
+      {
+        "part": "ppt/slides/slide12.xml",
+        "text": "Tolerancia 220   lbs.   POR   PERSONA Sistema   Eurotop MEMORY   FOAM ESTRUCTURA   INTERNA 1.  Forro   acolchado   multicapa Flexi  fit  foam Euro   Top   Memory  Foam Flexi   Fit   Foam Pro   Support   Foam   Top Capa   aislante Sistema   Foam   Encasement Panel   de   resortes   de  alto   calibre Capa   aislante Pro   Support   Foam   Back Forro   acolchado Memory   Plus MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS PLAZAS 2½   PLAZAS PLAZAS 105   cm 135   cm 160   cm 200   cm 190   cm 190   cm 200   cm 200   cm 31   cm 31   cm 31   cm 31   cm 12 años GARANTÍA ALTURA:   31  cm Ideal  para  personas   con   dolor   en   las   articulaciones. Recomendado   para   aplacar  dolores   cervicales. Mejora   la   circulación. Alto   nivel   de   adaptación   corporal MEMORY  FOAM MARCO   DE  ESPONJA (FOAM  ENCASEMENT) SISTEMA  EURO   TOP CAPA   SUPERIOR PANEL   DE  RESORTES DUAL  SYSTEM AMBOS   LADOS ANTIÁCAROS FIBRAS   DE  ALOE  VERA OPCIONES   DE   TELAS TELA NOMBRE COLOR Cloud Azul   240 Azul *IMÁGENES   REFERENCIALES LINEA Memory   Foam 1 2 3 4 5 6 7 8 9 10 ORTOPÉDICO SOPORTE   LATERAL INTEGRADA FUNCIONALES NIVEL   DE   FIRMEZA EXTRA FIRME ¡   El   mejor   colchón   del   Ecuador   ! SUAVE 22 23"
+      },
+      {
+        "part": "ppt/slides/slide13.xml",
+        "text": "LÍNEA HOTELERA Descansar   en   un   buen   colchón   es   la   base   para   iniciar   el   día   lleno   de  energía.   Disfruta   de   tus   actividades   cotidianas   luego   de   experimentar  un  descanso   reparador. ¡Cuando   duermes   bien,   estás   listo   para   brillar   cada   dìa! Desarrollados   con   los   más   altos  estándares  de  calidad   internacional   para   el   sector   hotelero,  garantizando   durabilidad,   confort   y   una   experiencia  de   descanso   excepcional."
+      },
+      {
+        "part": "ppt/slides/slide14.xml",
+        "text": "Tolerancia 240   lbs.   POR   PERSONA Exclusivo   Box   top   10   cm   de   alta  firmeza NUCLEO   DE   ESPONJA   PRENSADA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Box   Top   de   alta   firmeza Pro   Support   Foam   +   Esponja   prensada   100kg/m3 +   Pro   Support   Foam Pro   Support   Foam   TOP Capa   aislante Sistema   Foam   Encasement Panel   de  resortes Capa   aislante Pro   Support   Foam   Back Forro   acolchado Firm   Plus MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO PLAZAS 2½   PLAZAS PLAZAS 135   cm 160   cm 200   cm 190   cm 200   cm 200   cm 34   cm 34   cm 34   cm 15 años GARANTÍA ALTURA:   34   cm Diseñado   para   quienes   prefieren   la   firmeza   y  el   confort  propio   de   un   colchón   ortopédico  duro  de   alto   desem- peño. BOX   TOP  10   CM MARCO   DE  ESPONJA PANEL   DE  RESORTES DUAL  SYSTEM ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1.   Cloud Oxford Gris   Oscuro 2.   Cloud Oxford Gris   Claro OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 2 *IMÁGENES   REFERENCIALES LINEA Hotelera 1 2 3 4 5 6 7 8 9 (FOAM  ENCASEMENT)  SOPORTE   LATERAL CAPA   SUPERIOR INTEGRADA AMBOS   LADOS  FUNCIONALES ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 26 27"
+      },
+      {
+        "part": "ppt/slides/slide15.xml",
+        "text": "Tolerancia 240   lbs.   POR   PERSONA Box   Top   10   cm Óptimo   ajuste   corporal ESTRUCTURA   INTERNA Forro   acolchado   multicapa Flexi   Fit   Foam Ergo   Support  Foam Pro   Support   Foam Esponja   prensada   100   kg/m3 Pro   Support   Foam   Top Capa   aislante Sistema   Foam   Encasement Panel   de   resortes   de  alto   calibre Capa   aislante Pro   Support   Foam   Back Forro   acolchado Champion MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO PLAZAS 2½   PLAZAS PLAZAS 135   cm 160   cm 200   cm 190   cm 200   cm 200   cm 38   cm 38   cm 38   cm 12 años GARANTÍA ALTURA:   38   cm Perfecto   para  quienes  prefieren   mayor   soporte   y  firmeza,   con   un   alto   grado   de   confort   en   un   colchón  ortopédico  de   resortes de   alto   desempeño. BOX   TOP  10CM MARCO   DE  ESPONJA PANEL   DE  RESORTES DUAL  SYSTEM ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1.   Cloud Bristol Gris   Oscuro 2.   Cloud Bristol Gris   Claro OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 2 *IMÁGENES   REFERENCIALES LINEA Hotelera 1 2 3 4 5 6 7 8 9 10 11 12 (FOAM  ENCASEMENT)  SOPORTE   LATERAL CAPA   SUPERIOR INTEGRADA AMBOS   LADOS  FUNCIONALES ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 28 29"
+      },
+      {
+        "part": "ppt/slides/slide16.xml",
+        "text": "Tolerancia 220   lbs.   POR   PERSONA PRESENTACIÓN  CONVENCIONAL ESTRUCTURA   INTERNA Forro   acolchado   multicapa Flexi   Fit   Foam Pro   Support   Foam   Top Capa   aislante Sistema   Foam   Encasement Panel   de   resortes   de  alto   calibre Capa   aislante Pro   Support   Foam   Back Flexi   Fit   Foam Forro   acolchado   multicapa Su p H o p t o el e r r o t MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105   cm 190   cm 35   cm 2   PLAZAS 135   cm 190   cm 35   cm 2½   PLAZAS 160   cm 200   cm 35   cm 3  PLAZAS 200   cm 200   cm 35   cm 12 años GARANTÍA ALTURA:   35   cm El   preferido  por   el   sector   hotelero,   balance   ideal,   en-  tre   dureza  y   suavidad,   desarrollado   para   asegurar  un  descanso   reparador,   incluso   para   los   gustos   más   exi-  gentes. MARCO   DE  ESPONJA (FOAM  ENCASEMENT) SOPORTE   LATERAL PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 3 4 5 6 7 8 9 10 1.   Cloud Bristol Gris   Oscuro 2.   Cloud Bristol Gris   Claro OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 2 *IMÁGENES   REFERENCIALES ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 30 31 LINEA Hotelera"
+      },
+      {
+        "part": "ppt/slides/slide17.xml",
+        "text": "Tolerancia 220   lbs.   POR   PERSONA PRESENTACIÓN  CONVENCIONAL ESTRUCTURA   INTERNA Forro   acolchado   multicapa Flexi   Fit   Foam   Top Pro   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Pro   Support   Foam Flexi   Fit   Foam   Back Forro   acolchado   multicapa Hotelero MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105CM 190   cm 36   cm 2   PLAZAS 135   cm 190   cm 36   cm 2½   PLAZAS 160   cm 200   cm 36   cm 3  PLAZAS 200   cm 200   cm 36   cm 12 años GARANTÍA ALTURA:   36   cm La   mejor  opción  para  hoteles.   Balance   ideal,   entre   du-   reza   y   suavidad,   desarrollado   para   asegurar   un   descan-   so   reparador,   incluso   para   los   gustos   más   exigentes. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 3 4 5 6 7 8 9 1.   Cloud Bristol Gris   Oscuro 2.   Cloud Bristol Gris   Claro OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 2 *IMÁGENES   REFERENCIALES ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 32 33 LINEA Hotelera"
+      },
+      {
+        "part": "ppt/slides/slide18.xml",
+        "text": "DOBLE   PILLOW   TOP Infinitus MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO PLAZAS 2½   PLAZAS PLAZAS 135   cm 160   cm 200   cm 190   cm 200   cm 200   cm 35   cm 35   cm 35   cm ALTURA:   35   cm Creado   para   quienes   buscan   exclusividad  y  confort  en   su   máxima   expresión.   Diseño   único   con   hilos   de  plata,   este   producto  canaliza   tu   energía   de   manera  óptima,  permitiéndote   descansar   como   nunca   antes ¡   El   mejor   colchón   del   Ecuador   ! Tolerancia 200   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   Support   Foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Pillow   Top Ergo   Support   Foam Forro   acolchado   multicapa PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 4 3 5 6 7 DOBLE  PILLOW   TOP CAPA   SUPERIOR  INTEGRADA   EN   SUS  DOS   LADOS 12 años GARANTÍA OPCIONES   DE   TELAS TELA NOMBRE COLOR Cloud York   Metalizado Gris   Oscuro *IMÁGENES   REFERENCIALES 34 35 ORTOPÉDICO LINEA Hotelera 8 9 NIVEL   DE   FIRMEZA SUAVE EXTRA FIRME"
+      },
+      {
+        "part": "ppt/slides/slide19.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA PILLOW   TOP  ONE   SIDE ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   Support   Foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Forro   acolchado MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO PLAZAS 2½   PLAZAS PLAZAS 135   cm 160   cm 200   cm 190   cm 200   cm 200   cm 32   cm 32   cm 32   cm ALTURA:   32   cm Creado   para   quienes   prefieren   colchones   que   ofrecen  un   ajuste   corporal   excepcional,   con   un   nivel   superior  de   firmeza   en   su   lado   convencional. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 4 3 5 6 7 DUAL  SYSTEM AMBOS   LADOS  FUNCIONALES PILLOW   TOP CAPA   SUPERIOR INTEGRADA 12 años GARANTÍA OPCIONES   DE   TELAS TELA NOMBRE COLOR Cloud York   Metalizado Gris   Oscuro *IMÁGENES   REFERENCIALES Infinitus ORTOPÉDICO LINEA Hotelera 8 NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 36 37"
+      },
+      {
+        "part": "ppt/slides/slide2.xml",
+        "text": "Nuestra   empresa En   Lamitex   S.A.,   llevamos   más   de   40  años  en   el   mercado,   especiali-   zándonos   en   la   producción   de   colchones,   esponjas   y   laminados   de   alta   calidad.   Gracias   a   nuestra   constante   innovación   y   tecnología   de   van-   guardia,   junto   con   un   equipo   altamente   capacitado,   podemos   ofrecer   productos   excepcionales   que   destacan   en   el   mercado."
+      },
+      {
+        "part": "ppt/slides/slide20.xml",
+        "text": "PRESENTACIÓN  CONVENCIONAL MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO PLAZAS 2½   PLAZAS PLAZAS 135   cm 160   cm 200   cm 190   cm 200   cm 200   cm 32   cm 32   cm 32   cm ALTURA:   32   cm Que   las   estrellas   descubran   tus   sueños.   Diseñado  para   ofrecer   una   excelente   adaptación   corporal   y   un  confort   inigualable,  gracias   a   su   composición  de   alto  desempeño. 12 años GARANTÍA Tolerancia 200   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Forro   acolchado   multicapa PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 4 3 5 6 7 OPCIONES   DE   TELAS TELA NOMBRE COLOR Cloud York   Metalizado Gris   Oscuro *IMÁGENES   REFERENCIALES NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 38 39 ORTOPÉDICO Infinitus LINEA Hotelera"
+      },
+      {
+        "part": "ppt/slides/slide21.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA DOBLE   PILLOW   TOP ESTRUCTURA   INTERNA Forro   acolchado   tack   &   jump Latex   F.   +   Convoluted   foam   +   Latex   F. Pillow   Top Ergo   Support   Foam Pro   Support   Foam Capa   aislante Foam   Encasement Panel   de   resortes   de  alto   calibre Capa   aislante Pro   Support   Foam Pillow   Top Ergo   Support   Foam Latex   F.   +   Convoluted   foam   +   Latex   F. Forro   acolchado   tack   &   jump   multicapa Premier MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS PLAZAS 2½   PLAZAS PLAZAS 105   cm 135   cm 160   cm 200   cm 190   cm 190   cm 200   cm 200   cm 36   cm 36   cm 36   cm 36   cm ALTURA:   36   cm Elegido   como   uno   de   los   mejores  productos   por   todos  nuestros   clientes,   adaptación   corporal   excepcional   y  confort   superior.   Su   tecnología   convoluted   foam   mejo-  ra   la   circulación   del   aire   en   su   interior,   alivia   puntos   de presión   y   distribuye   el   peso   uniformemente.  Resortes  de   alto   desempeño   para   un  soporte  personalizado. PANEL   DE  RESORTES CONVOLUTED  FOAM CONFORT   Y VENTILACIÓN 3D   AIR   FLOW VENTILACIÓN   Y  FRESCURA. ANTIÁCAROS 12 años GARANTÍA MARCO   DE  ESPONJA (FOAM  ENCASEMENT) SOPORTE   LATERAL ACOLCHADO TACK&JUMP (MÁXIMO   CONFORT) DOBLE  PILLOW   TOP CAPAS   INTEGRADAS  EN   SUS   DOS   LADOS 1.   Cloud Chester Black 2.   Cloud Chester Gris   Claro OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 2 *IMÁGENES   REFERENCIALES ORTOPÉDICO LINEA Hotelera 1 2 3 4 5 6 7 8 9 10 11 12 NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 40 41"
+      },
+      {
+        "part": "ppt/slides/slide22.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA PILLOW   TOP  ONE   SIDE ESTRUCTURA   INTERNA Forro   acolchado   tack   &   jump Latex   +   Convoluted   foam   +   Latex Pillow   Top Ergo   Support   Foam Pro   Support   Foam Capa   aislante Foam   Encasement Panel   de   resortes   de  alto   calibre Capa   aislante Pro   Support   Foam Forro   acolchado MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS PLAZAS 2½   PLAZAS PLAZAS 105   cm 135   cm 160   cm 200   cm 190   cm 190   cm 200   cm 200   cm 32   cm 32   cm 32   cm 32   cm 12 años GARANTÍA 1.   Cloud Chester Black 2.   Cloud Chester Gris   Claro OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 2 RESORTES NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 42 43 FOAM CONFORT   Y  VENTILACIÓN VENTILACIÓN   Y  FRESCURA. CONVOLUTED    3D   AIR   FLOW \tPANEL   DE \t ANTIÁCAROS MARCO   DE  ESPONJA (FOAM  ENCASEMENT) SOPORTE   LATERAL MÁXIMO   CONFORT *IMÁGENES   REFERENCIALES PILLOW   TOP CAPA   SUPERIOR INTEGRADA Premier ORTOPÉDICO LINEA Hotelera DUAL \t ACOLCHADO SYSTEM \t TACK&JUMP AMBOS   LADOS  FUNCIONALES 1 2 3 4 5 6 7 8 9 10 ALTURA:   32   cm Elegido   como   uno   de   los   mejores  productos   por   todos  nuestros   clientes,   adaptación   corporal   excepcional   y  confort   superior.   Su   tecnología   convoluted   foam   mejo-  ra   la   circulación   del   aire   en   su   interior,   alivia   puntos   de presión   y   distribuye   el   peso   uniformemente.  Resortes  de   alto   desempeño   para   un  soporte  personalizado."
+      },
+      {
+        "part": "ppt/slides/slide23.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA DOBLE   PILLOW   TOP ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Flexi   fit   foam Pro   Support   Foam Capa   aislante Foam   Encasement Panel   de   resortes   de  alto   calibre Capa   aislante Pro   Support   Foam Pillow   Top Flexi   fit   foam Forro   acolchado   multicapa Perfection MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS PLAZAS 2½   PLAZAS PLAZAS 105   cm 135   cm 160   cm 200   cm 190   cm 190   cm 200   cm 200   cm 30   cm 30   cm 30   cm 30   cm ALTURA:   30   cm Exclusivo   sistema   Foam   Encasement   que   mejora   el   soporte   total   del   colchón,   prolongando   su   vida   útil.   Además,   su   tecnología   3D   Air   Flow   ofrece   una   exce-   lente   ventilación   y   frescura,   garantizando   un   sueño   re-   parador.   Ideal   adaptación   corporal   y   confort. 12 años GARANTÍA PANEL   DE  RESORTES 3D   AIR   FLOW VENTILACIÓN   Y  FRESCURA. ANTIÁCAROS FIBRAS   DE  ALOE  VERA MARCO   DE  ESPONJA (FOAM  ENCASEMENT) DOBLE  PILLOW   TOP CAPAS   INTEGRADAS OPCIONES   DE   TELAS TELA NOMBRE COLOR Jacquard Perfection Gris *IMÁGENES   REFERENCIALES ORTOPÉDICO SOPORTE   LATERAL EN   SUS   DOS   LADOS NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 44 45 LINEA Hotelera 1 2 3 4 5 6 7 8 9 10"
+      },
+      {
+        "part": "ppt/slides/slide24.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Flexi   fit   foam Pro   Support   Foam Capa   aislante Foam   Encasement Panel   de   resortes   de  alto   calibre Capa   aislante Pro   Support   Foam Flexi   fit   foam Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS PLAZAS 2½   PLAZAS PLAZAS 105   cm 135   cm 160   cm 200   cm 190   cm 190   cm 200   cm 200   cm 30   cm 30   cm 30   cm 30   cm 12 años GARANTÍA PANEL   DE  RESORTES 3D   AIR   FLOW VENTILACIÓN   Y  FRESCURA. ANTIÁCAROS FIBRAS   DE  ALOE  VERA MARCO   DE  ESPONJA (FOAM  ENCASEMENT) 1 2 3 4 5 6 7 8 9 10 OPCIONES   DE   TELAS TELA NOMBRE COLOR Jacquard Perfection Gris PRESENTACIÓN  CONVENCIONAL ORTOPÉDICO SOPORTE   LATERAL NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 46 47 *IMÁGENES   REFERENCIALES LINEA Hotelera Perfection ALTURA:   30   cm Exclusivo   sistema   Foam   Encasement   que   mejora   el  soporte  total   del   colchón,   prolongando   su vida   útil.  Además,   su   tecnología   3D   Air   Flow   ofrece   una   exce- lente   ventilación   y   frescura,   garantizando   un   sueño reparador."
+      },
+      {
+        "part": "ppt/slides/slide25.xml",
+        "text": "LÍNEA ORTOPÉDICOS DE   LUJO   Cloud Colchones   de  alto  desempeño   con   excelente  soporte   y  confort,   respaldados   con   garantía extendida. Un  colchón  no  es  solo  un   lugar   para   dormir,   es   el   refugio   donde   se   forjan   tus   sueños,   se   comparten   risas   y   se   crean   recuerdos   imborrables.   Es   el   escenario   perfecto   para   tu   descanso   y   el   cómplice   fiel   de   tus   momentos   más   especiales. ¡Cuando   duermes   bien,   estás   listo   para   brillar   cada   dìa!"
+      },
+      {
+        "part": "ppt/slides/slide26.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA DOBLE   PILLOW   TOP ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   Support   Foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Pillow   Top Ergo   Support   Foam Forro   acolchado   multicapa Jumbopedic Cloud MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105   cm 190   cm 39   cm 2   PLAZAS 135   cm 190   cm 39   cm 2½   PLAZAS 160   cm 200   cm 39   cm 3  PLAZAS 200   cm 200   cm 39   cm ALTURA:   39   cm Elaborado   para   quienes   valoran   la   firmeza   en  un    colchón    ortopédico    de    alto    desempeño.  Exclusiva   configuración   que   permite   entregar   un  producto   de   mayor  altura   maximizando   su   vida   útil.  Ideal   para   quienes   desean  aprovechar   al   máximo  el  beneficio   de   un   excelente   ajuste   corporal   en   los   dos  lados   del   colchón. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 4 3 5 6 7 DOBLE  PILLOW   TOP CAPAS   INTEGRADAS  EN   SUS   DOS   LADOS 12 años GARANTÍA OPCIONES   DE   TELAS TELA NOMBRE COLOR Cloud Jumbo Gris   Oscuro *IMÁGENES   REFERENCIALES LINEA   CLOUD NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 50 51 Ortopédicos   de   Lujo ORTOPÉDICO 8 9"
+      },
+      {
+        "part": "ppt/slides/slide27.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA PILLOW   TOP  ONE   SIDE ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   Support   Foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105   cm 190   cm 36   cm 2   PLAZAS 135   cm 190   cm 36   cm 2½   PLAZAS 160   cm 200   cm 36   cm 3  PLAZAS 200   cm 200   cm 36   cm ALTURA:   36   cm Recomendado   para   personas   que   prefieren   colchones  de   alta   firmeza,   pero   no   extremadamente   duros.   Ideal  para   un   descanso   confortable   y   reparador.   En   su   ver- sión   “Pillow   Top”   se  puede   utilizar   por   ambos   lados. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 4 3 5 6 7 PILLOW   TOP CAPA   SUPERIOR INTEGRADA DUAL  SYSTEM AMBOS   LADOS  FUNCIONALES 12 años GARANTÍA OPCIONES   DE   TELAS TELA NOMBRE COLOR Cloud Jumbo Gris   Oscuro *IMÁGENES   REFERENCIALES Jumbopedic Cloud NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 52 53 ORTOPÉDICO LINEA   CLOUD Ortopédicos   de   Lujo 8"
+      },
+      {
+        "part": "ppt/slides/slide28.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA PRESENTACIÓN  CONVENCIONAL ESTRUCTURA   INTERNA Forro   acolchado   multicapa Cozy   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Cozy   Foam Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105   cm 190   cm 36   cm 2   PLAZAS 135   cm 190   cm 36   cm 2½   PLAZAS 160   cm 200   cm 36   cm 3  PLAZAS 200   cm 200   cm 36   cm ALTURA:   36   cm Recomendado   para   personas   que   prefieren   colchones  de   alta   firmeza,   pero   no   extremadamente   duros.   Ideal  para   un   descanso   confortable   y   reparador. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 4 3 7 5 6 12 años GARANTÍA OPCIONES   DE   TELAS TELA NOMBRE COLOR Cloud Jumbo Gris   Oscuro *IMÁGENES   REFERENCIALES ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 54 55 Jumbopedic Cloud LINEA   CLOUD Ortopédicos   de   Lujo"
+      },
+      {
+        "part": "ppt/slides/slide29.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA PILLOW   TOP  ONE   SIDE ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   Support   Foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Forro   acolchado   multicapa Conforpedic Cloud MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105   cm 190   cm 35   cm 2   PLAZAS 135   cm 190   cm 35   cm 2½   PLAZAS 160   cm 200   cm 35   cm ALTURA:   35   cm Ideal   para  quienes   encuentran   un   descanso   placen-  tero   en   colchones   de   firmeza   media.   Desarrollado   es-  pecialmente   para  quienes  gustan   de  colchones  que  pueden  brindar   un   excelente   ajuste   corporal   y   dispo-  nen   además   de   un   nivel   de   firmeza   ideal   en   el   lado  convencional. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 4 3 5 7 6 DUAL  SYSTEM AMBOS   LADOS 12 años GARANTÍA OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 2 Cloud Conforpedic Gris   Oscuro Cloud Conforpedic Gris   Claro *IMÁGENES   REFERENCIALES PILLOW   TOP CAPA   SUPERIOR INTEGRADA ORTOPÉDICO FUNCIONALES NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 56 57 LINEA   CLOUD Ortopédicos   de   Lujo 8"
+      },
+      {
+        "part": "ppt/slides/slide3.xml",
+        "text": "Líderes   en   colchones   de   resortes   y   complementos   a   nivel   nacional,  comprometidos   con   la   excelencia   en   cada   etapa   de   producción,   des-  de   la   producción   de   hilos   para   nuestros   textiles   hasta   el   uso   de   acero  de  alto  carbono   en   la   estructura   de   los   resortes,   garantizando   firmeza,  excelente soporte,  confort   y   alto   desempeño   en   cada   uno   de  nuestros  colchones,   lo  que   nos  convierte  en   el   ¡Mejor   colchón   del   Ecuador!. Compromiso  con   la   calidad Disponemos   de   un   laboratorio   equipado   con  tecnología   de   última  generación   y   equipos   certificados   que   aseguran   la   excelencia   de  nuestras   esponjas   y   colchones.   Realizamos   exhaustivas   pruebas   en  los   productos   terminados  para   garantizar   su   durabilidad   y   eficien-   cia,   reafirmando   nuestro   compromiso   con   la   excelencia."
+      },
+      {
+        "part": "ppt/slides/slide30.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Cozy   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Cozy   Foam Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS 2   PLAZAS 2½   PLAZAS 105   cm 135   cm 160   cm 190   cm 190   cm 200   cm 35   cm 35   cm 35   cm ALTURA:   35   cm Recomendado   para   quienes   prefieren   colchones   de  firmeza   media   con   excelente   soporte.   Ideal   para   mini-  mizar   el   impacto   en   personas   que   están   migrando   de  colchones   suaves   a   duros. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 4 3 5 6 7 12 años GARANTÍA OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1.   Cloud Conforpedic Gris   Oscuro 2.   Cloud Conforpedic Gris   Claro *IMÁGENES   REFERENCIALES Conforpedic Cloud LINEA   CLOUD Ortopédicos   de   Lujo PRESENTACIÓN  CONVENCIONAL 1 2 ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 58 59"
+      },
+      {
+        "part": "ppt/slides/slide31.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA DOBLE   PILLOW   TOP ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   support   foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Pillow   Top Ergo   support   foam Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS PLAZAS 2½   PLAZAS PLAZAS 105   cm 135   cm 160   cm 200   cm 190   cm 190   cm 200   cm 200   cm 33   cm 33   cm 33   cm 33   cm ALTURA:   33   cm Recomendado   como   una   excelente   opción   de   valor,  elegido   por   quienes   buscan   un   descanso   placentero   y  reparador   en   productos   con   garantía   extendida   y   so-  porte   perfecto.   Ideal   para   quienes   desean   aprovechar  al   máximo   el   beneficio   de  un  excelente   ajuste   corporal  en   los   dos   lados. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 10 años GARANTÍA 3D   AIR   FLOW VENTILACIÓN   Y  FRESCURA. DOBLE  PILLOW   TOP CAPAS   INTEGRADAS 1.   Cloud York Gris   Oscuro 2.   Cloud York Gris   Claro 3.   Cloud York Beige OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 3 2 *IMÁGENES   REFERENCIALES Sonata Cloud ORTOPÉDICO EN   SUS   DOS   LADOS NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 60 61 LINEA   CLOUD Ortopédicos   de   Lujo 1 2 3 4 5 6 7 8 9"
+      },
+      {
+        "part": "ppt/slides/slide32.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA PILLOW   TOP  ONE   SIDE ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   support   foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105   cm 190   cm 36   cm 2   PLAZAS 135   cm 190   cm 36   cm 2½   PLAZAS 160   cm 200   cm 36   cm 3  PLAZAS 200   cm 200   cm 36   cm ALTURA:   36   cm Ideal   para   los   que   valoran   la   excelente   adaptación   corporal   que   brinda   el   sistema   pillow   top   o   la   firme-   za   que   se   puede  encontrar   en   el   lado   convencional   de   este   colchón   ortopédico   único   en   su   clase,   totalmente   confortable   y   de   excelente   desempeño.   Versión   Pillow   Top   One   Side   se   puede   utilizar   por   los   dos   lados   a   su   elección. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 10 años GARANTÍA 3D   AIR   FLOW VENTILACIÓN   Y  FRESCURA. PILLOW   TOP CAPA   SUPERIOR INTEGRADA DUAL  SYSTEM AMBOS   LADOS 1.   Cloud York Gris   Oscuro 2.   Cloud York Gris   Claro 3.   Cloud York Beige OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 3 2 *IMÁGENES   REFERENCIALES Sonata Cloud ORTOPÉDICO FUNCIONALES NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 62 63 LINEA   CLOUD Ortopédicos   de   Lujo 1 2 3 4 5 6 7 8"
+      },
+      {
+        "part": "ppt/slides/slide33.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO PLAZA 1¼   PLAZAS 1½   PLAZAS PLAZAS 2½   PLAZAS 80   cm 90   cm 105   cm 135   cm 160   cm 190   cm 190   cm 190   cm 190   cm 200   cm 34   cm 34   cm 34   cm 34   cm 34   cm PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 10 años GARANTÍA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Black   Foam   Hard Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Black   Foam   Hard Forro   acolchado   multicapa DISPONIBLE   TAMBIÉN   EN  VERSIÓN   “FRESH” (SISTEMA   3D   AIR   FLOW) 1 2 3 4 5 6 7 1 3 2 1.   Cloud York Gris   Oscuro 2.   Cloud York Gris   Claro 3.   Cloud York Beige OPCIONES   DE   TELAS TELA \t NOMBRE COLOR *IMÁGENES   REFERENCIALES Sonata Cloud ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 64 65 LINEA   CLOUD Ortopédicos   de   Lujo PRESENTACIÓN  CONVENCIONAL ALTURA:   34   cm Recomendado  para  personas   que   gustan   de  colcho-  nes   confortables   y   firmes   para   obtener   un   descanso  reparador.   Excelente   nivel   de   soporte   en   toda   la   super-  ficie   del   colchón."
+      },
+      {
+        "part": "ppt/slides/slide34.xml",
+        "text": "Tolerancia 180   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Black   Foam   Special Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Black   Foam   Special Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1   PLAZA 1¼   PLAZAS 1½   PLAZAS 2   PLAZAS 2   ½PLAZAS 80   cm 90   cm 105   cm 135   cm 160   cm 190   cm 190   cm 190   cm 190   cm 200   cm 34   cm 34   cm 34   cm 34   cm 34   cm ALTURA:   34   cm Preferido   por   quienes   valoran   la   frescura   en   un   colchón  de   resortes   cómodo,   firme,   con   tela   tipo   exportación   y  un   exclusivo   sistema  de   flujo   de   aire   (3D   Air   Flow). PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 3 4 5 6 7 8 años GARANTÍA 3D   AIR   FLOW VENTILACIÓN   Y  FRESCURA. 1 3 2 1.   Cloud Sueño   Fresh Gris   Oscuro 2.   Cloud Sueño   Fresh Gris   Claro 3.   Cloud Sueño   Fresh Beige OPCIONES   DE   TELAS TELA \t NOMBRE COLOR *IMÁGENES   REFERENCIALES Sueño  Fresh Cloud ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 66 67 LINEA   CLOUD Ortopédicos   de   Lujo PRESENTACIÓN  CONVENCIONAL"
+      },
+      {
+        "part": "ppt/slides/slide35.xml",
+        "text": "Después   de   una   larga   jornada   de   trabajo,  no   hay   nada   como   descansar   en   un   colchón  firme   que   asegure   un   descanso   merecido   y   una   postura   correcta   al   dormir. ¡Cuando   duermes   bien,   estás   listo   para   brillar   cada   dìa! LÍNEA  ORTOPÉDICOS  DE   LUJO Soporte   excepcional   y   comodidad   inigualable,  fabricados   con   materiales   de   alta   calidad   y  respaldados   por   una   garantía   extendida,   lo   que  asegura   durabilidad   y   brinda   tranquilidad   en   su  inversión."
+      },
+      {
+        "part": "ppt/slides/slide36.xml",
+        "text": "Tolerancia 240   lbs.   POR   PERSONA PILLOW   TOP  ONE   SIDE ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   support   foam Plancha   de   esponja   prensada   100kg/m3 Marco   de   esponja   prensada   100kg/m3 Panel   de   resortes   de   alto   calibre Plancha   de   esponja   prensada   100kg/m3 Forro   acolchado   multicapa Ultra Firme MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105   cm 190   cm 28   cm 2   PLAZAS 135   cm 190   cm 28   cm 2½   PLAZAS 160   cm 200   cm 28   cm 3  PLAZAS 200   cm 200   cm 28   cm ALTURA:   28   cm Desarrollado   para   quienes   encuentran   el   máximo  confort   en   colchones   de   alta   dureza   y   excelente  desempeño.  Recomendado   para   quienes   valoran   la  combinación   perfecta   entre   una   excelente   adapta-  ción   corporal   (Pillow   Top)   y   la   máxima  dureza   (lado  convencional)   en   un   colchón  ortopédico   prensado de  resorptes. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 15 años GARANTÍA ALTA  FIRMEZA DUAL  SYSTEM AMBOS   LADOS  FUNCIONALES PILLOW   TOP CAPA   SUPERIOR INTEGRADA OPCIONES   DE   TELAS TELA NOMBRE COLOR Bramante UltraFirme Beige *IMÁGENES   REFERENCIALES NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 70 71 ORTOPÉDICO LINEA Ortopédicos   de   Lujo 1 2 3 4 5 6 7"
+      },
+      {
+        "part": "ppt/slides/slide37.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA DOBLE   PILLOW   TOP ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   support   foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Pillow   Top Ergo   support   foam Forro   acolchado   multicapa Jumbopedic MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS 105   cm 190   cm 34   cm 2   PLAZAS 135   cm 190   cm 34   cm 2½   PLAZAS 160   cm 200   cm 34   cm 3  PLAZAS 200   cm 200   cm 34   cm PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA OPCIONES   DE   TELAS TELA NOMBRE COLOR Bramante Liverpool Azul   Marino *IMÁGENES   REFERENCIALES ORTOPÉDICO ALTURA:   34   cm Elaborado   para   quienes   valoran   la   firmeza   en   un  colchón   ortopédico   de   alto   desempeño.   Exclu-  siva   configuración   premiun   que   permite   entre-  gar   un   producto   diseñado   para   maximizar   su   vida  útil   y   ofrecer   el   mayor   beneficio   que   puede   entre-  gar   un   colchón   de   resortes   con   garantía   extendida. Excelente   ajuste   corporal  en   los   dos   lados   del  producto. 12 años GARANTÍA LINEA Ortopédicos   de   Lujo 1 2 3 4 5 6 7 8 9 DOBLE  PILLOW   TOP CAPAS   INTEGRADAS  EN   SUS   DOS   LADOS NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 72 73"
+      },
+      {
+        "part": "ppt/slides/slide38.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Cozy   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Cozy   Foam Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105   cm 190   cm 34   cm ESPECIAL 120   cm 190   cm 34   cm 2   PLAZAS 135   cm 190   cm 34   cm ESPECIAL 140   cm 190   cm 34   cm 2½   PLAZAS 160   cm 200   cm 34   cm 3  PLAZAS 200   cm 200   cm 34   cm ALTURA:   34   cm Recomendado   para   personas   que   prefieren   colchones   de   alta   firmeza   como   base   para   lograr   un   descanso   re-   parador.   La   mejor   solución   para   quienes   han   utilizado   colchones   prensados   y   desean   migrar   a   otro   tipo   de   col-   chones PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 3 4 5 6 7 12 años GARANTÍA OPCIONES   DE   TELAS TELA NOMBRE COLOR Bramante Liverpool Azul   Marino *IMÁGENES   REFERENCIALES ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 74 75 Jumbopedic LINEA Ortopédicos   de   Lujo PRESENTACIÓN  CONVENCIONAL"
+      },
+      {
+        "part": "ppt/slides/slide39.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA DOBLE   PILLOW   TOP ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   support   foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Pillow   Top Ergo   support   foam Forro   acolchado   multicapa CONFOrpE d iC MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1   PLAZA 80   cm 190   cm 35   cm 1½   PLAZAS 105   cm 190   cm 35   cm 2   PLAZAS 135   cm 190   cm 35   cm 2½   PLAZAS 160   cm 200   cm 35   cm 3  PLAZAS 200   cm 200   cm 35   cm ALTURA:   35   cm Recomendado   para   quienes   prefieren   colchones   de   fir-   meza   media   y   buscan   un   excelente   soporte.   Ideal   para   quienes   desean   cambiar   de   colchones   más   suaves   a   op-   ciones   más   firmes,   ya   que   ofrece   un   ajuste   óptimo. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 12 años GARANTÍA DOBLE  PILLOW   TOP CAPAS   INTEGRADAS OPCIONES   DE   TELAS TELA NOMBRE COLOR Bramante Respaldo   de   Cantera Azul   Marino *IMÁGENES   REFERENCIALES ORTOPÉDICO EN   SUS   DOS   LADOS NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 76 77 LINEA Ortopédicos   de   Lujo 1 2 3 4 5 6 7 8 9"
+      },
+      {
+        "part": "ppt/slides/slide4.xml",
+        "text": ""
+      },
+      {
+        "part": "ppt/slides/slide40.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Cozy   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Cozy   Foam Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1   PLAZA 80   cm 190   cm 34   cm 1½   PLAZAS 105   cm 190   cm 34   cm 2   PLAZAS 135   cm 190   cm 34   cm 2½   PLAZAS 160   cm 200   cm 34   cm 3  PLAZAS 200   cm 200   cm 34   cm ALTURA:   34   cm Perfecto   para   quienes   disfrutan   de   un   descanso  placentero   en   colchones   de   firmeza   media.   Una  excelente   opción   para   quienes   desean   hacer   la  transición   de   colchones   suaves   a   opciones   más  firmes,   ya   que   proporciona   un   ajuste   óptimo   y  equilibrio   perfecto   entre   firmeza   y   suavidad. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 12 años GARANTÍA 1 2 3 4 5 6 7 OPCIONES   DE   TELAS TELA NOMBRE COLOR Bramante Respaldo   de   Cantera Azul   Marino *IMÁGENES   REFERENCIALES ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 78 79 CONFOrpE d iC LINEA Ortopédicos   de   Lujo PRESENTACIÓN  CONVENCIONAL"
+      },
+      {
+        "part": "ppt/slides/slide41.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA DOBLE   PILLOW   TOP ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   support   foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Pillow   Top Ergo   support   foam Forro   acolchado   multicapa Sonata MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS  ESPECIAL   2   PLAZAS  ESPECIAL  2½   PLAZAS 3  PLAZAS 105   cm 120   cm 135   cm 140   cm 160   cm 200   cm 190   cm 190   cm 190   cm 190   cm 200   cm 200   cm 31   cm 31   cm 31   cm 31   cm 31   cm 31   cm ALTURA:   31  cm Recomendado   como   la   mejor   opción   de   valor,   elegido   por   quienes   buscan   un   descanso   placentero   y   repa-   rador,   en   productos   con   garantía   extendida   y   soporte   ideal,   a  precios  totalmente   accesibles.   Ideal   para   quie-   nes   desean   aprovechar   al   máximo   el   beneficio   de   un   excelente   ajuste   corporal   en   los   dos   lados   del   producto. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 10 años GARANTÍA DOBLE  PILLOW   TOP CAPAS   INTEGRADAS 1 2 OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR 3 4 ORTOPÉDICO EN   SUS   DOS   LADOS NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 80 81 1.   Bramante Firmamento Azul 2.   Bramante Celtic Azul   acero 3.   Bramante Celtic Gris 4.  Bramante Color   llano Azul   marino *IMÁGENES   REFERENCIALES LINEA Ortopédicos   de   Lujo 1 2 3 4 5 6 7 8 9"
+      },
+      {
+        "part": "ppt/slides/slide42.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA PILLOW   TOP  ONE   SIDE ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Ergo   support   foam Ergo   Support   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Ergo   Support   Foam Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105   cm 190   cm 31   cm 2   PLAZAS 135   cm 190   cm 31   cm 2½   PLAZAS 160   cm 200   cm 31   cm 3  PLAZAS 200   cm 200   cm 31   cm ALTURA:   31  cm Ideal   para   los   que   valoran  la  excelente   adaptación   cor-   poral   que   brinda   el   sistema   pillow   top   o   la   firmeza   de   su   lado   convencional,   en   un   colchón   ortopédico   total-   mente   confortable   y   de   excelente   desempeño.   Versión   Pillow   Top   One   Side   se   puede   utilizar   por   los   dos   lados. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 10 años GARANTÍA PILLOW   TOP CAPA   SUPERIOR INTEGRADA DUAL  SYSTEM AMBOS   LADOS *IMÁGENES   REFERENCIALES Sonata LINEA Ortopédicos   de   Lujo 1 2 3 4 5 6 7 8 1 2 OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR 3 4 1.   Bramante Firmamento Azul 2.   Bramante Celtic Azul   acero 3.   Bramante Celtic Gris 4.  Bramante Color   llano Azul   Marino ORTOPÉDICO FUNCIONALES NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 82 83"
+      },
+      {
+        "part": "ppt/slides/slide43.xml",
+        "text": "Tolerancia 200   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Black   Foam   Hard Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Black   Foam   Hard Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO PLAZA 1¼   PLAZAS 1½   PLAZAS \tPLAZAS  ESPECIAL  2½   PLAZAS PLAZAS 80   cm 90   cm 105   cm 135   cm 140   cm 160   cm 200   cm 190   cm 190   cm 190   cm 190   cm 190   cm 200   cm 200   cm 32   cm 32   cm 32   cm 32   cm 32   cm 32   cm 32   cm ALTURA:   32   cm Recomendado  para  personas   que   gustan   de  colcho-  nes   confortables   y   firmes   para   obtener   un   descanso  reparador.   Excelente   nivel   de   soporte   en   toda   la   super-  ficie   de   este   colchón   ortopédico   de   resortes   único   en  su   clase. PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 3 4 5 6 7 10 años GARANTÍA *IMÁGENES   REFERENCIALES Sonata LINEA Ortopédicos   de   Lujo PRESENTACIÓN  CONVENCIONAL 1 2 OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR 3 4 1.   Bramante Firmamento Azul 2.   Bramante Celtic Azul   acero 3.   Bramante Celtic Gris 4.  Bramante Color   llano Azul   Marino ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 84 85"
+      },
+      {
+        "part": "ppt/slides/slide44.xml",
+        "text": "Inglés   Firme MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1   PLAZA 1¼   PLAZAS 1½   PLAZAS  ESPECIAL   2   PLAZAS  ESPECIAL  2½   PLAZAS 3  PLAZAS 80   cm 90   cm 105   cm 120   cm 135   cm 140   cm 160   cm 200   cm 190   cm 190   cm 190   cm 190   cm 190   cm 190   cm 200   cm 200   cm 27   cm 27   cm 27   cm 27   cm 27   cm 27   cm 27   cm 27   cm ALTURA:   27   cm Colchón   firme   de   alto   desempeño   con   excelentes  acabados,   disponible   en   todas  las   medidas   hasta   tres  plazas.   Preferido   por   brindar  un   excelente   nivel   de  confort   con   garantía   extendida. 10 años GARANTÍA Tolerancia 180   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Black   Foam   Hard Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Black   Foam   Hard Forro   acolchado   multicapa PANEL   DE  RESORTES ALTA  FIRMEZA ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 3 4 5 7 2 6 1 2 1.   Bramante Inglés Azul   marino 2.   Bramante Inglés Blanco OPCIONES   DE   TELAS TELA \t NOMBRE COLOR *IMÁGENES   REFERENCIALES LINEA ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 86 87 Ortopédicos   de   Lujo PRESENTACIÓN  CONVENCIONAL"
+      },
+      {
+        "part": "ppt/slides/slide45.xml",
+        "text": "El  descanso   en   familia   es   el   mejor   regalo   para   renovar   energías   juntos.   Disfruta   de   noches   de   calidad   y   conexión   con   los   que   más   amas.   Por-   que   descansar   bien   es   disfrutar   cada   momento   en  compañía. ¡Cuando   duermes   bien,   estás   listo   para   brillar   cada   dìa! Colchones   de   alta   aceptación   de   mercado   por   su  desempeño,   soporte,   garantía   y   confort. Elaborados   con   materiales   y   tecnología   de   primera   línea. LÍNEA  ORTOPÉDICOS  TRADICIONALES"
+      },
+      {
+        "part": "ppt/slides/slide46.xml",
+        "text": "Satisfacción   Total MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1   PLAZA 1¼   PLAZAS 1½   PLAZAS  ESPECIAL   2   PLAZAS  ESPECIAL  2½   PLAZAS 80   cm 90   cm 105   cm 120   cm 135   cm 140   cm 160   cm 190   cm 190   cm 190   cm 190   cm 190   cm 190   cm 200   cm 29   cm 29   cm 29   cm 29   cm 29   cm 29   cm 29   cm ALTURA:   29   cm Exclusivo   sistema   Full   Air   Flow   (Full   3D)   en   todo   el   pe-  rímetro   del   colchón.   Frescura   y   Confort   garantizados en   este   colchón   ortopédico   de  diseño   innovador   y   alto  desempeño. 8 años GARANTÍA Tolerancia 180   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Black   Foam   Special Black   Foam   Ligth Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Black   Foam   Ligth Black   Foam   Special Forro   acolchado   multicapa PANEL   DE  RESORTES FULL  AIR   FLOW VENTILACIÓN   Y FRESCURA. ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 3 4 5 6 7 8 9 1 2 1.   Bramante Petra Azul 2.   Bramante Jizzard Azul OPCIONES   DE   TELAS TELA \t NOMBRE COLOR *IMÁGENES   REFERENCIALES ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 90 91 LINEA Ortopédicos   Tradicionales PRESENTACIÓN  CONVENCIONAL"
+      },
+      {
+        "part": "ppt/slides/slide47.xml",
+        "text": "Sue ñ o   T o t a l MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1   PLAZA 80   cm 190   cm 28   cm 1¼   PLAZAS 90   cm 190   cm 28   cm 1½   PLAZAS 105   cm 190   cm 28   cm ESPECIAL 120   cm 190   cm 28   cm 2   PLAZAS 135   cm 190   cm 28   cm ESPECIAL 140   cm 190   cm 28   cm ALTURA:   28   cm Referido   por   quienes   buscan   un   colchón   ortopédico   de   resortes   de   buen   desempeño,   garantía   real  y  ex-   celentes   acabados.   Encuéntralo   en   una   amplia   varie-   dad   de   diseños,   colores   y   telas,   para   todos   los   gustos.  Disfruta   de   la   frescura   y   confort   propio   de   las   telas   bramante   de   algodón. 5 años GARANTÍA Tolerancia 160   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Black   Foam   Ligth White   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante White   Foam Black   Foam   Ligth Forro   acolchado   multicapa 1 2 3 4 5 6 7 8 9 1 6 2 7 3 8 4 OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR 1.   Bramante Antares Azul   marino 2.   Bramante Color   entero Azul   marino 3.   Bramante London Azul   acero 4.  Bramante Sarandi Gris 5.   Bramante Sarandi Nuez 6.  Bramante Ivanka Vino 7.   Bramante Susdal Azul   marino 8.   Bramante Melida Azul   marino 9.   Jacquard Sueño   Total Blanco 5 9 *IMÁGENES   REFERENCIALES LINEA PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA ORTOPÉ   DICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 92 93 Ortopédicos   Tradicionales PRESENTACIÓN  CONVENCIONAL"
+      },
+      {
+        "part": "ppt/slides/slide48.xml",
+        "text": "Tolerancia 160   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Black   Foam   Ligth Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante Black   Foam   Ligth Forro   acolchado   multicapa Novo Compromiso MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO PLAZA 1¼   PLAZAS 1½   PLAZAS PLAZAS 80   cm 90   cm 105   cm 135   cm 190   cm 190   cm 190   cm 190   cm 19   cm 19   cm 19   cm 19   cm 1 2 3 4 5 6 7 4 años GARANTÍA OPCIONES   DE   TELAS TELA NOMBRE COLOR 1.   Bramante Sandoval Azul *IMÁGENES   REFERENCIALES LINEA PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 94 95 Ortopédicos   Tradicionales PRESENTACIÓN  CONVENCIONAL ALTURA:   19   cm Colchón   ortopédico   de   excelente   desempeño,   calidad   y   tecnología.   Diseñado   especialmente   para   el   uso   pro-   longado   en   literas   por   su   gran   confort,   maximizando   el   espacio   disponible."
+      },
+      {
+        "part": "ppt/slides/slide49.xml",
+        "text": "Tolerancia 160   lbs.   POR   PERSONA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Black   Foam   Ligth White   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante White   Foam Black   Foam   Ligth Forro   acolchado   multicapa Full   Spring MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1   PLAZA 1¼   PLAZAS 1½   PLAZAS  ESPECIAL  2   PLAZAS  ESPECIAL 80   cm 90   cm 105   cm 120   cm 135   cm 140   cm 190   cm 190   cm 190   cm 190   cm 190   cm 190   cm 27   cm 27   cm 27   cm 27   cm 27   cm 27   cm ALTURA:   27   cm Ideal   para   quienes   buscan   un   colchón   ortopédico   de  alto   rendimiento,   garantía   confiable   y   acabados   impe-  cables.   Experimenta   la  frescura   y  comodidad   del   “Full  Spring”,  diseñado   para   brindarte   el   máximo   confort. 3 años GARANTÍA 1 2 3 4 5 6 7 8 9 1 2 OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR 3 1.   Bramante Viviana Azul 2.   Bramante Cori Gris 3.   Bramante Cori Azul   acero 4.  Bramante Charlotte Azul   marino 5.   Bramante Color   entero Azul   marino 6.  Jacquard Full   Spring Blanco 4 5 *IMÁGENES   REFERENCIALES LINEA Ortopédicos   Tradicionales PRESENTACIÓN  CONVENCIONAL 6 PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA ORTOPÉDICO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 96 97"
+      },
+      {
+        "part": "ppt/slides/slide5.xml",
+        "text": "ÍNDICE ÍNDICE LÍNEA   POCKET   COIL POCKET  BOREAL   MEMORY   FOAM   ...................   12   -   13 POCKET   BOREAL   CONVENCIONAL   .................   14   -   15 LÍNEA   MEMORY   FOAM SUPREME   MEMORY   FOAM   ...............................   18   -   19 FRIZANTE   MEMORY   FOAM   ...............................  20   -   21  MEMORY   PLUS   ...................................................   22   -   23 LÍNEA   HOTELERA FIRM   PLUS   ..........................................................   26   -   27 CHAMPION   .........................................................   28- 29 HOTELERO   SUPPORT  .......................................   30   -   31 HOTELERO   ..........................................................   32   - 33  INFINITUS   DOBLE   PILLOW   TOP........................   34-   35  INFINITUS   PILLOW   TOP   ....................................   36-   37  INFINITUS   ...........................................................   38-   39  PREMIER   DOBLE   PILLOW   TOP   ........................   40   -  41  PREMIER   PILLOW   TOP   ......................................   42- 43  PERFECTION   DOBLE   PILLOW   TOP   ..................   44- 45 PERFECTION   CONVENCIONAL   .......................   46-   47 ORTOPÉDICOS   DE   LUJO   LÍNEA   CLOUD JUMBOPEDIC   CLOUD   DOBLE   PILLOW   TOP   ...   50   -   51  JUMBOPEDIC   CLOUD   PILLOW   TOP   ................   52-   53  JUMBOPEDIC   CLOUD.......................................   54-   55  CONFORPEDIC   CLOUD   PILLOW   TOP...............   56   -   57  CONFORPEDIC   CLOUD   ....................................   58- 59  SONATA   CLOUD   DOBLE   PILLOW   TOP   ............   60   -   61  SONATA   CLOUD   PILLOW   TOP   ..........................   62   - 63  SONATA   CLOUD   ................................................   64- 65 SUEÑO   FRESH   CLOUD   ....................................  66-   67 ORTOPÉDICOS   DE   LUJO ULTRA   FIRME   PILLOW   TOP   ......................................   70   -   71  JUMBOPEDIC   DOBLE   PILLOW   TOP   ........................   72   -   73  JUMBOPEDIC   ...........................................................   74   -   75  CONFORPEDIC  DOBLE  PILLOW TOP   ......................   76   -   77  CONFORPEDIC   .........................................................   78   -   79  SONATA   DOBLE  PILLOW   TOP   ..................................   80   -   81 SONATA   PILLOW   TOP   ................................................   82   -   83  SONATA   .....................................................................   84   -   85 INGLÉS   FIRME   ..........................................................  86   -   87 ORTOPÉDICOS   TRADICIONALES SATISFACCIÓN   TOTAL   .............................................   90   -   91 SUEÑO   TOTAL   ..........................................................   92   -   93 NOVO   COMPROMISO   ...............................................   94   -   95 FULL   SPRING   ...........................................................   96   -   97 SEMI   ORTOPÉDICOS FIESTA   .......................................................................   98  -   99 INFANTIL BAMBINO   .................................................................   100   -   101 PRENSADOS   CLÍNICOS ORTOPÉDICO   DE   LUXE   .......................................   104   -   105  NOVO   ORTOPÉDICO   CLOUD   PILLOW   TOP   .........   106   -   107  NOVO   ORTOPÉDICO   CLOUD   ...............................   108   -   109 NOVO   ORTOPÉDICO   PILLOW TOP   ......................   110   -   111  NOVO   ORTOPÉDICO   ............................................   112   -   113 COMPLEMENTOS BASES   DE   COLCHÓN   ....................................................   115 ALMOHADAS   ........................................................   116   -   117 FORROS  Y   PROTECTORES   ...........................................   118"
+      },
+      {
+        "part": "ppt/slides/slide50.xml",
+        "text": "Tolerancia 140   lbs.   POR   PERSONA Fiesta MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1   PLAZA 80   cm 190   cm 21   cm 1¼   PLAZAS 90   cm 190   cm 21   cm 1½   PLAZAS 105   cm 190   cm 21   cm 2   PLAZAS 135   cm 190   cm 21   cm Firmeza   ideal   al   alcance   de   todos,  recomendado  para  quienes   buscan   la   frescura   y   comodidad   de   telas  de  algodón.   Ideal   para   su   uso   en   literas. ALTURA:   21   cm ¡   El   mejor   colchón   del   Ecuador   ! PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA LÍNEA SEMI  ORTOPÉDICOS Firmeza   basculante   al   alcance   de   todos 1 2 4 3 5 6 7 ESTRUCTURA   INTERNA Forro   acolchado   multicapa White   Foam Capa   aislante Panel   de   resortes   de  alto   calibre Capa   aislante White   Foam Forro   acolchado   multicapa OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR 1.   Bramante Bursa Azul   marino 2.   Bramante Eslovenia Azul 3.   Bramante Zenda Azul   marino 4.  Bramante Tailandia Azul *IMÁGENES   REFERENCIALES 98 99 LINEA Semi   Ortopédicos 1 \t 2 \t 3 \t 4 Se   envía   surtido   de   acuerdo   a   disponibilidad NIVEL   DE   FIRMEZA SUAVE EXTRA FIRME"
+      },
+      {
+        "part": "ppt/slides/slide51.xml",
+        "text": "MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO ESPECIAL \t70   cm \t140   cm \t 19   cm ALTURA:   19   cm Colchón   de   resortes   desarrollado   para   garantizar   el  máximo  confort   de   los   más   pequeños   del   hogar. Tolerancia NIÑOS   MENORES   A   1   AÑO Bambino ¡   El   mejor   colchón   del   Ecuador   ! PANEL   DE  RESORTES ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 4 3 5 6 7 TRUCTURA   INTERNA o   acolchado   multicapa Black   Foam   Ligth  Capa   aislante anel   de   resortes   de   alto   calibre  Capa   aislante Black   Foam   Ligth o   acolchado   multicapa 101 LÍNEA INFANTIL Desarrollados   para   garantizar   un   descanso  saludable   a   los   más  pequeños   del   hogar. LINEA Infantil VARIAS   OPCIONES  EN   DISEÑOS   Y   COLORES NIVEL   DE   FIRMEZA SUAVE EXTRA FIRME"
+      },
+      {
+        "part": "ppt/slides/slide52.xml",
+        "text": "Un   buen   descanso   es   la   clave  para  un   día  lleno de energía.  Cuida   tu   sueño   y   despierta   renovado  para  disfrutar   de  un   nuevo   día   con   opti-   mismo.   ¡Descansa  profundamente,   vive   plenamente! ¡Cuando   duermes   bien,   estás   listo   para   brillar   cada   dìa! LÍNEA  PRENSADOS  CLÍNICOS Colchones   de   máxima   firmeza,   diseñados   para   quienes   prefieren   la   comodidad  de   los   colchones   ortopédicos   duros  sin   panel   de   resortes.   Fabricados   con   espu-  mas   de   alta   calidad   y   una   mayor   proporción   de   espuma   prensada,   garantizando un   soporte   superior."
+      },
+      {
+        "part": "ppt/slides/slide53.xml",
+        "text": "Tolerancia 260   lbs.   POR   PERSONA 100%   NÚCLEO DE   ESPONJA   PRENSADA ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pro   Support   Foam Esponja   prensada   100   kg/m3 Pro   Support   Foam Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO NÚCLEO  ESPONJA PRENSADA ANTIÁCAROS FIBRAS   DE  ALOE  VERA 1 2 3 4 5 15 años GARANTÍA ORTOPÉDICO DE   LUXE ALTA  FIRMEZA ESPECIAL  1   PLAZA 1   ¼PLAZAS 1   ½PLAZAS  ESPECIAL  2   PLAZAS 2½   PLAZAS 3  PLAZAS 52   cm 80   cm 90   cm 105   cm 120   cm 135   cm 160   cm 200   cm 200   cm 190   cm 190   cm 190   cm 190   cm 190   cm 200   cm 200   cm ALTURAS   DISPONIBLES: 13,   15,   17,   20,   23,   30   cm. Único   en   su   clase,  núcleo   100%   esponja  prensada   de  100   kg/m 3 .   La   elección   de   quienes   encuentran  mayor confort   en   colchones   duros   sin   resortes.   Desarrolla-  do   para   personas   con   afecciones   lumbares   (columna  baja). *IMÁGENES   REFERENCIALES LINEA Clínicos 1.   Bramante Aztlan Beige 2.   Bramante Aztlan Gris 3.   Bramante Aztlan Azul   marino OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 104 105"
+      },
+      {
+        "part": "ppt/slides/slide54.xml",
+        "text": "Tolerancia 260   lbs.   POR   PERSONA PILLOW   TOP  ONE   SIDE ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Flexi   Fit   Foam Capa   de   esponja   prensada   100   kg/m3 Marco   de   esponja   prensada   100   kg/m3 Pro   Support   Foam Capa   de   esponja   prensada   100   kg/m3 Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS PLAZAS 2½   PLAZAS PLAZAS 105   cm 135   cm 160   cm 200   cm 190   cm 190   cm 200   cm 200   cm 27   cm 27   cm 27   cm 27   cm ALTURA:   27   cm La   elección   de   quienes  encuentran  mayor   confort   en colchones   duros   sin   resortes.   Desarrollado   para  perso-  nas   con  afecciones   lumbares   (columna   baja). ANTIÁCAROS FIBRAS   DE  ALOE  VERA ALTA  FIRMEZA PRENSADO  CLÍNICO CONVENCIONAL PILLOW   TOP CAPA   SUPERIOR INTEGRADA 15 años GARANTÍA DUAL  SYSTEM AMBOS   LADOS  FUNCIONALES OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR 1 3 2 1.   Cloud Oxford Gris   claro 2.   Cloud Oxford Gris   oscuro 2.   Cloud Oxford Beige *IMÁGENES   REFERENCIALES NOVO NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 106 107 ORTOPEDICO Cloud LINEA Clínicos 1 2 3 4 5 6 7"
+      },
+      {
+        "part": "ppt/slides/slide55.xml",
+        "text": "Tolerancia 260   lbs.   POR   PERSONA CONVENCIONAL ESTRUCTURA   INTERNA Forro   acolchado   multicapa Capa   de   esponja   prensada   100   kg/m3 Marco   de   esponja   prensada   100   kg/m3 Pro   Support   Foam Capa   de   esponja   prensada   100   kg/m3 Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS PLAZAS 2½   PLAZAS PLAZAS 105   cm 135   cm 160   cm 200   cm 190   cm 190   cm 200   cm 200   cm 20cm 20cm 20cm 20cm ALTURA:   20   cm La   elección   de   quienes  encuentran  mayor   confort   en colchones   duros   sin   resortes.   Desarrollado   para  perso-  nas   con  afecciones   lumbares   (columna   baja). ANTIÁCAROS FIBRAS   DE  ALOE  VERA ALTA  FIRMEZA PRENSADO  CLÍNICO CONVENCIONAL 1 2 3 4 5 6 15 años GARANTÍA *IMÁGENES   REFERENCIALES NOVO ORTOPEDICO Cloud LINEA Clínicos OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR 1 3 2 1.   Cloud Oxford Gris   claro 2.   Cloud Oxford Gris   oscuro 2.   Cloud Oxford Beige NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 108 109"
+      },
+      {
+        "part": "ppt/slides/slide56.xml",
+        "text": "Tolerancia 260   lbs.   POR   PERSONA PILLOW   TOP  ONE   SIDE ESTRUCTURA   INTERNA Forro   acolchado   multicapa Pillow   Top Flexi   Fit   Foam Capa   de   esponja   prensada   100   kg/m3 Marco   de   esponja   prensada   100   kg/m3 Pro   Support   Foam Capa   de   esponja   prensada   100   kg/m3 Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS  ESPECIAL   2   PLAZAS  ESPECIAL  2½   PLAZAS 3  PLAZAS 105   cm 120   cm 135   cm 140   cm 160   cm 200   cm 190   cm 190   cm 190   cm 190   cm 200   cm 200   cm 23   cm 23   cm 23   cm 23   cm 23   cm 23   cm ALTURA:   23   cm La   elección   de   quienes  encuentran  mayor   confort   en colchones   duros   sin   resortes.   Desarrollado   para  perso-  nas   con  afecciones   lumbares   (columna   baja). ANTIÁCAROS FIBRAS   DE  ALOE  VERA ALTA  FIRMEZA 15 años GARANTÍA PRENSADO  CLÍNICO CONVENCIONAL PILLOW   TOP CAPA   SUPERIOR INTEGRADA DUAL  SYSTEM AMBOS   LADOS  FUNCIONALES 1.   Bramante Aztlan Beige 2.   Bramante Aztlan Gris 3.   Bramante Aztlan Azul   marino OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR *IMÁGENES   REFERENCIALES NOVO ORTOPEDICO LINEA Clínicos 1 2 3 4 5 6 7 1 3 2 NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 110 111"
+      },
+      {
+        "part": "ppt/slides/slide57.xml",
+        "text": "Tolerancia 260   lbs.   POR   PERSONA CONVENCIONAL ESTRUCTURA   INTERNA Forro   acolchado   multicapa Capa   de   esponja   prensada   100   kg/m3 Marco   de   esponja   prensada   100   kg/m3 Pro   Support   Foam Capa   de   esponja   prensada   100   kg/m3 Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS  ESPECIAL   2   PLAZAS  ESPECIAL  2½   PLAZAS 3  PLAZAS 105   cm 120   cm 135   cm 140   cm 160   cm 200   cm 190   cm 190   cm 190   cm 190   cm 200   cm 200   cm 20   cm 20   cm 20   cm 20   cm 20   cm 20   cm ALTURA:   20   cm La   elección   de   quienes  encuentran  mayor   confort   en colchones   duros   sin   resortes.   Desarrollado   para  perso-  nas   con  afecciones   lumbares   (columna   baja). ANTIÁCAROS FIBRAS   DE  ALOE  VERA ALTA  FIRMEZA PRENSADO  CLÍNICO CONVENCIONAL 1 2 3 4 5 6 15 años GARANTÍA 1.   Bramante Aztlan Beige 2.   Bramante Aztlan Gris 3.   Bramante Aztlan Azul   marino OPCIONES   DE   TELAS TELA \t NOMBRE \t COLOR *IMÁGENES   REFERENCIALES NOVO ORTOPEDICO LINEA Clínicos 1 3 2 NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 112 113"
+      },
+      {
+        "part": "ppt/slides/slide58.xml",
+        "text": "Estructura   interna   en   madera   de   alta   resistencia   ·  Patas   de   poliuretano   de   larga   duración   · 6   Patas   por   base   · BASES   DE   COLCHÓN MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO PATAS 1   PLAZA 80CM 190CM 18CM 12CM 1   ½   PLAZA 105CM 190CM 18CM 12CM 2   PLAZAS 135CM 190CM 18CM 12CM 2   ½   PLAZAS 160CM 200CM 18CM 12CM 3   PLAZAS 200CM 200CM 18CM 12CM ¡COMBINACIÓN   PERFECTA ! CON   LA   TELA/COLOR/DISEÑO   DE   TU   COLCHÓN BASE BRAMANTE BASE CLOUD BASE PERFECTION Mejora   la   estabilidad Alarga   la   vida   útil   del   colchón  Aumenta   la   comodidad Madera   con   tratamiento   antiplagas 115 I   M   A   G   I   N   A \t D   E   S   P   E   R   T   A   R \t C   A   D   A \t M   A   Ñ   A   N   A \t C   O   N \t U   N   A \t S   O   N   R   I   S   A"
+      },
+      {
+        "part": "ppt/slides/slide59.xml",
+        "text": "116 117"
+      },
+      {
+        "part": "ppt/slides/slide6.xml",
+        "text": "Experiencia   de   descanso   única,   que   te despertar   renovado, lleno   de   energía   y   sin   molestias,   listo   par vechar   al   máximo   cada momento   del   día. ¡Cuando   duermes   bien,   estás   listo brillar   cada   dìa! LÍNEA POCKET   COIL Los   colchones   Pocket   Coil   brindan   un   des-  canso   superior,   evitando   la   transferencia   de  movimiento   y   adaptándose   perfectamente   al  cuerpo."
+      },
+      {
+        "part": "ppt/slides/slide60.xml",
+        "text": "FORROS   &   PROTECTORES FORROS Cubren   completamente   los   dos   lados  y  todo   el   contorno   de  tu  colchón,   diseñadas   con   una   cremallera   topo   “U”   para   facilitar   su   coloca-   ción   y   ajuste.   Son   ideales   para   extender   la   vida   útil   de   tu   colchón   y   mantenerlo   protegido   y   seco   por   más   tiempo.   Elaborados   con   mate-   riales   frescos   y   confortables,   son   los   complementos   ideales   para   el   cuidado   de   tu   colchón. PROTECTORES Cubren  uno   de  los   lados   y   todo  el  contorno   de   tu   colchón.  Aportan   en  buena  forma   para   proteger   y   extender   la   vida  útil   de   tu   colchón.  Prácticos  y   fáciles   de   instalar,   están   elaborados  con  materiales   frescos   y   confortables,   son   los   complementos   ideales   para   el   cuidado   de  tu   colchón. MEDIDAS   DISPONIBLES 1½   -   2   -   2½   -   3 PLAZAS COLORES PRESENTACIONES FORRO \t PROTECTOR BLANCO   GRANITO AZUL  ACERO AZUL  MARINO PLAZAS   DISPONIBLE  1½   -   2   -   2½   -   3 PLAZAS PRESENTACIONES FORRO \t PROTECTOR Variedad   en   diseños  y   colores M 5   /   M 20 Protege  y  alarga   la   vida   útil   de  tu   colchón Mejora   tu   descanso   con   la   comodidad   de   su   relleno  de  plumón  de   primera  calidad  Ofrecen   suavidad   excepcional Regulan  la   temperatura   para   mantener   la   frescura   en   todo   momento COLORES MEDIDAS   DISPONIBLES 1½   -   2   -   2½   -   3 PLAZAS PRESENTACIONES FORRO \t PROTECTOR BLANCO GRIS Suaviplus Protege   tu   colchón   de   manera  efectiva   y   prolongada  Fabricado   con   materiales   frescos   y   cómodos  Exclusivo   sistema   antifluido   para   protección  óptima  Tela   Cloud  que  ofrece   una   suavidad   excepcional Ultra SOFT Preserva   y   extiende   la   vida  útil  de   tu   colchón Ultrasoft,   exclusiva  tecnología   con  ultrasonido  Suavidad   excepcional Regulan   la   temperatura   para   asegurar   frescura   en   todo   momento RESORPEDIC   es   la   marca   de   colchones   número   uno   en   calidad   en   el   territorio   ecuatoriano.   Una  filosofía   de   mejoramiento   continuo   por   más   de   cuatro   décadas,   los   altos   estándares   de   calidad  que   manejamos,   la   cuidadosa   selección   de   materiales   y   nuestro   compromiso   de   brindar  siempre  el   mejor   servicio   nos   permiten   entregarte   el   MEJOR   COLCHÓN   DEL   ECUADOR. Este   catálogo   ha   sido   diseñado   con   el   fin   de   proporcionar   una   comprensión   más   clara   de   la   es-  tructura   de nuestros  productos,  presentaciones, medidas   y   características   de   valor.   Su   contenido  tiene   carácter   referencial   y   está   sujeto   a   modificaciones   sin   previo   aviso. CONTÁCTANOS   /   CALL   CENTER 0979919343:   Azuay   /   Cañar   /   El  Oro   /   Loja   /   Morona   Santiago   /   Zamora   Chinchipe 0996275057:   Esmeraldas   /   Santo   Domingo   /   Pichincha   /   Imbabura   /   Carchi   /   Napo   /   Shushufindi   /   Orellana 0994561020:   Guayas   /   Santa   Elena   /   Los   Rios   /   Manabí   /   Galápagos 0959040566:   Chimborazo   /   Bolivar   /   Tungurahua   /   Cotopaxi   /   Pastaza Atención   a   nivel   nacional   a   través   de   nuestro   equipo   de   asesores   especializados. CERTIFICACIÓN   ISO   9001:2015 INSTRUCCIONES   DE   CUIDADO   Y   CONSERVACIÓN Use    el    colchón    sobre    una    BASE    SOMMIER    RESORPEDIC,    box    spring,    camas    pla-  nas,   completas,   o   similares.   Las   medidas   de   la   base   deben   ser   iguales   o   superiores   a  las   del   colchón,   para   evitar   que   una   parte   quede   sin   apoyo   o   apretada   por   la   cabece-  ra.   Evite   realizar   actividades   que   puedan   mojar,   manchar   o   rasgar   la   tela   del   colchón. La   garantía  cubre  el   desgaste  propio   del  producto que   experimenta   por   el  uso   a   través  del  tiem-  po. Para  garantizar   la   máxima   protección   y  durabilidad,   es   fundamental  que   use   un   FORRO   O   PRO-   TECTOR   RESORPEDIC.   No   lavar,   no   planchar,   no   ace r car  al   fuego,   no   lo   doble,   no   lo  exponga  al  sol,   ventile   el   colchón   periódicamente   y   gírelo   cada   tres   meses,   manipúlelo   adecuadamente.   Evite   golpearlo   o   dejarlo   caer,   aspirar   regularmente  el  colchón. 118"
+      },
+      {
+        "part": "ppt/slides/slide61.xml",
+        "text": "Cuenca:   Vía   a   Racar,   Centro   Comercial   Racar   Plaza (oficinas)"
+      },
+      {
+        "part": "ppt/slides/slide7.xml",
+        "text": "Tolerancia 220   lbs.   POR   PERSONA MEMORY   FOAM ESTRUCTURA   INTERNA Forro   acolchado Latex   F.   +   Convoluted   foam   +   Latex   F. Memory   Foam Flexi   Fit   Foam Capa   aislante Foam   Encasement Panel   de   resortes   Pocket   Coil Capa   aislante Flexi   Fit   Foam Forro   acolchado MEDIDAS   DISPONIBLES MEDIDA \t ANCHO \t LARGO \t ALTO 1½   PLAZAS PLAZAS 2½   PLAZAS PLAZAS 105   cm 135   cm 160   cm 200   cm 190   cm 190   cm 200   cm 200   cm 38   cm 38   cm 38   cm 38   cm ALTURA:   38   cm Diseñado   para   reducir   la   transferencia   de   movimiento   y  proporcionar   un  ajuste   corporal   preciso   y   confortable,  su   estructura   minimiza   ruidos,   favorece   la   circulación  del   aire   y   mantiene   el   colchón  fresco   y   duradero.   Alivia  dolores   articulares   y   puntos   de   presión,   mejorando   la  calidad   del   descanso. Para   optimizar   su   experiencia   y   prolongar   la   vida   útil   de   su   colchón   Pocket   Coil,   colóquelo   sobre   una   superficie   completamente   plana. CONVOLUTED  FOAM CONFORT   Y VENTILACIÓN 3D   AIR   FLOW VENTILACIÓN   Y  FRESCURA. ANTIÁCAROS 12 años GARANTÍA MARCO   DE  ESPONJA (FOAM  ENCASEMENT) SOPORTE   LATERAL POCKET   COIL RESORTES ENFUNDADOS INDIVIDUALMENTE *IMÁGENES   REFERENCIALES ORTOPÉDICO LINEA Pocket   Coil 1 2 3 4 5 6 7 8 9 10 MEMORY  FOAM 1.   Cloud Boreal Gris   Claro 2.   Cloud Boreal Gris   Oscuro OPCIONES   DE   TELAS TELA \t NOMBRE COLOR 1 2 DUAL  SYSTEM AMBOS   LADOS  FUNCIONALES NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 12 13"
+      },
+      {
+        "part": "ppt/slides/slide8.xml",
+        "text": "Tolerancia 220   lbs.   POR   PERSONA CONVENCIONAL ESTRUCTURA   INTERNA Forro   acolchado   multicapa Latex   F.   +   Convoluted   foam   +   Latex   F. Flexi   Fit   Foam Capa   aislante Foam   Encasement Panel   de   resortes   Pocket  Coil Capa   aislante Flexi   Fit   Foam Latex   F.   +   Convoluted   foam   +   Latex   F. Forro   acolchado   multicapa MEDIDAS   DISPONIBLES MEDIDA ANCHO LARGO ALTO 1½   PLAZAS 105   cm 190   cm 36   cm 2   PLAZAS 135   cm 190   cm 36   cm 2½   PLAZAS 160   cm 200   cm 36   cm 3  PLAZAS 200   cm 200   cm 36   cm Para   optimizar   su   experiencia   y   prolongar   la   vida   útil   de   su   colchón   Pocket   Coil,   colóquelo   sobre   una   superficie   completamente   plana. ALTURA:   36   cm Diseñado   para   reducir   la   transferencia   de   movimiento   y  proporcionar   un  ajuste   corporal   preciso   y   confortable,  su   estructura   minimiza   ruidos,   favorece   la   circulación  del   aire   y   mantiene   el   colchón   fresco   y   duradero. CONVOLUTED  FOAM CONFORT   Y VENTILACIÓN 3D   AIR   FLOW VENTILACIÓN   Y  FRESCURA. ANTIÁCAROS 12 años GARANTÍA MARCO   DE  ESPONJA (FOAM  ENCASEMENT) SOPORTE   LATERAL POCKET   COIL RESORTES ENFUNDADOS INDIVIDUALMENTE *IMÁGENES   REFERENCIALES ORTOPÉDICO LINEA Pocket   Coil 1 2 3 4 5 6 7 8 9 10 1 2 1.   Cloud Boreal Gris   Claro 2.   Cloud Boreal Gris   Oscuro NIVEL   DE   FIRMEZA EXTRA FIRME SUAVE ¡   El   mejor   colchón   del   Ecuador   ! 14 15 OPCIONES   DE   TELAS TELA \t NOMBRE COLOR"
+      },
+      {
+        "part": "ppt/slides/slide9.xml",
+        "text": "LÍNEA MEMORY  FOAM Ideales   para   aliviar   dolores   articulares  y   cervicales,   mejoran   la   circulación sanguínea,   óptima   adaptación   corporal,  reducen   al   máximo   los   puntos   de   presión. No   hay   nada   como   compartir   momentos   especiales   en   familia   sobre  un   buen   colchón.   Un   descanso   de   calidad   es   esencial   para   disfrutar  juntos   de   risas,   abrazos   y   para   crear  recuerdos   inolvidables. ¡Cuando   duermes   bien,   estás   listo   para   brillar   cada   dìa!"
+      }
+    ]
+  }
+}

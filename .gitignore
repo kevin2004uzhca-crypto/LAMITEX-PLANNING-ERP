@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.next-dev/
+.erp/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+supabase/.temp/
+supabase/.branches/
+reports/*.png
+reports/*.log

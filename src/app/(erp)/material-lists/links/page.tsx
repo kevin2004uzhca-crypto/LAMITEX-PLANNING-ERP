@@ -1,0 +1,10 @@
+import { requireUser } from '@/lib/auth';
+import { mrpContext } from '@/lib/materials-server';
+import { MaterialForm } from '@/components/material-form';
+import Link from 'next/link';
+export default async function Page({searchParams}:{searchParams:Promise<{q?:string;edit?:string}>}){
+ const {profile}=await requireUser();const {products,headers}=await mrpContext();const params=await searchParams;const q=params.q??'';const codes=[...new Set(headers.map(h=>h.code))].sort();const canEdit=['ADMIN','ENGINEERING'].includes(profile.role);const selected=products.find(p=>String(p.id)===params.edit);
+ return <><h1>Producto ↔ código SAP</h1><p>Relaciones por código exacto. Seleccionar un código no modifica la estructura de ingeniería. Cada cambio queda en el historial.</p>
+ {canEdit&&selected&&<section className="panel"><h2>{selected.name}</h2><p>Referencia original: {selected.referenceCode??'No informada'} · SAP actual: {selected.code??'No relacionado'}</p><MaterialForm key={`${selected.id}:${selected.code}`} action="link" values={{id:selected.id,previous:selected.code,code:selected.code}} fields={[{name:'code',label:'Código SAP explícito',options:[{value:'',label:'Sin relación'},...codes.map(c=>({value:c,label:c!==c.trim()?`${c} [espacios finales conservados]`:c}))]}]} button="Guardar relación"/></section>}
+ <section className="panel"><form className="filters"><label>Producto o código<input name="q" defaultValue={q}/></label><button>Buscar</button></form><div className="table-scroll"><table><thead><tr><th>Producto</th><th>Referencia</th><th>Código SAP</th><th>Listas</th><th/></tr></thead><tbody>{products.filter(p=>`${p.name} ${p.code} ${p.referenceCode}`.toLowerCase().includes(q.toLowerCase())).map(p=><tr key={p.id}><td><Link href={`/products/${p.id}`}>{p.name}</Link></td><td>{p.referenceCode??'No informada'}</td><td>{p.code??'Sin SAP'}</td><td>{headers.filter(h=>h.code===p.code).length}</td><td>{canEdit&&<Link href={`?${new URLSearchParams({q,edit:String(p.id)})}`}>Editar relación</Link>}</td></tr>)}</tbody></table></div></section></>;
+}

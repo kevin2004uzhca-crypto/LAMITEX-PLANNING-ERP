@@ -1,0 +1,57 @@
+const fs=require('node:fs');
+const node=(i)=>({key:`N${i}`,parentKey:i===1?null:`N${i-1}`,externalId:null,name:`QA ${i}`,declaredLevel:i,quantity:1,unit:null,leadTime:null,leadTimeUnit:null,notes:null,active:true,sequence:i,sourceFile:null,sourceRow:null});
+const fixture={id:null,revision:null,reference:null,design:'QA TRANSACCIONAL NO PERSISTIR',referenceCode:null,brand:null,description:null,imagePath:null,notes:null,lifecycle:'ACTIVE',sourceType:'MANUAL',sourceFile:null,nodes:Array.from({length:12},(_,i)=>node(i+1))};
+const sql=`BEGIN;
+DO $qa$
+DECLARE actor uuid; bid bigint; result jsonb; b jsonb='${JSON.stringify(fixture).replaceAll("'","''")}'::jsonb; edited jsonb; bad jsonb; denied boolean; total int; role_name text;
+BEGIN
+ SELECT user_id INTO actor FROM public.user_profiles WHERE role='ADMIN' AND active LIMIT 1;
+ IF actor IS NULL THEN RAISE EXCEPTION 'No ADMIN'; END IF;
+ PERFORM set_config('request.jwt.claims',jsonb_build_object('sub',actor,'role','authenticated')::text,true);
+ SET LOCAL ROLE authenticated;
+ result=public.save_engineering_boms(jsonb_build_array(b)); bid=(result->0->>'id')::bigint;
+ SELECT count(*) INTO total FROM public.engineering_bom_nodes WHERE engineering_bom_id=bid AND calculated_level BETWEEN 1 AND 12;
+ IF total<>12 THEN RAISE EXCEPTION 'Depth failed: %',total; END IF;
+ edited=b||jsonb_build_object('id',bid,'revision',1);
+ edited=jsonb_set(edited,'{nodes,11,declaredLevel}','2');
+ PERFORM public.save_engineering_boms(jsonb_build_array(edited));
+ IF NOT EXISTS(SELECT 1 FROM public.engineering_bom_nodes WHERE engineering_bom_id=bid AND node_code='N12' AND declared_level=2 AND calculated_level=12) THEN RAISE EXCEPTION 'Declared level not preserved'; END IF;
+ denied=false;BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(edited));EXCEPTION WHEN raise_exception THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Concurrent overwrite accepted';END IF;
+ edited=edited||jsonb_build_object('revision',2);
+ bad=jsonb_set(edited,'{nodes,0,parentKey}','"N12"');denied=false;
+ BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(bad));EXCEPTION WHEN raise_exception OR check_violation THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Cycle accepted';END IF;
+ bad=jsonb_set(edited,'{nodes,1,parentKey}','"foreign-BOM"');denied=false;
+ BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(bad));EXCEPTION WHEN raise_exception THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Foreign parent accepted';END IF;
+ bad=jsonb_set(edited,'{nodes,1,quantity}','0');denied=false;
+ BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(bad));EXCEPTION WHEN raise_exception THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Zero quantity accepted';END IF;
+ bad=jsonb_set(edited,'{nodes,0,active}','false');denied=false;
+ BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(bad));EXCEPTION WHEN raise_exception THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Active child of inactive parent accepted';END IF;
+ SELECT count(*) INTO total FROM public.engineering_bom_history WHERE engineering_bom_id=bid;
+ IF total<>2 THEN RAISE EXCEPTION 'History failed';END IF;
+ -- Batch: second invalid tree must roll back first tree too.
+ SELECT count(*) INTO total FROM public.engineering_boms;
+ denied=false;BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(b,jsonb_set(b,'{nodes,0,quantity}','0')));EXCEPTION WHEN raise_exception THEN denied=true;END;
+ IF NOT denied OR (SELECT count(*) FROM public.engineering_boms)<>total THEN RAISE EXCEPTION 'Batch atomicity failed';END IF;
+ FOREACH role_name IN ARRAY ARRAY['PLANNER','SUPERVISOR','VIEWER'] LOOP
+  RESET ROLE;UPDATE public.user_profiles SET role=role_name::public.app_role WHERE user_id=actor;SET LOCAL ROLE authenticated;
+  SELECT count(*) INTO total FROM public.engineering_boms WHERE id=bid;IF total<>1 THEN RAISE EXCEPTION 'Read denied to %',role_name;END IF;
+  denied=false;BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(b));EXCEPTION WHEN raise_exception THEN denied=true;END;
+  IF NOT denied THEN RAISE EXCEPTION 'Write permitted to %',role_name;END IF;
+  UPDATE public.engineering_bom_nodes SET quantity=999 WHERE engineering_bom_id=bid;GET DIAGNOSTICS total=ROW_COUNT;IF total<>0 THEN RAISE EXCEPTION 'Direct update permitted to %',role_name;END IF;
+ END LOOP;
+ RESET ROLE;UPDATE public.user_profiles SET role='ENGINEERING' WHERE user_id=actor;SET LOCAL ROLE authenticated;
+ PERFORM public.save_engineering_boms(jsonb_build_array(edited));
+ RESET ROLE;SET LOCAL ROLE anon;denied=false;
+ BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(b));EXCEPTION WHEN insufficient_privilege THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Anonymous RPC accepted';END IF;
+ RESET ROLE;
+END;$qa$;
+ROLLBACK;
+SELECT 'PASS: create/edit/12 levels/warnings/history/concurrency/cycles/foreign parents/quantities/inactive parents/atomic batch/5 roles. All row changes rolled back.' AS result;`;
+fs.writeFileSync('reports/engineering-db-check.sql',sql);
+console.log('Prepared rollback-only database acceptance tests.');

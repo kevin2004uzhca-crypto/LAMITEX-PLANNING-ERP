@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-23T09:00:21.110Z",
+  "results": [
+    {
+      "name": "Second launch reuses same process",
+      "result": "PASS",
+      "detail": "Same child PID; no duplicate server."
+    },
+    {
+      "name": "Missing configuration has a clear error",
+      "result": "PASS",
+      "detail": "No environment value printed."
+    },
+    {
+      "name": "Foreign port is not killed or silently changed",
+      "result": "PASS",
+      "detail": "Unrelated listener and ERP stay alive."
+    },
+    {
+      "name": "Stop targets the launcher-owned instance",
+      "result": "PASS",
+      "detail": "Supervisor removed its own state after child exit."
+    },
+    {
+      "name": "Fresh restart without npm ci",
+      "result": "PASS",
+      "detail": "New instance, reused dependencies, HTTP ready."
+    },
+    {
+      "name": "Unauthenticated ERP routes redirect to login",
+      "result": "PASS",
+      "detail": "No pilot or business data returned to anonymous requests."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "catalog_models": 45,
+  "catalog_variants": 239,
+  "initial_rows": 195,
+  "sap_codes": 169,
+  "missing_sap": 26,
+  "unique_legacy_ids": 188,
+  "repeated_legacy_ids": {
+    "201": 2,
+    "202": 2,
+    "203": 2,
+    "301": 2,
+    "302": 2,
+    "303": 2,
+    "401": 2
+  },
+  "engineering_rows": 1842,
+  "sap_rows": 18199,
+  "sap_negative_rows": 1561,
+  "pilot_nodes": 10,
+  "pilot_sap_headers": 1,
+  "pilot_sap_items": 19
+}

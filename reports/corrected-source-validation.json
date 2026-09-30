@@ -1,0 +1,125 @@
+{
+  "extractedAt": "2026-09-23T19:06:21.623242+00:00",
+  "sources": [
+    {
+      "file": "Arbol_estructura_lamitex.xlsx",
+      "sha256": "f6a38373ee643276deb2e08d9cb7992a5122c935ced2fe7479a6b827e84fccb9",
+      "sheet": "Hoja1",
+      "rows": 1842
+    },
+    {
+      "file": "Componentes_arbol_lamitex.xlsx",
+      "sha256": "dbf407b4e75cf4e6a0bd413274699680badffda260868992d4f674ae215dd939",
+      "sheet": "Hoja1",
+      "rows": 1842
+    },
+    {
+      "file": "Datos_iniciales_lamitex.xlsx",
+      "sha256": "4ec09f8895c5bd55c359f96d1c397e20587b0b2a547a3e2c639ff969d7106f0e",
+      "sheet": "Hoja1",
+      "rows": 195
+    },
+    {
+      "file": "EXPORT_ListasMateriales3001_3034.xlsx",
+      "sha256": "e2cd20a49084ed83ba80713394e6d033c0d4fd4abf30db87e5a47d0e919ac956",
+      "sheet": "Data",
+      "rows": 18199
+    }
+  ],
+  "issues": [
+    {
+      "code": "DUPLICATE_LEGACY",
+      "source": "Datos_iniciales_lamitex.xlsx",
+      "row": 6,
+      "message": "ID 201: 3C83001, 3C8030U"
+    },
+    {
+      "code": "DUPLICATE_LEGACY",
+      "source": "Datos_iniciales_lamitex.xlsx",
+      "row": 7,
+      "message": "ID 202: 3C83002, 3C8030W"
+    },
+    {
+      "code": "DUPLICATE_LEGACY",
+      "source": "Datos_iniciales_lamitex.xlsx",
+      "row": 8,
+      "message": "ID 203: 3C83003, 3C8030Y"
+    },
+    {
+      "code": "DUPLICATE_LEGACY",
+      "source": "Datos_iniciales_lamitex.xlsx",
+      "row": 10,
+      "message": "ID 301: 3C80906, None"
+    },
+    {
+      "code": "DUPLICATE_LEGACY",
+      "source": "Datos_iniciales_lamitex.xlsx",
+      "row": 11,
+      "message": "ID 302: 3C80907, None"
+    },
+    {
+      "code": "DUPLICATE_LEGACY",
+      "source": "Datos_iniciales_lamitex.xlsx",
+      "row": 12,
+      "message": "ID 303: 3C80908, None"
+    },
+    {
+      "code": "DUPLICATE_LEGACY",
+      "source": "Datos_iniciales_lamitex.xlsx",
+      "row": 13,
+      "message": "ID 401: 3C80909, 3C80870"
+    },
+    {
+      "code": "ENGINEERING",
+      "source": "Arbol_estructura_lamitex.xlsx",
+      "row": 419,
+      "message": "ID 904, componente 418: nivel no coincide con padre, ciclo"
+    },
+    {
+      "code": "ENGINEERING",
+      "source": "Arbol_estructura_lamitex.xlsx",
+      "row": 420,
+      "message": "ID 904, componente 419: nivel no coincide con padre, ciclo"
+    },
+    {
+      "code": "ENGINEERING",
+      "source": "Arbol_estructura_lamitex.xlsx",
+      "row": 421,
+      "message": "ID 904, componente 420: nivel no coincide con padre, ciclo"
+    },
+    {
+      "code": "ENGINEERING",
+      "source": "Arbol_estructura_lamitex.xlsx",
+      "row": 422,
+      "message": "ID 904, componente 421: nivel no coincide con padre, ciclo"
+    },
+    {
+      "code": "ENGINEERING",
+      "source": "Arbol_estructura_lamitex.xlsx",
+      "row": 423,
+      "message": "ID 904, componente 422: nivel no coincide con padre, ciclo"
+    },
+    {
+      "code": "ENGINEERING",
+      "source": "Arbol_estructura_lamitex.xlsx",
+      "row": 424,
+      "message": "ID 904, componente 423: ciclo"
+    },
+    {
+      "code": "ENGINEERING",
+      "source": "Arbol_estructura_lamitex.xlsx",
+      "row": 425,
+      "message": "ID 904, componente 424: ciclo"
+    }
+  ],
+  "stats": {
+    "engineeringRows": 1842,
+    "engineeringGroups": 188,
+    "initialRows": 195,
+    "duplicateLegacyIds": 7,
+    "sapRows": 18199,
+    "sapHeaders": 2482,
+    "materials": 1306,
+    "negativeRows": 1561
+  }
+}

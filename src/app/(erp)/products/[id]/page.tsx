@@ -1,0 +1,19 @@
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { requireUser } from '@/lib/auth';
+import { BomExplorer } from '@/components/bom-explorer';
+import { graphNodes } from '@/lib/engineering';
+import { loadEngineering } from '@/lib/engineering-server';
+export default async function Product({ params, searchParams }: { params: Promise<{ id:string }>; searchParams:Promise<{ bom?:string; sap?:string }> }) {
+  const { db } = await requireUser(); const { id } = await params; const selection = await searchParams;
+  if (!/^\d+$/.test(id)) notFound();
+  const { data: sku, error } = await db.from('product_skus').select('*,product_models!inner(catalog_name_original,product_line)').eq('id',id).eq('product_models.product_line','RESORPEDIC').maybeSingle();
+  if(error) throw new Error('No se pudo consultar el producto.'); if(!sku) notFound();
+  const [boms, sap] = await Promise.all([db.from('engineering_boms').select('*').eq('product_sku_id',id).order('version'),db.from('sap_bom_headers').select('*').eq('product_sku_id',id).order('id')]);
+  if(boms.error || sap.error) throw new Error('No se pudieron consultar los BOM.');
+  const chosen = boms.data?.find(b=>String(b.id)===selection.bom); const sapChosen=sap.data?.find(b=>String(b.id)===selection.sap);
+  const nodes = chosen ? await db.from('engineering_bom_nodes').select('*').eq('engineering_bom_id',chosen.id).order('sequence_order').order('legacy_component_id') : null;
+  const items = sapChosen ? await db.from('sap_bom_items').select('*').eq('sap_bom_header_id',sapChosen.id).order('position').limit(500) : null;
+  if(nodes?.error || items?.error) throw new Error('No se pudieron consultar los componentes.');
+  return <><Link href="/products">← Productos</Link><div className="page-heading"><div><p className="eyebrow">FICHA DE PRODUCTO</p><h1>{sku.product_models.catalog_name_original}</h1><p>{sku.sap_material_code ?? 'Sin código SAP'} · {sku.width_cm} × {sku.length_cm} × {sku.height_cm} cm</p></div><span className="badge">{sku.reconciliation_status}</span></div><section className="panel"><h2>BOM de ingeniería</h2><form className="filters"><label>Versión<select name="bom" defaultValue={selection.bom ?? ''}><option value="">Seleccionar versión</option>{boms.data?.map(b=><option key={b.id} value={b.id}>Versión {b.version} · {b.status}</option>)}</select></label><button>Consultar</button></form>{chosen && nodes?.data ? <BomExplorer title={sku.product_models.catalog_name_original} items={graphNodes((await loadEngineering(chosen.id))!)}/> : <p className="muted">Selecciona una versión disponible para explorar la estructura.</p>}</section><section className="panel"><h2>BOM SAP</h2><form className="filters"><label>Centro y alternativa<select name="sap" defaultValue={selection.sap??''}><option value="">Seleccionar BOM</option>{sap.data?.map(b=><option key={b.id} value={b.id}>{b.center} · alternativa {b.alternative} · base {b.base_quantity} {b.base_unit}</option>)}</select></label><button>Consultar</button></form>{items?.data && <div className="table-scroll"><table><thead><tr><th>Material</th><th>Descripción</th><th>Cantidad</th><th>Unidad</th><th>Consumo unitario</th><th>Fila</th></tr></thead><tbody>{items.data.map(i=><tr key={i.id}><td><Link href={`/materials?q=${encodeURIComponent(i.component_code)}`}>{i.component_code}</Link></td><td>{i.component_description}</td><td>{i.component_quantity}</td><td>{i.component_unit}</td><td>{i.normalized_unit_quantity}</td><td>{i.source_row}</td></tr>)}</tbody></table></div>}</section><section className="panel"><h2>Origen y revisión</h2><p>{sku.source_file ?? 'Fuente pendiente'} · fila {sku.source_row ?? 'no informada'}</p><p>Estado de asociación: {sku.reconciliation_status}. Inventario, demanda y programación: en desarrollo.</p></section></>;
+}

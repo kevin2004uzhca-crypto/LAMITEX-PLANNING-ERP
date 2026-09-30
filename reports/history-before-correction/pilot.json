@@ -1,0 +1,455 @@
+{
+  "status": "PENDING_REVIEW",
+  "title": "POCKET BOREAL MEMORY FOAM",
+  "sap": "3C83010",
+  "dimensions": "105 × 190 × 38 cm",
+  "legacyId": 101,
+  "nodes": [
+    {
+      "id": 1,
+      "bom": "pilot-101-components-1-10",
+      "name": "Panel Completo",
+      "parent": null,
+      "declaredLevel": 1,
+      "quantity": 1,
+      "unit": null,
+      "leadTime": 0.3,
+      "sourceFile": "Arbol_estructura_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 2,
+      "sequence": 2,
+      "sourceRecordId": 1
+    },
+    {
+      "id": 2,
+      "bom": "pilot-101-components-1-10",
+      "name": "Falda",
+      "parent": null,
+      "declaredLevel": 1,
+      "quantity": 1,
+      "unit": null,
+      "leadTime": 0.3,
+      "sourceFile": "Arbol_estructura_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 3,
+      "sequence": 3,
+      "sourceRecordId": 2
+    },
+    {
+      "id": 3,
+      "bom": "pilot-101-components-1-10",
+      "name": "Forro acolchado",
+      "parent": null,
+      "declaredLevel": 1,
+      "quantity": 2,
+      "unit": null,
+      "leadTime": 0.3,
+      "sourceFile": "Arbol_estructura_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 4,
+      "sequence": 4,
+      "sourceRecordId": 3
+    },
+    {
+      "id": 4,
+      "bom": "pilot-101-components-1-10",
+      "name": "Capa aislante",
+      "parent": 1,
+      "declaredLevel": 2,
+      "quantity": 2,
+      "unit": null,
+      "leadTime": 0.3,
+      "sourceFile": "Arbol_estructura_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 5,
+      "sequence": 5,
+      "sourceRecordId": 4
+    },
+    {
+      "id": 5,
+      "bom": "pilot-101-components-1-10",
+      "name": "Panel",
+      "parent": 1,
+      "declaredLevel": 2,
+      "quantity": 1,
+      "unit": null,
+      "leadTime": 0.3,
+      "sourceFile": "Arbol_estructura_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 6,
+      "sequence": 6,
+      "sourceRecordId": 5
+    },
+    {
+      "id": 6,
+      "bom": "pilot-101-components-1-10",
+      "name": "Flexi Fit Foam",
+      "parent": 1,
+      "declaredLevel": 2,
+      "quantity": 2,
+      "unit": null,
+      "leadTime": 0.3,
+      "sourceFile": "Arbol_estructura_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 7,
+      "sequence": 7,
+      "sourceRecordId": 6
+    },
+    {
+      "id": 7,
+      "bom": "pilot-101-components-1-10",
+      "name": "Latex F + Convoluted Foam + Latex F",
+      "parent": 1,
+      "declaredLevel": 2,
+      "quantity": 2,
+      "unit": null,
+      "leadTime": 0.3,
+      "sourceFile": "Arbol_estructura_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 8,
+      "sequence": 8,
+      "sourceRecordId": 7
+    },
+    {
+      "id": 8,
+      "bom": "pilot-101-components-1-10",
+      "name": "Resortes Pocket Coil",
+      "parent": 5,
+      "declaredLevel": 3,
+      "quantity": 1,
+      "unit": null,
+      "leadTime": 0.25,
+      "sourceFile": "Arbol_estructura_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 9,
+      "sequence": 9,
+      "sourceRecordId": 8
+    },
+    {
+      "id": 9,
+      "bom": "pilot-101-components-1-10",
+      "name": "Foam Encased",
+      "parent": 5,
+      "declaredLevel": 3,
+      "quantity": 2,
+      "unit": null,
+      "leadTime": 0.25,
+      "sourceFile": "Arbol_estructura_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 10,
+      "sequence": 10,
+      "sourceRecordId": 9
+    },
+    {
+      "id": 10,
+      "bom": "pilot-101-components-1-10",
+      "name": "Foam Encased Head",
+      "parent": 5,
+      "declaredLevel": 3,
+      "quantity": 2,
+      "unit": null,
+      "leadTime": 0.25,
+      "sourceFile": "Arbol_estructura_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 11,
+      "sequence": 11,
+      "sourceRecordId": 10
+    }
+  ],
+  "catalog": [
+    {
+      "name": "POCKET BOREAL MEMORY FOAM",
+      "measure": "1½ PLAZAS",
+      "width": 105,
+      "length": 190,
+      "height": 38,
+      "sourceFile": "Base_de_datos_modelos_Resorpedic_2025.xlsx",
+      "sourceSheet": "Modelos Resorpedic",
+      "sourceRow": 2
+    }
+  ],
+  "candidates": [
+    {
+      "legacyId": 101,
+      "sap": "3C83010",
+      "name": "RESORPEDIC POCKET BOREAL MF 105X190X38",
+      "sourceFile": "Datos_iniciales_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 2
+    },
+    {
+      "legacyId": 101,
+      "sap": "3C81021",
+      "name": "RESORPED INFINITUS DOB PTOP 135X190X35",
+      "sourceFile": "Datos_iniciales_lamitex.xlsx",
+      "sourceSheet": "Hoja1",
+      "sourceRow": 35
+    }
+  ],
+  "sapHeaders": [
+    {
+      "center": "3001",
+      "material": "3C83010",
+      "alternative": "1",
+      "baseQuantity": 2,
+      "baseUnit": "UN",
+      "description": "3C83010 RESORPEDIC POKCET BOREAL MF 105",
+      "items": [
+        {
+          "position": "0010",
+          "code": "8T10459",
+          "quantity": 13.5,
+          "unit": "M2",
+          "componentAlternative": "1",
+          "name": "GOBELINO CLOUD ACOLCHADO 4 CM LATEX",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13130,
+          "unitUsage": 6.75
+        },
+        {
+          "position": "0020",
+          "code": "8T10440",
+          "quantity": 10.2,
+          "unit": "M2",
+          "componentAlternative": "1",
+          "name": "GOBELINO ACOLCHADO CON ESPONJA DE 1CM",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13131,
+          "unitUsage": 5.1
+        },
+        {
+          "position": "0030",
+          "code": "8H10101",
+          "quantity": 90,
+          "unit": "DCM",
+          "componentAlternative": "1",
+          "name": "HILO BLANCO (DECAMETRO)",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13132,
+          "unitUsage": 45.0
+        },
+        {
+          "position": "0040",
+          "code": "8E119CE",
+          "quantity": 14.04,
+          "unit": "CM",
+          "componentAlternative": "1",
+          "name": "ESPONJA  AMARILLA ESPECIAL CONT 105X190",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13133,
+          "unitUsage": 7.02
+        },
+        {
+          "position": "0060",
+          "code": "1RL0001",
+          "quantity": 73.19999999999999,
+          "unit": "M",
+          "componentAlternative": "1",
+          "name": "REATA COLORES LAMITEX PRODUCCION",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13134,
+          "unitUsage": 36.599999999999994
+        },
+        {
+          "position": "0080",
+          "code": "3C80700",
+          "quantity": 3,
+          "unit": "UN",
+          "componentAlternative": "1",
+          "name": "\"ESTRUCTURA METAL  POCKET 85X170 D=1,90\"",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13135,
+          "unitUsage": 1.5
+        },
+        {
+          "position": "0090",
+          "code": "1PL0001",
+          "quantity": 0.35100000000000003,
+          "unit": "KG",
+          "componentAlternative": "1",
+          "name": "PLASTICO BOTA PRODUCCION",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13136,
+          "unitUsage": 0.17550000000000002
+        },
+        {
+          "position": "0100",
+          "code": "RP1433A",
+          "quantity": 2.565,
+          "unit": "KG",
+          "componentAlternative": "1",
+          "name": "PLASTICO NATURAL LAMITEX 2.40CM X 0.07MM",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13137,
+          "unitUsage": 1.2825
+        },
+        {
+          "position": "0110",
+          "code": "PEB14955",
+          "quantity": 3,
+          "unit": "UN",
+          "componentAlternative": "1",
+          "name": "ETQ TEJIDA POCKET GARRA 200X240MM 2C",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13138,
+          "unitUsage": 1.5
+        },
+        {
+          "position": "0120",
+          "code": "ETQ7897",
+          "quantity": 3,
+          "unit": "UN",
+          "componentAlternative": "1",
+          "name": "ETQ GARANTIA COLOCHON POCKED MEMORY FOAM",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13139,
+          "unitUsage": 1.5
+        },
+        {
+          "position": "0130",
+          "code": "ETQ7476",
+          "quantity": 6,
+          "unit": "UN",
+          "componentAlternative": "1",
+          "name": "CUADRO ORT.  GAMA ALTA",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13140,
+          "unitUsage": 3.0
+        },
+        {
+          "position": "0140",
+          "code": "LEI0001",
+          "quantity": 3,
+          "unit": "UN",
+          "componentAlternative": "1",
+          "name": "ETIQUETA RESORPEDIC INEN",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13141,
+          "unitUsage": 1.5
+        },
+        {
+          "position": "0150",
+          "code": "9P1230P",
+          "quantity": -0.336,
+          "unit": "KG",
+          "componentAlternative": "1",
+          "name": "SP DESPERDICIO PLASTICO LAMITEX",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13142,
+          "unitUsage": -0.168
+        },
+        {
+          "position": "0160",
+          "code": "8S1167J",
+          "quantity": 1.35,
+          "unit": "M",
+          "componentAlternative": "1",
+          "name": "TELA MALLA 3D PAREDES CRUDA AGU PEQUEÑO",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13143,
+          "unitUsage": 0.675
+        },
+        {
+          "position": "0170",
+          "code": "9A10185",
+          "quantity": 1.941,
+          "unit": "KG",
+          "componentAlternative": "1",
+          "name": "PEGAMENTO HOT MELT PRODUCCION",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13144,
+          "unitUsage": 0.9705
+        },
+        {
+          "position": "0180",
+          "code": "FLE0736",
+          "quantity": 3,
+          "unit": "UN",
+          "componentAlternative": "1",
+          "name": "ETQ VERTICAL POCKET BOREAL MEM. FOAM",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13145,
+          "unitUsage": 1.5
+        },
+        {
+          "position": "0190",
+          "code": "ICC0001",
+          "quantity": 24,
+          "unit": "UN",
+          "componentAlternative": "1",
+          "name": "PLASTIFLECHA 15 MM PARA COLCHONES",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13146,
+          "unitUsage": 12.0
+        },
+        {
+          "position": "0200",
+          "code": "8E118VT",
+          "quantity": 11.64,
+          "unit": "CM",
+          "componentAlternative": "1",
+          "name": "BLOQUE COLCHON VISCOELASTICA 135X190 D40",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13147,
+          "unitUsage": 5.82
+        },
+        {
+          "position": "0210",
+          "code": "8E115LS",
+          "quantity": 12.809999999999999,
+          "unit": "CM",
+          "componentAlternative": "1",
+          "name": "LATEX CELESTE ESPECIAL 140X200",
+          "sourceFile": "EXPORT_ListasMateriales3001_3034.xlsx",
+          "sourceSheet": "Data",
+          "sourceRow": 13148,
+          "unitUsage": 6.404999999999999
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "file": "Arbol_estructura_lamitex.xlsx",
+      "sha256": "53f25072fcf6fefc78dac2a0e21f5dd4beda68b5f5f79d0d5a8a3364aac7293c"
+    },
+    {
+      "file": "Base_de_datos_modelos_Resorpedic_2025.xlsx",
+      "sha256": "c813944fa35b882d15a765ef296b403d11b5fcb4ebaf4cdbaa362b74d0c748e1"
+    },
+    {
+      "file": "Datos_iniciales_lamitex.xlsx",
+      "sha256": "8c118348b9017068f0f8d0805e888844052be4c4a6d046eff946c4167e4bc4b0"
+    },
+    {
+      "file": "EXPORT_ListasMateriales3001_3034.xlsx",
+      "sha256": "22be9b82a23aac70fab6513b7bc5a16695c44c9a7b5d8203202ec8e1d3775c32"
+    }
+  ],
+  "notes": [
+    "colchon_id 101 se reutiliza en Pocket Boreal e Infinitus. Los componentes 425–433 pertenecen a otro bloque que no se mezcla con este piloto.",
+    "Selección de componentes 1–10 basada en el caso de aceptación del usuario. Asociación al SKU pendiente de confirmación humana.",
+    "La fuente conserva el nombre Latex F + Convoluted Foam + Latex F para el componente 7.",
+    "El Excel estructural no declara unidad de cantidad ni unidad temporal del lead time. No se suponen unidades.",
+    "La columna bom_id del archivo estructural identifica filas, no cabeceras de BOM.",
+    "En SAP se conservan por posición ambas columnas LMat alternativa: la segunda se registra como alternativa de componente, sin elegirla automáticamente."
+  ]
+}

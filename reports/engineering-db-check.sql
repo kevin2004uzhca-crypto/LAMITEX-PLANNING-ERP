@@ -1,0 +1,52 @@
+BEGIN;
+DO $qa$
+DECLARE actor uuid; bid bigint; result jsonb; b jsonb='{"id":null,"revision":null,"reference":null,"design":"QA TRANSACCIONAL NO PERSISTIR","referenceCode":null,"brand":null,"description":null,"imagePath":null,"notes":null,"lifecycle":"ACTIVE","sourceType":"MANUAL","sourceFile":null,"nodes":[{"key":"N1","parentKey":null,"externalId":null,"name":"QA 1","declaredLevel":1,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":1,"sourceFile":null,"sourceRow":null},{"key":"N2","parentKey":"N1","externalId":null,"name":"QA 2","declaredLevel":2,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":2,"sourceFile":null,"sourceRow":null},{"key":"N3","parentKey":"N2","externalId":null,"name":"QA 3","declaredLevel":3,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":3,"sourceFile":null,"sourceRow":null},{"key":"N4","parentKey":"N3","externalId":null,"name":"QA 4","declaredLevel":4,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":4,"sourceFile":null,"sourceRow":null},{"key":"N5","parentKey":"N4","externalId":null,"name":"QA 5","declaredLevel":5,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":5,"sourceFile":null,"sourceRow":null},{"key":"N6","parentKey":"N5","externalId":null,"name":"QA 6","declaredLevel":6,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":6,"sourceFile":null,"sourceRow":null},{"key":"N7","parentKey":"N6","externalId":null,"name":"QA 7","declaredLevel":7,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":7,"sourceFile":null,"sourceRow":null},{"key":"N8","parentKey":"N7","externalId":null,"name":"QA 8","declaredLevel":8,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":8,"sourceFile":null,"sourceRow":null},{"key":"N9","parentKey":"N8","externalId":null,"name":"QA 9","declaredLevel":9,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":9,"sourceFile":null,"sourceRow":null},{"key":"N10","parentKey":"N9","externalId":null,"name":"QA 10","declaredLevel":10,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":10,"sourceFile":null,"sourceRow":null},{"key":"N11","parentKey":"N10","externalId":null,"name":"QA 11","declaredLevel":11,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":11,"sourceFile":null,"sourceRow":null},{"key":"N12","parentKey":"N11","externalId":null,"name":"QA 12","declaredLevel":12,"quantity":1,"unit":null,"leadTime":null,"leadTimeUnit":null,"notes":null,"active":true,"sequence":12,"sourceFile":null,"sourceRow":null}]}'::jsonb; edited jsonb; bad jsonb; denied boolean; total int; role_name text;
+BEGIN
+ SELECT user_id INTO actor FROM public.user_profiles WHERE role='ADMIN' AND active LIMIT 1;
+ IF actor IS NULL THEN RAISE EXCEPTION 'No ADMIN'; END IF;
+ PERFORM set_config('request.jwt.claims',jsonb_build_object('sub',actor,'role','authenticated')::text,true);
+ SET LOCAL ROLE authenticated;
+ result=public.save_engineering_boms(jsonb_build_array(b)); bid=(result->0->>'id')::bigint;
+ SELECT count(*) INTO total FROM public.engineering_bom_nodes WHERE engineering_bom_id=bid AND calculated_level BETWEEN 1 AND 12;
+ IF total<>12 THEN RAISE EXCEPTION 'Depth failed: %',total; END IF;
+ edited=b||jsonb_build_object('id',bid,'revision',1);
+ edited=jsonb_set(edited,'{nodes,11,declaredLevel}','2');
+ PERFORM public.save_engineering_boms(jsonb_build_array(edited));
+ IF NOT EXISTS(SELECT 1 FROM public.engineering_bom_nodes WHERE engineering_bom_id=bid AND node_code='N12' AND declared_level=2 AND calculated_level=12) THEN RAISE EXCEPTION 'Declared level not preserved'; END IF;
+ denied=false;BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(edited));EXCEPTION WHEN raise_exception THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Concurrent overwrite accepted';END IF;
+ edited=edited||jsonb_build_object('revision',2);
+ bad=jsonb_set(edited,'{nodes,0,parentKey}','"N12"');denied=false;
+ BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(bad));EXCEPTION WHEN raise_exception OR check_violation THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Cycle accepted';END IF;
+ bad=jsonb_set(edited,'{nodes,1,parentKey}','"foreign-BOM"');denied=false;
+ BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(bad));EXCEPTION WHEN raise_exception THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Foreign parent accepted';END IF;
+ bad=jsonb_set(edited,'{nodes,1,quantity}','0');denied=false;
+ BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(bad));EXCEPTION WHEN raise_exception THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Zero quantity accepted';END IF;
+ bad=jsonb_set(edited,'{nodes,0,active}','false');denied=false;
+ BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(bad));EXCEPTION WHEN raise_exception THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Active child of inactive parent accepted';END IF;
+ SELECT count(*) INTO total FROM public.engineering_bom_history WHERE engineering_bom_id=bid;
+ IF total<>2 THEN RAISE EXCEPTION 'History failed';END IF;
+ -- Batch: second invalid tree must roll back first tree too.
+ SELECT count(*) INTO total FROM public.engineering_boms;
+ denied=false;BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(b,jsonb_set(b,'{nodes,0,quantity}','0')));EXCEPTION WHEN raise_exception THEN denied=true;END;
+ IF NOT denied OR (SELECT count(*) FROM public.engineering_boms)<>total THEN RAISE EXCEPTION 'Batch atomicity failed';END IF;
+ FOREACH role_name IN ARRAY ARRAY['PLANNER','SUPERVISOR','VIEWER'] LOOP
+  RESET ROLE;UPDATE public.user_profiles SET role=role_name::public.app_role WHERE user_id=actor;SET LOCAL ROLE authenticated;
+  SELECT count(*) INTO total FROM public.engineering_boms WHERE id=bid;IF total<>1 THEN RAISE EXCEPTION 'Read denied to %',role_name;END IF;
+  denied=false;BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(b));EXCEPTION WHEN raise_exception THEN denied=true;END;
+  IF NOT denied THEN RAISE EXCEPTION 'Write permitted to %',role_name;END IF;
+  UPDATE public.engineering_bom_nodes SET quantity=999 WHERE engineering_bom_id=bid;GET DIAGNOSTICS total=ROW_COUNT;IF total<>0 THEN RAISE EXCEPTION 'Direct update permitted to %',role_name;END IF;
+ END LOOP;
+ RESET ROLE;UPDATE public.user_profiles SET role='ENGINEERING' WHERE user_id=actor;SET LOCAL ROLE authenticated;
+ PERFORM public.save_engineering_boms(jsonb_build_array(edited));
+ RESET ROLE;SET LOCAL ROLE anon;denied=false;
+ BEGIN PERFORM public.save_engineering_boms(jsonb_build_array(b));EXCEPTION WHEN insufficient_privilege THEN denied=true;END;
+ IF NOT denied THEN RAISE EXCEPTION 'Anonymous RPC accepted';END IF;
+ RESET ROLE;
+END;$qa$;
+ROLLBACK;
+SELECT 'PASS: create/edit/12 levels/warnings/history/concurrency/cycles/foreign parents/quantities/inactive parents/atomic batch/5 roles. All row changes rolled back.' AS result;

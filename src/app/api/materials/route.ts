@@ -1,0 +1,18 @@
+import { requireUser } from '@/lib/auth';
+import { checkOrigin,apiError } from '@/lib/engineering-api';
+import { revalidatePath } from 'next/cache';
+const classes=['PRINCIPAL','AUXILIAR','CONSUMIBLE','EMPAQUE','ETIQUETA','SEMIPRODUCTO','DESPERDICIO','OTRO'];
+export async function POST(req:Request){try{checkOrigin(req);const {db,user,profile}=await requireUser();if(!['ADMIN','ENGINEERING'].includes(profile.role))return Response.json({error:'Acceso de edición denegado.'},{status:403});const body=await req.json();const s=(v:unknown)=>typeof v==='string'?v.trim().slice(0,2000)||null:null;
+ const n=(v:unknown)=>v===null||v===''||v===undefined?null:Number(v);let error;
+ if(body.action==='link'){({error}=await db.rpc('set_product_sap_link',{sku:Number(body.id),previous:body.previous??null,new_code:typeof body.code==='string'?body.code:null}));}
+ else if(body.action==='family'){if(!s(body.family_name))throw new Error('Escribe el nombre de la familia.');const existing=await db.from('material_families').select('id').eq('family_name',s(body.family_name)!);if(existing.error)throw new Error(existing.error.message);const sub=s(body.subfamily_name);const match=sub?await db.from('material_families').select('id').eq('family_name',s(body.family_name)!).eq('subfamily_name',sub):await db.from('material_families').select('id').eq('family_name',s(body.family_name)!).is('subfamily_name',null);if(match.data?.length)throw new Error('Esa familia y subfamilia ya existen.');({error}=await db.from('material_families').insert({family_name:s(body.family_name),subfamily_name:sub,description:s(body.description)}));}
+ else if(body.action==='unit'){const code=s(body.code);if(!code||code.length>30||!s(body.description))throw new Error('Indica código y significado de la unidad.');({error}=await db.from('material_units').upsert({code,description:s(body.description),confirmed:body.confirmed===true,active:true}));}
+ else if(body.action==='material'){
+ const patch={material_family_id:n(body.material_family_id),base_unit:s(body.base_unit),purchase_unit:s(body.purchase_unit),conversion_from_unit:s(body.conversion_from_unit),units_per_purchase:n(body.units_per_purchase),package_content:n(body.package_content),conversion_confirmed:body.conversion_confirmed===true,mrp_classification:s(body.mrp_classification),material_nature:s(body.material_nature),procurement_type:s(body.procurement_type),lead_time_days:n(body.lead_time_days),safety_stock:n(body.safety_stock),active:body.active===true,notes:s(body.notes),updated_by:user.id};
+ for(const [k,v] of Object.entries(patch)){if(typeof v==='number'&&(!Number.isFinite(v)||v<0))throw new Error(`Valor inválido: ${k}`);}
+ if(patch.units_per_purchase===0||patch.package_content===0)throw new Error('El factor y contenido deben ser positivos.');if(patch.lead_time_days!==null&&!Number.isInteger(patch.lead_time_days))throw new Error('Lead time debe ser un número entero de días.');
+ if(patch.mrp_classification&&!classes.includes(patch.mrp_classification))throw new Error('Clasificación inválida.');if(patch.procurement_type&&!['MAKE','BUY'].includes(patch.procurement_type))throw new Error('Usa MAKE o BUY.');
+ if(patch.conversion_confirmed&&(!patch.conversion_from_unit||!patch.purchase_unit||!patch.units_per_purchase))throw new Error('Para confirmar la conversión indica unidad BOM, unidad de compra y factor positivo.');
+ ({error}=await db.from('materials').update(patch).eq('id',Number(body.id)).select('id').single());
+ }else throw new Error('Operación no reconocida.');if(error)throw new Error(error.message);for(const p of ['/materials','/material-lists','/mrp'])revalidatePath(p,'layout');return Response.json({ok:true});}catch(e){return apiError(e);}}
+
