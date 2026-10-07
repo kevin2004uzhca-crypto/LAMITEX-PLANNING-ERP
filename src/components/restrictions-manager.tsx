@@ -1,10 +1,14 @@
 'use client';
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { CalendarDays, Gauge, Plus, Trash2, Users } from 'lucide-react';
+import { CalendarDays, Clock, Gauge, Plus, Scale, Trash2, Users } from 'lucide-react';
 import { buildCalendar, capacitySummary, matchesRestriction, netHours, WEEKDAY_LABELS, type Area, type AttendanceDay, type AttendanceMonth, type DemandItem, type PlanningCode, type Restriction, type WeekDay, type WorkDayException } from '@/lib/planning';
+import type { PolicyRow } from '@/lib/mps-server';
+import { LaborPolicyTab } from './labor-policy-tab';
+import { ShiftsTab } from './shifts-tab';
+import { DEFAULT_SHIFTS, type MpsShift } from '@/lib/mps';
 
-type Props={month:string;tab:string;restrictions:Restriction[];items:DemandItem[];codes:PlanningCode[];areas:Area[];week:WeekDay[];exceptions:WorkDayException[];monthAttendance:AttendanceMonth[];dayAttendance:AttendanceDay[];referenceHours:number;canEdit:boolean};
+type Props={month:string;tab:string;restrictions:Restriction[];items:DemandItem[];codes:PlanningCode[];areas:Area[];week:WeekDay[];exceptions:WorkDayException[];monthAttendance:AttendanceMonth[];dayAttendance:AttendanceDay[];referenceHours:number;canEdit:boolean;policies?:PolicyRow[];currentPolicy?:PolicyRow|null;policiesReady?:boolean;shifts?:MpsShift[];shiftsReady?:boolean};
 const n0=new Intl.NumberFormat('es-EC',{maximumFractionDigits:0}),n1=new Intl.NumberFormat('es-EC',{maximumFractionDigits:1});
 const monthLabel=(m:string)=>new Date(m+'-15T12:00:00Z').toLocaleDateString('es-EC',{month:'long',year:'numeric',timeZone:'UTC'});
 const shiftMonth=(m:string,d:number)=>{const [y,mo]=m.split('-').map(Number);const t=new Date(Date.UTC(y,mo-1+d,1));return t.toISOString().slice(0,7);};
@@ -25,11 +29,13 @@ export function RestrictionsManager(props:Props){
   <div className="month-bar"><button onClick={()=>go(shiftMonth(props.month,-1))} aria-label="Mes anterior">‹</button><input type="month" value={props.month} onChange={e=>e.target.value&&go(e.target.value)}/><button onClick={()=>go(shiftMonth(props.month,1))} aria-label="Mes siguiente">›</button>
    <span className="muted"><b>{monthLabel(props.month)}</b> · {working.length} días laborables · {n1.format(working.reduce((s,d)=>s+d.hours,0))} h disponibles · {n1.format(working.reduce((s,d)=>s+d.overtime,0))} h extra programadas</span></div>
   <div className="tabs" role="tablist">
-   {[['capacity','Capacidad diaria',Gauge],['staff','Personal y asistencia',Users],['calendar','Jornada y calendario',CalendarDays]].map(([k,l,I]:any)=><button key={k} role="tab" aria-selected={tab===k} className={tab===k?'active':''} onClick={()=>{setTab(k);window.history.replaceState(null,'',`/restrictions?month=${props.month}&tab=${k}`);}}><I size={15}/> {l}</button>)}
+   {[['capacity','Capacidad diaria',Gauge],['staff','Personal y asistencia',Users],['calendar','Jornada y calendario',CalendarDays],['shifts','Turnos',Clock],['policy','Políticas laborales',Scale]].map(([k,l,I]:any)=><button key={k} role="tab" aria-selected={tab===k} className={tab===k?'active':''} onClick={()=>{setTab(k);window.history.replaceState(null,'',`/restrictions?month=${props.month}&tab=${k}`);}}><I size={15}/> {l}</button>)}
   </div>
   {tab==='capacity'&&<CapacityTab {...props} calendar={calendar}/>}
   {tab==='staff'&&<StaffTab {...props} calendar={calendar}/>}
   {tab==='calendar'&&<CalendarTab {...props} calendar={calendar}/>}
+  {tab==='shifts'&&<ShiftsTab shifts={props.shifts??DEFAULT_SHIFTS} areas={props.areas} ready={props.shiftsReady??false} canEdit={props.canEdit} referenceHours={props.referenceHours}/>}
+  {tab==='policy'&&<LaborPolicyTab policies={props.policies??[]} current={props.currentPolicy??null} ready={props.policiesReady??false} canEdit={props.canEdit} month={props.month}/>}
  </>;
 }
 
