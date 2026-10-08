@@ -1,11 +1,11 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Boxes, CalendarCheck, ClipboardList, LayoutDashboard, LogOut, PackageCheck, QrCode } from 'lucide-react';
+import { Boxes, ClipboardList, LayoutDashboard, LogOut, PackageCheck, QrCode } from 'lucide-react';
 import { logout } from '@/app/login/actions';
 import { QR_MODULES, ROLE_LABEL, type QrModule, type QrRole } from '@/lib/qr';
 
-const ICONS: Record<QrModule, typeof Boxes> = { programa: CalendarCheck, empaque: PackageCheck, bodega: Boxes, etiquetas: QrCode, produccion: ClipboardList };
+const ICONS: Record<QrModule, typeof Boxes> = { empaque: PackageCheck, bodega: Boxes, etiquetas: QrCode, produccion: ClipboardList };
 
 export function QrShell({ children, name, role, modules, erp }: { children: React.ReactNode; name: string; role: QrRole; modules: QrModule[]; erp: boolean }) {
   const path = usePathname();

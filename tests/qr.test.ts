@@ -15,7 +15,7 @@ test('cada rol solo ve sus módulos', () => {
   assert.deepEqual(modulesFor('PACKER'), ['empaque']);
   assert.deepEqual(modulesFor('WAREHOUSE'), ['bodega']);
   assert.deepEqual(modulesFor('OFFICE'), ['produccion']);
-  assert.deepEqual(modulesFor('ADMIN'), ['programa', 'empaque', 'bodega', 'etiquetas', 'produccion']);
+  assert.deepEqual(modulesFor('ADMIN'), ['empaque', 'bodega', 'etiquetas', 'produccion']);
 });
 
 test('sameOrigin acepta el dominio público detrás de un proxy y rechaza otros sitios', async () => {

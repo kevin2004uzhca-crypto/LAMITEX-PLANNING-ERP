@@ -27,7 +27,7 @@ export async function readDemandExcel(bytes:Buffer,codes:PlanningCode[]){
 
 export async function readTrainingExcel(bytes:Buffer){
  const book=await load(bytes);if(book.worksheets.length>60)throw new Error('Máximo 60 hojas por archivo.');
- return {programs:book.worksheets.filter(s=>s.state==='visible'&&s.rowCount>0).map(s=>parseProgramSheet(s.name,sheetRows(s,3))),hash:fileHash(bytes)};
+ return {programs:book.worksheets.filter(s=>s.state==='visible'&&s.rowCount>0&&!/^INSTRUCCIONES$/i.test(s.name.trim())).map(s=>parseProgramSheet(s.name,sheetRows(s,3))),hash:fileHash(bytes)};
 }
 
 type Snapshot={material_code:string;description:string;mattress_type:string;panel_type:string;size_cm:number|null;monthly_demand:number;active:boolean};
