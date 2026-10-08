@@ -1,27 +1,37 @@
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Camera, CameraOff, CheckCircle2, Flag, Keyboard, XCircle } from 'lucide-react';
+import { AlertTriangle, Camera, CameraOff, CheckCircle2, Flag, Keyboard, XCircle } from 'lucide-react';
 import { QrCamera } from '@/components/qr-camera';
-import { fmtTime, mattressName, parseLabelCode, RESULT_LABEL, type ScanResult, type ScanStage } from '@/lib/qr';
+import { fmtTime, mattressName, parseLabelCode, RESULT_LABEL, type PlanFit, type ScanResult, type ScanStage } from '@/lib/qr';
 import type { CatalogItem, DayClosure, DayProgress } from '@/lib/qr-server';
 import { QrProgressTable } from '@/components/qr-progress';
 
 export type StationScan = { id: number | string; scanned_at: string; scanned_code: string; result: ScanResult; label_sap_code: string | null; model: string | null; manual: boolean; scanned_by_name: string | null };
-type Outcome = { ok: boolean; result: ScanResult | 'ERROR'; message: string; code: string; model: string | null; at: string; packedAt?: string | null };
+type PlanInfo = { status: PlanFit; planned: number; packed: number } | null;
+type Outcome = { ok: boolean; result: ScanResult | 'ERROR'; message: string; code: string; model: string | null; at: string; packedAt?: string | null; plan?: PlanInfo };
+
+/** Lo que el empacador ve del programa de hoy después de un empaque aceptado. */
+function planNote(p: PlanInfo) {
+  if (!p) return null;
+  if (p.status === 'IN_PLAN') return { warn: false, title: 'REGISTRADO · DENTRO DEL PROGRAMA', text: `${p.packed} de ${p.planned} del programa de hoy.` };
+  if (p.status === 'EXCESS') return { warn: true, title: 'REGISTRADO · EXCEDENTE', text: `${p.packed} de ${p.planned}: ya se cumplió el programa de este colchón. Queda registrado como excedente y no suma al cumplimiento.` };
+  if (p.status === 'OFF_PLAN') return { warn: true, title: 'REGISTRADO · FUERA DEL PROGRAMA', text: 'Este colchón no está en el programa de hoy. Queda registrado aparte y no suma al cumplimiento.' };
+  return { warn: false, title: 'REGISTRADO · ESPERA A BODEGA', text: 'Todavía no se cargó el programa de hoy.' };
+}
 
 const TEXT = {
-  PACK: { title: 'Empaque', pick: 'Colchón que estás empacando', pickHelp: 'Obligatorio. Si la etiqueta es de otro modelo, el sistema la rechaza.', ok: 'Empacados hoy', none: 'Selecciona primero el colchón que estás empacando.' },
+  PACK: { title: 'Empaque', pick: 'Colchón que estás empacando', pickHelp: 'Modo verificación: si la etiqueta es de otro modelo, el sistema la rechaza.', ok: 'Empacados hoy', none: 'Selecciona primero el colchón que estás empacando.' },
   WAREHOUSE: { title: 'Bodega', pick: 'Verificar contra un colchón (opcional)', pickHelp: 'Si eliges uno, se rechazan las etiquetas de otro modelo. Si no, se acepta cualquier modelo empacado.', ok: 'Match hoy (pasan a producción)', none: '' },
 } as const;
 
 /** Tono corto de confirmación (agudo) o de rechazo (grave) y vibración en el celular. */
-function feedback(ok: boolean) {
-  try { navigator.vibrate?.(ok ? 80 : [120, 80, 120]); } catch { /* sin vibración */ }
+function feedback(ok: boolean, warn = false) {
+  try { navigator.vibrate?.(!ok ? [120, 80, 120] : warn ? [80, 60, 80] : 80); } catch { /* sin vibración */ }
   try {
     const A = window.AudioContext || (window as any).webkitAudioContext; const ctx = new A();
-    const o = ctx.createOscillator(), g = ctx.createGain(); o.frequency.value = ok ? 1046 : 220; o.type = ok ? 'sine' : 'square';
-    g.gain.value = 0.08; o.connect(g).connect(ctx.destination); o.start(); o.stop(ctx.currentTime + (ok ? 0.12 : 0.35)); o.onended = () => ctx.close();
+    const o = ctx.createOscillator(), g = ctx.createGain(); o.frequency.value = !ok ? 220 : warn ? 660 : 1046; o.type = ok ? 'sine' : 'square';
+    g.gain.value = 0.08; o.connect(g).connect(ctx.destination); o.start(); o.stop(ctx.currentTime + (!ok ? 0.35 : warn ? 0.3 : 0.12)); o.onended = () => ctx.close();
   } catch { /* sin audio */ }
 }
 
@@ -35,6 +45,12 @@ export function QrScanStation({ stage, catalog, initialScans, progress, closure 
   const planned = progress.rows.filter(r => r.planned > 0);
   const storageKey = `lmx-qr-model-${stage}`;
   const [sap, setSap] = useState('');
+  // Empaque: por defecto solo se escanea y la etiqueta dice qué colchón es. El modo verificación pide elegirlo antes.
+  const verifyKey = 'lmx-qr-pack-verify';
+  const [verify, setVerify] = useState(false);
+  useEffect(() => { if (stage !== 'PACK') return; try { setVerify(localStorage.getItem(verifyKey) === '1'); } catch { /* sin almacenamiento */ } }, [stage]);
+  const toggleVerify = (v: boolean) => { setVerify(v); setOutcome(null); try { v ? localStorage.setItem(verifyKey, '1') : localStorage.removeItem(verifyKey); } catch { /* sin almacenamiento */ } };
+  const direct = stage === 'PACK' && !verify;
   const [filter, setFilter] = useState('');
   const [camera, setCamera] = useState(false);
   const [manual, setManual] = useState('');
@@ -53,7 +69,7 @@ export function QrScanStation({ stage, catalog, initialScans, progress, closure 
     const list = q ? catalog.filter(c => `${c.model_name} ${c.measure ?? ''} ${c.sap_code} ${c.sap_name ?? ''}`.toLowerCase().includes(q)) : catalog;
     return selected && !list.includes(selected) ? [selected, ...list] : list;
   }, [catalog, filter, selected]);
-  const blocked = stage === 'PACK' && !sap;
+  const blocked = stage === 'PACK' && verify && !sap;
 
   const counts = useMemo(() => {
     const m = new Map<string, { name: string; n: number }>();
@@ -71,13 +87,13 @@ export function QrScanStation({ stage, catalog, initialScans, progress, closure 
     last.current = { code, at: now };
     setBusy(true);
     try {
-      const res = await fetch('/api/qr/scan', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ stage, code, expectedSap: sap || null, manual: isManual }) });
+      const res = await fetch('/api/qr/scan', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ stage, code, expectedSap: direct ? null : sap || null, auto: direct, manual: isManual }) });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? 'No se pudo registrar.');
       const model = data.model_name ? mattressName({ model_name: data.model_name, measure: data.measure }) : null;
-      setOutcome({ ok: data.ok, result: data.result, message: stage === 'WAREHOUSE' && data.ok ? 'Coincide con el registro de empaque. Pasa a producción.' : data.message, code: data.code, model, at: data.at, packedAt: data.packed_at });
+      setOutcome({ ok: data.ok, result: data.result, message: stage === 'WAREHOUSE' && data.ok ? 'Coincide con el registro de empaque. Pasa a producción.' : data.message, code: data.code, model, at: data.at, packedAt: data.packed_at, plan: data.plan ?? null });
       setScans(s => [{ id: `n${now}`, scanned_at: data.at, scanned_code: data.code, result: data.result, label_sap_code: data.sap_code, model, manual: isManual, scanned_by_name: null }, ...s]);
-      feedback(data.ok);
+      feedback(data.ok, !!planNote(data.plan ?? null)?.warn);
       if (data.ok) router.refresh();
       if (isManual && data.ok) setManual('');
     } catch (e) {
@@ -103,7 +119,12 @@ export function QrScanStation({ stage, catalog, initialScans, progress, closure 
   return <div className="qr-station">
     <div className={`qr-stage-banner ${stage === 'PACK' ? 'pack' : 'warehouse'}`}><strong>{stage === 'PACK' ? 'EMPAQUE' : 'BODEGA'}</strong><span>{stage === 'PACK' ? 'Paso 1 · registra cada colchón terminado' : 'Paso 2 · confirma cada colchón que llega'}</span></div>
 
-    <section className="qr-card">
+    {stage === 'PACK' && <section className="qr-card">
+      <label className="inline-check qr-mode"><input type="checkbox" checked={verify} onChange={e => toggleVerify(e.target.checked)}/>Modo verificación (elegir el colchón antes de escanear)</label>
+      {direct && <p className="muted qr-mode-help">Escaneo directo: solo escanea la etiqueta. El sistema reconoce el colchón y lo compara con el programa de hoy.</p>}
+    </section>}
+
+    {!direct && <section className="qr-card">
       <label>{t.pick}
         <input type="search" placeholder="Buscar por modelo, medida o código SAP" value={filter} onChange={e => setFilter(e.target.value)}/>
         <select value={sap} onChange={e => choose(e.target.value)}>
@@ -114,7 +135,7 @@ export function QrScanStation({ stage, catalog, initialScans, progress, closure 
       <small className="muted">{t.pickHelp}</small>
       {stage === 'PACK' && planned.length > 0 && <div className="qr-quick"><span>Programa de hoy</span>{planned.map(r => <button type="button" key={r.sap_code} className={sap === r.sap_code ? 'active' : ''} onClick={() => choose(r.sap_code)}>{r.model_name}<small>{r.packed}/{r.planned}</small></button>)}</div>}
       {selected && <div className="qr-selected"><span>Colchón seleccionado</span><strong>{mattressName(selected)}</strong><small>SAP {selected.sap_code}</small></div>}
-    </section>
+    </section>}
 
     <section className="qr-card">
       {blocked ? <p className="alert warning">{t.none}</p> : <>
@@ -130,13 +151,13 @@ export function QrScanStation({ stage, catalog, initialScans, progress, closure 
         </form>
       </>}
       {busy && <p className="muted" role="status">Registrando…</p>}
-      {outcome && <div className={`qr-outcome ${outcome.ok ? 'ok' : 'bad'}`} role="alert">
-        {outcome.ok ? <CheckCircle2 size={40}/> : <XCircle size={40}/>}
-        <div><strong>{outcome.ok ? (stage === 'WAREHOUSE' ? 'MATCH ✓ EMPAQUE = BODEGA' : 'REGISTRADO · ESPERA A BODEGA') : outcome.result === 'ERROR' ? 'ERROR' : `RECHAZADO · ${RESULT_LABEL[outcome.result as ScanResult]}`}</strong>
-          <p>{outcome.message}</p>
-          {outcome.model && <p><b>{outcome.model}</b></p>}
+      {outcome && (() => { const note = outcome.ok && stage === 'PACK' ? planNote(outcome.plan ?? null) : null; return <div className={`qr-outcome ${!outcome.ok ? 'bad' : note?.warn ? 'warn' : 'ok'}`} role="alert">
+        {!outcome.ok ? <XCircle size={40}/> : note?.warn ? <AlertTriangle size={40}/> : <CheckCircle2 size={40}/>}
+        <div><strong>{outcome.ok ? (stage === 'WAREHOUSE' ? 'MATCH ✓ EMPAQUE = BODEGA' : note?.title ?? 'REGISTRADO · ESPERA A BODEGA') : outcome.result === 'ERROR' ? 'ERROR' : `RECHAZADO · ${RESULT_LABEL[outcome.result as ScanResult]}`}</strong>
+          {outcome.model && <p className="qr-outcome-model">{outcome.model}</p>}
+          <p>{note ? note.text : outcome.message}</p>
           <small>{outcome.code} · {fmtTime(outcome.at)}{stage === 'WAREHOUSE' && outcome.ok && outcome.packedAt ? ` · empacado ${fmtTime(outcome.packedAt)}` : ''}</small></div>
-      </div>}
+      </div>; })()}
     </section>
 
     <section className="qr-card">
