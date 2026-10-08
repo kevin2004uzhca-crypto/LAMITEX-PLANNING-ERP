@@ -1,7 +1,8 @@
 import { Download } from 'lucide-react';
-import { requireQrModule } from '@/lib/qr-server';
+import { loadDayProgress, requireQrModule } from '@/lib/qr-server';
+import { QrProgressTable } from '@/components/qr-progress';
 import { loadProduction } from '@/lib/qr-report';
-import { fmtDateTime, isDay, RESULT_LABEL, STAGE_LABEL, todayEc } from '@/lib/qr';
+import { fmtDateTime, fmtTime, isDay, RESULT_LABEL, STAGE_LABEL, todayEc } from '@/lib/qr';
 
 const pct = (a: number, b: number) => b ? `${Math.round(a / b * 1000) / 10} %` : '—';
 
@@ -10,7 +11,9 @@ export default async function ProductionPage({ searchParams }: { searchParams: P
   const p = await searchParams; const today = todayEc();
   let from = isDay(p.from) ? p.from : today, to = isDay(p.to) ? p.to : from;
   if (from > to) [from, to] = [to, from];
-  const prod = await loadProduction(db, from, to);
+  const [prod, progress] = await Promise.all([loadProduction(db, from, to), loadDayProgress(db, from, to)]);
+  const closed = (s: 'PACK' | 'WAREHOUSE') => progress.closures.filter(c => c.stage === s);
+  const ready = from === to && closed('PACK').length > 0 && closed('WAREHOUSE').length > 0;
   const { totals } = prod;
   const pending = prod.detail.filter(l => !l.received_at);
   const period = from === to ? `del ${from}` : `del ${from} al ${to}`;
@@ -33,6 +36,16 @@ export default async function ProductionPage({ searchParams }: { searchParams: P
       <div><span>Faltan en bodega</span><strong className={totals.missing ? 'qr-warn' : ''}>{totals.missing}</strong><small>Empacados sin escaneo de bodega</small></div>
       <div><span>Intentos rechazados</span><strong className={totals.rejected ? 'qr-bad' : ''}>{totals.rejected}</strong><small>Duplicados, otro modelo, sin empaque…</small></div>
     </div>
+
+    <section className="panel">
+      <h2>Cierre del día</h2>
+      {from === to ? <>
+        <div className="qr-closures">{(['PACK', 'WAREHOUSE'] as const).map(st => { const c = closed(st)[0]; return <div key={st} className={c ? 'done' : ''}><span>{STAGE_LABEL[st]}</span><strong>{c ? `Terminó ${fmtTime(c.closed_at)}` : 'Aún trabajando'}</strong><small>{c ? `${c.total_ok} colchones · ${c.closed_by_name ?? ''}` : 'No ha presionado "Terminar el día"'}</small></div>; })}</div>
+        <p className={`alert ${ready ? 'success' : ''}`}>{ready ? 'Empaque y bodega terminaron el día: ya puedes descargar el reporte y cargar la producción.' : 'Espera a que empaque y bodega presionen "Terminar el día" antes de cargar la producción.'}</p>
+      </> : <p className="muted">{progress.closures.length} cierres registrados en el rango.</p>}
+      <h3>Programa vs. real</h3>
+      <QrProgressTable rows={progress.rows} total={progress.total}/>
+    </section>
 
     <section className="panel">
       <h2>Producción por código SAP</h2>

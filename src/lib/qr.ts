@@ -1,10 +1,11 @@
 /** Control de colchones con etiquetas QR: definiciones compartidas entre servidor y navegador. */
 export type QrRole = 'ADMIN' | 'PACKER' | 'WAREHOUSE' | 'OFFICE';
-export type QrModule = 'empaque' | 'bodega' | 'etiquetas' | 'produccion';
+export type QrModule = 'programa' | 'empaque' | 'bodega' | 'etiquetas' | 'produccion';
 export type ScanStage = 'PACK' | 'WAREHOUSE';
 export type ScanResult = 'OK' | 'ALREADY_SCANNED' | 'NOT_FOUND' | 'MODEL_MISMATCH' | 'NOT_PACKED' | 'VOIDED';
 
 export const QR_MODULES: Record<QrModule, { label: string; roles: QrRole[] }> = {
+  programa: { label: 'Programa diario', roles: ['ADMIN'] },
   empaque: { label: 'Empaque', roles: ['ADMIN', 'PACKER'] },
   bodega: { label: 'Bodega', roles: ['ADMIN', 'WAREHOUSE'] },
   etiquetas: { label: 'Etiquetas QR', roles: ['ADMIN'] },

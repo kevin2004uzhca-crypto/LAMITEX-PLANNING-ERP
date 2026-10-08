@@ -51,51 +51,54 @@ function drawQr(page: PDFPage, text: string, x: number, y: number, size: number)
   }
 }
 
-export async function labelsPdf(batch: PdfBatch, labels: PdfLabel[]) {
+/**
+ * Una etiqueta por página del tamaño del sticker. `offsetTopMm` baja todo el contenido para que el corte
+ * o la separación entre stickers del rollo no se coma el QR (en la Zebra de Lamitex funcionan ~5 mm).
+ * El código SAP no se imprime: el operario identifica el colchón por el nombre del modelo.
+ */
+export async function labelsPdf(batch: PdfBatch, labels: PdfLabel[], offsetTopMm = 0) {
   const doc = await PDFDocument.create();
   doc.setTitle(`Etiquetas QR lote ${batch.id}`); doc.setAuthor('LAMITEX'); doc.setCreator('LAMITEX Planning ERP');
   const bold = await doc.embedFont(StandardFonts.HelveticaBold);
   const regular = await doc.embedFont(StandardFonts.Helvetica);
   const W = batch.width_mm * MM, H = batch.height_mm * MM;
   const pad = Math.max(1.5 * MM, Math.min(W, H) * 0.05);
+  const top = H - pad - Math.min(Math.max(offsetTopMm, 0), batch.height_mm * 0.4) * MM; // borde superior útil
+  const avail = top - pad;
   const date = new Date(batch.created_at).toLocaleDateString('es-EC', { timeZone: 'America/Guayaquil' });
-  const landscape = W >= H * 1.25;
+  const landscape = W >= avail * 1.25;
 
   for (const l of labels) {
     const page = doc.addPage([W, H]);
     const model = clean(l.model_name.toUpperCase());
-    const details = [
-      l.measure ? clean(l.measure) : null,
-      `SAP ${clean(l.sap_code)}`,
-    ].filter(Boolean).join('  ·  ');
+    const details = l.measure ? clean(l.measure) : '';
     const footer = clean(`${l.code}   ${l.seq}/${l.lineTotal}   Lote ${batch.id}   ${date}`);
     const note = l.observation ? clean(l.observation) : null;
 
     if (landscape) {
-      const qrSize = Math.min(H - pad * 2, W * 0.46);
-      drawQr(page, l.code, pad, (H - qrSize) / 2, qrSize);
+      const qrSize = Math.min(avail, W * 0.46);
+      drawQr(page, l.code, pad, pad + (avail - qrSize) / 2, qrSize);
       const tx = pad + qrSize + pad * 0.6, tw = W - tx - pad;
-      const name = wrap(model, bold, tw, H * 0.2, 6, 3);
-      let y = H - pad - name.size;
+      const name = wrap(model, bold, tw, avail * 0.22, 6, 3);
+      let y = top - name.size;
       for (const line of name.lines) { page.drawText(line, { x: tx, y, size: name.size, font: bold, color: ink }); y -= name.size * 1.12; }
-      const ds = fitSize(details, regular, tw, H * 0.11, 5);
-      y -= ds * 0.35; page.drawText(details, { x: tx, y, size: ds, font: regular, color: ink });
-      if (note) { const ns = fitSize(note, regular, tw, H * 0.08, 4.5); y -= ns * 1.5; page.drawText(note, { x: tx, y, size: ns, font: regular, color: ink }); }
-      const codeSize = fitSize(l.code, bold, tw, H * 0.1, 5);
+      if (details) { const ds = fitSize(details, regular, tw, avail * 0.12, 5); y -= ds * 0.35; page.drawText(details, { x: tx, y, size: ds, font: regular, color: ink }); y -= ds * 0.2; }
+      if (note) { const ns = fitSize(note, regular, tw, avail * 0.09, 4.5); y -= ns * 1.3; page.drawText(note, { x: tx, y, size: ns, font: regular, color: ink }); }
+      const codeSize = fitSize(l.code, bold, tw, avail * 0.11, 5);
       const rest = clean(`${l.seq}/${l.lineTotal}  ·  Lote ${batch.id}  ·  ${date}`);
-      const rs = fitSize(rest, regular, tw, H * 0.075, 4);
+      const rs = fitSize(rest, regular, tw, avail * 0.08, 4);
       page.drawText(rest, { x: tx, y: pad, size: rs, font: regular, color: ink });
       page.drawText(l.code, { x: tx, y: pad + rs * 1.35, size: codeSize, font: bold, color: ink });
     } else {
-      const fs = fitSize(footer, regular, W - pad * 2, H * 0.045, 4);
-      const name = wrap(model, bold, W - pad * 2, H * 0.09, 5, 2);
-      const ds = fitSize(details, regular, W - pad * 2, H * 0.055, 4.5);
-      const textH = name.lines.length * name.size * 1.12 + ds * 1.4 + fs * 1.6;
-      const qrSize = Math.min(W - pad * 2, H - pad * 2 - textH);
-      drawQr(page, l.code, (W - qrSize) / 2, H - pad - qrSize, qrSize);
-      let y = H - pad - qrSize - name.size;
+      const fs = fitSize(footer, regular, W - pad * 2, avail * 0.05, 4);
+      const name = wrap(model, bold, W - pad * 2, avail * 0.1, 5, 2);
+      const ds = details ? fitSize(details, regular, W - pad * 2, avail * 0.06, 4.5) : 0;
+      const textH = name.lines.length * name.size * 1.12 + (ds ? ds * 1.4 : 0) + fs * 1.6;
+      const qrSize = Math.min(W - pad * 2, avail - textH);
+      drawQr(page, l.code, (W - qrSize) / 2, top - qrSize, qrSize);
+      let y = top - qrSize - name.size;
       for (const line of name.lines) { page.drawText(line, { x: (W - bold.widthOfTextAtSize(line, name.size)) / 2, y, size: name.size, font: bold, color: ink }); y -= name.size * 1.12; }
-      page.drawText(details, { x: (W - regular.widthOfTextAtSize(details, ds)) / 2, y: y - ds * 0.2, size: ds, font: regular, color: ink });
+      if (details) page.drawText(details, { x: (W - regular.widthOfTextAtSize(details, ds)) / 2, y: y - ds * 0.2, size: ds, font: regular, color: ink });
       page.drawText(footer, { x: (W - regular.widthOfTextAtSize(footer, fs)) / 2, y: pad, size: fs, font: regular, color: ink });
     }
   }

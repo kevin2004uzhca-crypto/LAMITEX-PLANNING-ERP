@@ -9,7 +9,8 @@ export async function GET(req: Request) {
   try {
     const { db, role } = await requireQrUser();
     if (role !== 'ADMIN') throw new Error('Solo el administrador puede descargar etiquetas.');
-    const id = Number(new URL(req.url).searchParams.get('batch'));
+    const url = new URL(req.url); const id = Number(url.searchParams.get('batch'));
+    const top = Math.min(Math.max(Number(url.searchParams.get('top') ?? 0) || 0, 0), 30);
     if (!Number.isInteger(id) || id < 1) throw new Error('Lote no válido.');
     const [batch, lines] = await Promise.all([
       db.from('lmx_qr_batches').select('*').eq('id', id).single(),
@@ -22,6 +23,7 @@ export async function GET(req: Request) {
     const pdf = await labelsPdf(
       { id, programmer: batch.data.programmer, created_at: batch.data.created_at, width_mm: Number(batch.data.sticker_width_mm), height_mm: Number(batch.data.sticker_height_mm) },
       labels.filter(l => !l.voided_at).map(l => ({ ...l, lineTotal: byLine.get(l.line_id)?.quantity ?? 0, observation: byLine.get(l.line_id)?.observation ?? null })),
+      top,
     );
     return new Response(new Uint8Array(pdf), { headers: { 'Content-Type': 'application/pdf', 'Content-Disposition': `attachment; filename="ETIQUETAS_QR_LOTE_${id}.pdf"`, 'Cache-Control': 'no-store' } });
   } catch (e) { return apiError(e); }

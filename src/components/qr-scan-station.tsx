@@ -1,9 +1,11 @@
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Camera, CameraOff, CheckCircle2, Keyboard, XCircle } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Camera, CameraOff, CheckCircle2, Flag, Keyboard, XCircle } from 'lucide-react';
 import { QrCamera } from '@/components/qr-camera';
 import { fmtTime, mattressName, parseLabelCode, RESULT_LABEL, type ScanResult, type ScanStage } from '@/lib/qr';
-import type { CatalogItem } from '@/lib/qr-server';
+import type { CatalogItem, DayClosure, DayProgress } from '@/lib/qr-server';
+import { QrProgressTable } from '@/components/qr-progress';
 
 export type StationScan = { id: number | string; scanned_at: string; scanned_code: string; result: ScanResult; label_sap_code: string | null; model: string | null; manual: boolean; scanned_by_name: string | null };
 type Outcome = { ok: boolean; result: ScanResult | 'ERROR'; message: string; code: string; model: string | null; at: string; packedAt?: string | null };
@@ -23,8 +25,14 @@ function feedback(ok: boolean) {
   } catch { /* sin audio */ }
 }
 
-export function QrScanStation({ stage, catalog, initialScans }: { stage: ScanStage; catalog: CatalogItem[]; initialScans: StationScan[] }) {
+export function QrScanStation({ stage, catalog, initialScans, progress, closure }: { stage: ScanStage; catalog: CatalogItem[]; initialScans: StationScan[]; progress: DayProgress; closure: DayClosure | null }) {
   const t = TEXT[stage];
+  const router = useRouter();
+  const [closing, setClosing] = useState(false);
+  const [closeMsg, setCloseMsg] = useState<{ ok: boolean; text: string } | null>(null);
+  // El programa y los contadores de los demás celulares se actualizan solos cada 30 s.
+  useEffect(() => { const id = setInterval(() => router.refresh(), 30000); return () => clearInterval(id); }, [router]);
+  const planned = progress.rows.filter(r => r.planned > 0);
   const storageKey = `lmx-qr-model-${stage}`;
   const [sap, setSap] = useState('');
   const [filter, setFilter] = useState('');
@@ -70,6 +78,7 @@ export function QrScanStation({ stage, catalog, initialScans }: { stage: ScanSta
       setOutcome({ ok: data.ok, result: data.result, message: stage === 'WAREHOUSE' && data.ok ? 'Coincide con el registro de empaque. Pasa a producción.' : data.message, code: data.code, model, at: data.at, packedAt: data.packed_at });
       setScans(s => [{ id: `n${now}`, scanned_at: data.at, scanned_code: data.code, result: data.result, label_sap_code: data.sap_code, model, manual: isManual, scanned_by_name: null }, ...s]);
       feedback(data.ok);
+      if (data.ok) router.refresh();
       if (isManual && data.ok) setManual('');
     } catch (e) {
       setOutcome({ ok: false, result: 'ERROR', message: e instanceof Error ? e.message : 'No se pudo registrar.', code, model: null, at: new Date().toISOString() });
@@ -79,7 +88,21 @@ export function QrScanStation({ stage, catalog, initialScans }: { stage: ScanSta
     }
   }
 
+  async function closeDay() {
+    const label = stage === 'PACK' ? 'empaque' : 'bodega';
+    if (!confirm(`¿Terminar el día de ${label}? Se avisará a producción con el total de hoy. Si luego escaneas más, puedes volver a cerrarlo.`)) return;
+    setClosing(true); setCloseMsg(null);
+    try {
+      const res = await fetch('/api/qr/close', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ stage }) });
+      const data = await res.json(); if (!res.ok) throw new Error(data.error);
+      setCloseMsg({ ok: true, text: `Día cerrado a las ${fmtTime(data.closed_at)} con ${data.total_ok} colchones. Producción ya puede verlo.` }); router.refresh();
+    } catch (e) { setCloseMsg({ ok: false, text: e instanceof Error ? e.message : 'No se pudo cerrar el día.' }); }
+    finally { setClosing(false); }
+  }
+
   return <div className="qr-station">
+    <div className={`qr-stage-banner ${stage === 'PACK' ? 'pack' : 'warehouse'}`}><strong>{stage === 'PACK' ? 'EMPAQUE' : 'BODEGA'}</strong><span>{stage === 'PACK' ? 'Paso 1 · registra cada colchón terminado' : 'Paso 2 · confirma cada colchón que llega'}</span></div>
+
     <section className="qr-card">
       <label>{t.pick}
         <input type="search" placeholder="Buscar por modelo, medida o código SAP" value={filter} onChange={e => setFilter(e.target.value)}/>
@@ -89,6 +112,7 @@ export function QrScanStation({ stage, catalog, initialScans }: { stage: ScanSta
         </select>
       </label>
       <small className="muted">{t.pickHelp}</small>
+      {stage === 'PACK' && planned.length > 0 && <div className="qr-quick"><span>Programa de hoy</span>{planned.map(r => <button type="button" key={r.sap_code} className={sap === r.sap_code ? 'active' : ''} onClick={() => choose(r.sap_code)}>{r.model_name}<small>{r.packed}/{r.planned}</small></button>)}</div>}
       {selected && <div className="qr-selected"><span>Colchón seleccionado</span><strong>{mattressName(selected)}</strong><small>SAP {selected.sap_code}</small></div>}
     </section>
 
@@ -121,11 +145,24 @@ export function QrScanStation({ stage, catalog, initialScans }: { stage: ScanSta
     </section>
 
     <section className="qr-card">
+      <h3>Programa de hoy vs. escaneado</h3>
+      {!progress.hasPlan && <p className="muted">Todavía no se cargó el programa de hoy. Se muestran solo los escaneos.</p>}
+      <QrProgressTable rows={progress.rows} total={progress.total} focus={stage}/>
+    </section>
+
+    <section className="qr-card">
       <h3>Últimos escaneos de hoy</h3>
       {scans.length === 0 ? <p className="muted">Todavía no hay escaneos hoy.</p> :
         <ul className="qr-log">{scans.slice(0, 40).map(s => <li key={s.id} className={s.result === 'OK' ? 'ok' : 'bad'}>
           <span>{fmtTime(s.scanned_at)}</span><b>{s.result === 'OK' ? '✓' : '✕'} {s.model ?? s.scanned_code}</b>
           <small>{s.scanned_code}{s.result !== 'OK' ? ` · ${RESULT_LABEL[s.result]}` : ''}{s.manual ? ' · manual' : ''}{s.scanned_by_name ? ` · ${s.scanned_by_name}` : ''}</small></li>)}</ul>}
+    </section>
+
+    <section className="qr-card">
+      <h3>Fin de la jornada</h3>
+      {closure ? <p className="alert success">Día cerrado a las {fmtTime(closure.closed_at)} por {closure.closed_by_name} con {closure.total_ok} colchones.</p> : <p className="muted">Cuando termines, presiona el botón para avisar a producción que ya puede cargar lo de hoy.</p>}
+      <button type="button" className="qr-big" disabled={closing} onClick={closeDay}><Flag size={20}/>{closure ? 'Volver a cerrar el día (actualizar total)' : 'Terminar el día'}</button>
+      {closeMsg && <p className={`alert ${closeMsg.ok ? 'success' : 'error'}`} role="alert">{closeMsg.text}</p>}
     </section>
   </div>;
 }

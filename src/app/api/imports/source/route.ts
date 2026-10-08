@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto';
 import { requireUser } from '@/lib/auth';
 import pilot from '@/data/pilot.json';
+import { sameOrigin } from '@/lib/origin';
 export async function POST(request: Request) {
   const { db, user, profile } = await requireUser();
   if(!['ADMIN','ENGINEERING'].includes(profile.role)) return Response.json({error:'Tu rol no permite archivar fuentes.'},{status:403});
-  if(request.headers.get('origin') !== new URL(request.url).origin) return Response.json({error:'Origen no permitido.'},{status:403});
+  if(!sameOrigin(request)) return Response.json({error:'Origen no permitido.'},{status:403});
   const form=await request.formData();const file=form.get('file');
   if(!(file instanceof File)||file.size>50*1024*1024) return Response.json({error:'Selecciona un archivo original de hasta 50 MB.'},{status:400});
   const expected=pilot.sources.find(s=>s.file===file.name);

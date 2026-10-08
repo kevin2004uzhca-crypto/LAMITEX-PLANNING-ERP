@@ -67,3 +67,12 @@
 details.panel summary{cursor:pointer}
 @media(max-width:900px){.qr-line{grid-template-columns:28px 1fr 1fr}.qr-line .grow{grid-column:2/-1}.qr-metrics{grid-template-columns:1fr 1fr}.qr-metrics>div:nth-child(2){border-right:0}}
 @media(max-width:620px){.qr-title{font-size:22px}.qr-main{padding:14px 12px 32px}.qr-filter .primary{margin-left:0;width:100%}.qr-user small{display:none}.qr-logout span{display:none}.qr-line{grid-template-columns:1fr}.qr-line .grow{grid-column:auto}.qr-line-n{display:none}}
+.qr-stage-banner{border-radius:12px;padding:14px 16px;color:white;display:grid;gap:2px}.qr-stage-banner strong{font-size:24px;letter-spacing:3px}.qr-stage-banner span{font-size:13px;opacity:.9}
+.qr-stage-banner.pack{background:#2c6975}.qr-stage-banner.warehouse{background:#76550c}
+.qr-quick{display:flex;flex-wrap:wrap;gap:8px}.qr-quick>span{width:100%;font-size:11px;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
+.qr-quick button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 12px;font-size:13px;text-align:left}.qr-quick button small{color:var(--muted);font-weight:500}.qr-quick button.active{background:var(--dark);color:white;border-color:var(--dark)}.qr-quick button.active small{color:#d7e9e4}
+.qr-progress .qr-focus{background:#e3f1e2;font-weight:700}.qr-row-done td{color:#2d614f}.qr-row-extra td{color:var(--warning)}
+.qr-closures{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}.qr-closures>div{border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:2px;background:#fff8e7}.qr-closures>div.done{background:#e8f4ec;border-color:#9cc8b0}.qr-closures span{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}.qr-closures strong{font-size:18px}.qr-closures small{color:var(--muted)}
+.qr-plan-head .grow{flex:1;min-width:240px}.qr-plan-line{grid-template-columns:28px minmax(240px,1fr) 120px auto}
+.qr-paste{margin:8px 0 14px}.qr-paste summary{cursor:pointer;display:flex;gap:6px;align-items:center;font-weight:600}.qr-paste textarea{width:100%;margin:8px 0;font:inherit;padding:10px;border:1px solid #9cafab;border-radius:6px}
+@media(max-width:620px){.qr-stage-banner strong{font-size:20px}.qr-plan-line{grid-template-columns:1fr}}

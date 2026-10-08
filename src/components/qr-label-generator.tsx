@@ -1,5 +1,5 @@
 'use client';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Ban, Download, Plus, QrCode, Trash2 } from 'lucide-react';
 import { fmtDateTime, mattressName } from '@/lib/qr';
@@ -16,12 +16,17 @@ const PRESETS = [
 let seq = 1;
 const newLine = (): Line => ({ key: seq++, skuId: '', filter: '', quantity: '', observation: '' });
 
-export function QrLabelGenerator({ catalog, batches, defaultProgrammer }: { catalog: CatalogItem[]; batches: BatchSummary[]; defaultProgrammer: string }) {
+export function QrLabelGenerator({ catalog, batches, defaultProgrammer, prefill = [], prefillNote = '' }: { catalog: CatalogItem[]; batches: BatchSummary[]; defaultProgrammer: string; prefill?: { skuId: string; quantity: string; observation: string }[]; prefillNote?: string }) {
   const router = useRouter();
   const [programmer, setProgrammer] = useState(defaultProgrammer);
-  const [observation, setObservation] = useState('');
+  const [observation, setObservation] = useState(prefillNote);
   const [w, setW] = useState('100'); const [h, setH] = useState('50');
-  const [lines, setLines] = useState<Line[]>([newLine()]);
+  // Ajuste de impresión: baja el contenido para que la separación del rollo no corte el QR. Se recuerda en este equipo.
+  const [top, setTop] = useState('5');
+  useEffect(() => { try { const v = localStorage.getItem('lmx-qr-top-mm'); if (v !== null) setTop(v); } catch { /* sin almacenamiento */ } }, []);
+  const saveTop = (v: string) => { setTop(v); try { localStorage.setItem('lmx-qr-top-mm', v); } catch { /* sin almacenamiento */ } };
+  const pdfUrl = (id: number) => `/api/qr/pdf?batch=${id}&top=${Number(top) || 0}`;
+  const [lines, setLines] = useState<Line[]>(prefill.length ? prefill.map(l => ({ ...newLine(), ...l })) : [newLine()]);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
   const [voidCode, setVoidCode] = useState(''); const [voidReason, setVoidReason] = useState('');
@@ -46,7 +51,7 @@ export function QrLabelGenerator({ catalog, batches, defaultProgrammer }: { cata
       const data = await res.json(); if (!res.ok) throw new Error(data.error);
       setMsg({ ok: true, text: `Lote ${data.id} generado con ${total} etiquetas. Descargando el PDF…` });
       setLines([newLine()]); setObservation('');
-      window.location.href = `/api/qr/pdf?batch=${data.id}`;
+      window.location.href = pdfUrl(data.id);
       router.refresh();
     } catch (e) { setMsg({ ok: false, text: e instanceof Error ? e.message : 'No se pudo generar.' }); }
     finally { setBusy(false); }
@@ -101,13 +106,14 @@ export function QrLabelGenerator({ catalog, batches, defaultProgrammer }: { cata
             </select></label>
           <label>Ancho (mm)<input type="number" min={20} max={300} value={w} onChange={e => setW(e.target.value)}/></label>
           <label>Alto (mm)<input type="number" min={15} max={300} value={h} onChange={e => setH(e.target.value)}/></label>
+          <label>Bajar contenido (mm)<input type="number" min={0} max={30} step={0.5} value={top} onChange={e => saveTop(e.target.value)}/></label>
         </div>
-        <div className="qr-preview" style={{ width: W * scale, height: H * scale, flexDirection: W >= H * 1.25 ? 'row' : 'column' }} aria-label="Vista previa del sticker">
+        <div className="qr-preview" style={{ width: W * scale, height: H * scale, paddingTop: 6 + (Number(top) || 0) * scale, flexDirection: W >= H * 1.25 ? 'row' : 'column' }} aria-label="Vista previa del sticker">
           <QrCode style={{ width: Math.min(W, H) * scale * 0.8, height: Math.min(W, H) * scale * 0.8 }}/>
-          <div><b>MODELO DEL COLCHÓN</b><small>Medida · SAP</small><small>LMX-XXXXXXXXXXXX</small></div>
+          <div><b>MODELO DEL COLCHÓN</b><small>Observación</small><small>LMX-XXXXXXXXXXXX</small></div>
         </div>
       </div>
-      <p className="muted">El PDF trae una etiqueta por página del tamaño del sticker. En la impresora de etiquetas, imprime al 100 % (tamaño real, sin “ajustar a la página”).</p>
+      <p className="muted">El PDF trae una etiqueta por página del tamaño del sticker. En la impresora de etiquetas, imprime al 100 % (tamaño real, sin “ajustar a la página”). Si la separación entre stickers corta el QR, sube “Bajar contenido”; el cambio aplica también al volver a descargar lotes anteriores.</p>
 
       {msg && <p className={`alert ${msg.ok ? 'success' : 'error'}`} role="alert">{msg.text}</p>}
       <button className="primary qr-big" disabled={busy || total < 1} onClick={generate}><QrCode size={20}/>{busy ? 'Generando…' : `Generar ${total || ''} etiquetas y descargar PDF`}</button>
@@ -121,7 +127,7 @@ export function QrLabelGenerator({ catalog, batches, defaultProgrammer }: { cata
             <td>{b.id}</td><td>{fmtDateTime(b.created_at)}</td><td>{b.programmer}{b.observation && <small className="muted"><br/>{b.observation}</small>}</td>
             <td>{b.lines.map((l, i) => <div key={i}>{l.quantity} × {mattressName(l)} <small className="muted">({l.sap_code})</small></div>)}</td>
             <td>{b.total_labels}{b.voided ? <small className="muted"><br/>{b.voided} anuladas</small> : null}</td><td>{b.packed}</td><td>{b.received}</td><td>{b.sticker_width_mm}×{b.sticker_height_mm} mm</td>
-            <td><a className="button compact-button" href={`/api/qr/pdf?batch=${b.id}`}><Download size={16}/>PDF</a></td></tr>)}</tbody></table></div>}
+            <td><a className="button compact-button" href={pdfUrl(b.id)}><Download size={16}/>PDF</a></td></tr>)}</tbody></table></div>}
     </section>
 
     <section className="panel">
