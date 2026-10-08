@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { History, X } from 'lucide-react';
+import { Download, History, X } from 'lucide-react';
 
 export const when=(iso?:string|null)=>iso?new Date(iso).toLocaleString('es-EC',{timeZone:'America/Guayaquil',dateStyle:'short',timeStyle:'short'}):'—';
 export const day=(d?:string|null)=>d?new Date(d+'T12:00:00Z').toLocaleDateString('es-EC',{timeZone:'UTC'}):'—';
@@ -15,7 +15,7 @@ export function MasterUpload({kind,title,columns,help,onDone}:{kind:'COSTOS'|'IN
   if(confirm)onDone(`Carga aplicada: ${data.inserted} nuevos, ${data.updated} actualizados, ${data.unchanged} sin cambio${data.removed?` y ${data.removed} operaciones retiradas`:''}.`);else setPreview(data);}
   catch(e){setError(e instanceof Error?e.message:'Error al cargar.');}finally{setBusy(false);}}
  const unit=kind==='RUTAS'?'operaciones':'materiales';
- return <section className="panel"><h2>{title}</h2><p>{help}</p><p className="footnote">Columnas del Excel de SAP: {columns.join(' · ')}. Se reconocen por su nombre, en cualquier orden.</p>
+ return <section className="panel"><h2>{title}</h2><p>{help}</p><p className="footnote">Columnas del Excel de SAP: {columns.join(' · ')}. Se reconocen por su nombre, en cualquier orden.</p><p><a className="button" href={`/api/templates?kind=${kind}`}><Download size={16}/>Descargar plantilla</a></p>
   <div className="filters"><label>Archivo Excel (.xlsx)<input type="file" accept=".xlsx" disabled={busy} onChange={e=>{setFile(e.target.files?.[0]??null);setPreview(null);setError('');}}/></label>
    {kind==='INVENTARIO'&&<label>Fecha del corte de inventario<input type="date" value={snapshot} max={today()} onChange={e=>{setSnapshot(e.target.value);setPreview(null);}}/></label>}
    <button disabled={!file||busy} onClick={()=>submit(false)}>{busy&&!preview?'Validando…':'Validar archivo'}</button></div>

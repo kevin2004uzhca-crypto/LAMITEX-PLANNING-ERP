@@ -1,7 +1,7 @@
 'use client';
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Trash2, Upload } from 'lucide-react';
+import { Download, Trash2, Upload } from 'lucide-react';
 import { checkProgram, WEEKDAYS, WEEKDAY_LABELS, type DemandItem, type PlanningCode, type Restriction } from '@/lib/planning';
 
 export type Program={id:number;name:string;weekday:string;program_date:string|null;source_file:string|null;sheet_name:string|null;notes:string|null;created_at:string;lines:{material_code:string;description:string|null;quantity:number;source_row:number|null}[]};
@@ -67,7 +67,7 @@ function TrainingUpload({onDone}:{onDone:()=>void}){
   catch(e){setError(e instanceof Error?e.message:'Error al cargar.');}finally{setBusy(false);}}
  const set=(i:number,p:any)=>setChoices(choices.map((c,j)=>j===i?{...c,...p}:c));
  return <section className="panel"><h2>Subir programas de entrenamiento</h2>
-  <p>Cada hoja del Excel es un programa diario con las columnas <b>Material · Descripción del material · cantidad</b> (tercera columna). El día se reconoce por el nombre de la hoja (LUNES, MIERCOLES, …) y puedes corregirlo antes de guardar.</p>
+  <p>Cada hoja del Excel es un programa diario con las columnas <b>Material · Descripción del material · cantidad</b> (tercera columna). El día se reconoce por el nombre de la hoja (LUNES, MIERCOLES, …) y puedes corregirlo antes de guardar.</p><p><a className="button" href="/api/templates?kind=ENTRENAMIENTO"><Download size={16}/>Descargar plantilla</a></p>
   <label>Archivo Excel (.xlsx)<input type="file" accept=".xlsx" disabled={busy} onChange={e=>{setFile(e.target.files?.[0]??null);setPreview(null);setError('');}}/></label>
   <p><button disabled={!file||busy} onClick={()=>submit(false)}>{busy&&!preview?'Leyendo…':'Leer archivo'}</button></p>
   {error&&<p role="alert" className="alert error">{error}</p>}

@@ -2,7 +2,8 @@ import 'server-only';
 import { requireEngineer } from './engineering-server';
 import { validateEngineering,type EngineeringBom } from './engineering';
 import { revalidatePath } from 'next/cache';
-export function checkOrigin(request:Request){if(request.headers.get('origin')!==new URL(request.url).origin)throw new Error('Origen no autorizado.');}
+import { sameOrigin } from './origin';
+export function checkOrigin(request:Request){if(!sameOrigin(request))throw new Error('Origen no autorizado.');}
 export async function persistEngineering(boms:EngineeringBom[],acknowledged:boolean){
  const {db}=await requireEngineer();if(!Array.isArray(boms)||!boms.length||boms.length>200)throw new Error('Seleccione entre 1 y 200 BOM.');
  const checks=boms.map(validateEngineering);if(checks.some(c=>!c.valid))throw new Error('Hay errores críticos. Corrige la estructura antes de guardar.');

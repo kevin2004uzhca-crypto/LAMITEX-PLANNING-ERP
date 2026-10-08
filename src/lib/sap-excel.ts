@@ -1,9 +1,10 @@
 import ExcelJS from 'exceljs';
 import { createHash } from 'node:crypto';
 export type SapRow={center:string;alternative:string;material:string;description:string;base_quantity:number|null;base_unit:string|null;position:string|null;component:string;quantity:number|null;unit:string|null;component_alternative:string|null;component_description:string|null;source_row:number;raw_source:unknown[]};
+export const SAP_COLUMNS=['Centro','LMat alternativa','Material','Texto de alternativa','Cantidad base','Unidad medida base','Núm.posición','Componente','Cantidad componente','Un.medida componente','LMat alternativa','Texto breve material'];
 export async function readSapExcel(bytes:Buffer){
  const book=new ExcelJS.Workbook();await book.xlsx.load(bytes as any);const sheet=book.getWorksheet('Data')??book.worksheets[0];if(!sheet)throw new Error('El Excel no contiene hojas.');
- const columns=['Centro','LMat alternativa','Material','Texto de alternativa','Cantidad base','Unidad medida base','Núm.posición','Componente','Cantidad componente','Un.medida componente','LMat alternativa','Texto breve material'];
+ const columns=SAP_COLUMNS;
  if(columns.some((c,i)=>String(sheet.getRow(1).getCell(i+1).value??'').trim()!==c))throw new Error('Las columnas no coinciden con la exportación SAP esperada. Se distinguen las dos columnas LMat alternativa por su posición.');
  if(sheet.rowCount>50001)throw new Error('Máximo 50.000 posiciones por archivo.');
  const rows:SapRow[]=[];const errors:string[]=[];const warnings:string[]=[];const bases=new Map<string,string>();
