@@ -36,3 +36,21 @@ export const isDay = (v: string | null | undefined): v is string => !!v && /^\d{
 export const fmtTime = (iso: string | null | undefined) => iso ? new Date(iso).toLocaleTimeString('es-EC', { timeZone: TZ, hour: '2-digit', minute: '2-digit', second: '2-digit' }) : '';
 export const fmtDateTime = (iso: string | null | undefined) => iso ? new Date(iso).toLocaleString('es-EC', { timeZone: TZ, day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
 export const mattressName = (x: { model_name: string; measure?: string | null }) => [x.model_name, x.measure].filter(Boolean).join(' · ');
+
+/** Cómo cuenta un colchón empacado frente al programa del día. `packed` ya incluye el recién escaneado. */
+export type PlanFit = 'IN_PLAN' | 'EXCESS' | 'OFF_PLAN' | 'NO_PLAN';
+export function planFit(planned: number, packed: number, hasPlan: boolean): PlanFit {
+  if (!hasPlan) return 'NO_PLAN';
+  if (planned <= 0) return 'OFF_PLAN';
+  return packed > planned ? 'EXCESS' : 'IN_PLAN';
+}
+
+/** Cumplimiento del programa: solo suma lo programado; el excedente y lo que está fuera de programa se informan aparte. */
+export function planCompliance(rows: { planned: number; done: number }[]) {
+  let planned = 0, counted = 0, excess = 0, offPlan = 0;
+  for (const r of rows) {
+    if (r.planned > 0) { planned += r.planned; counted += Math.min(r.done, r.planned); excess += Math.max(r.done - r.planned, 0); }
+    else offPlan += r.done;
+  }
+  return { planned, counted, excess, offPlan, pct: planned ? Math.round(counted * 1000 / planned) / 10 : null };
+}

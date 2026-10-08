@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { modulesFor, parseLabelCode } from '../src/lib/qr';
+import { modulesFor, parseLabelCode, planCompliance, planFit } from '../src/lib/qr';
 
 test('parseLabelCode normaliza lo que lee la cámara o escribe el operario', () => {
   assert.equal(parseLabelCode('LMX-0A1B2C3D4E5F'), 'LMX-0A1B2C3D4E5F');
@@ -26,4 +26,18 @@ test('sameOrigin acepta el dominio público detrás de un proxy y rechaza otros 
   assert.equal(sameOrigin(req('http://192.168.1.20:3000', { host: '192.168.1.20:3000' })), true);
   assert.equal(sameOrigin(req('https://otro-sitio.com', { 'x-forwarded-host': 'lamitex.up.railway.app' })), false);
   assert.equal(sameOrigin(req(null)), false);
+});
+
+test('planFit clasifica cada empaque frente al programa del día', () => {
+  assert.equal(planFit(100, 37, true), 'IN_PLAN');
+  assert.equal(planFit(20, 20, true), 'IN_PLAN');
+  assert.equal(planFit(20, 21, true), 'EXCESS');
+  assert.equal(planFit(0, 1, true), 'OFF_PLAN');
+  assert.equal(planFit(0, 1, false), 'NO_PLAN');
+});
+
+test('planCompliance solo suma lo programado; excedente y fuera de programa van aparte', () => {
+  const c = planCompliance([{ planned: 100, done: 96 }, { planned: 80, done: 80 }, { planned: 20, done: 21 }, { planned: 0, done: 3 }]);
+  assert.deepEqual(c, { planned: 200, counted: 196, excess: 1, offPlan: 3, pct: 98 });
+  assert.equal(planCompliance([{ planned: 0, done: 5 }]).pct, null);
 });

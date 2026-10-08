@@ -8,7 +8,7 @@ export default async function PackingPage() {
   return <>
     <p className="eyebrow">CONTROL DE COLCHONES / EMPAQUE</p>
     <h1 className="qr-title">Registro de empaque</h1>
-    <p className="muted qr-lead">Elige el colchón que estás empacando y escanea su etiqueta. Cada etiqueta se registra una sola vez con la hora exacta.</p>
+    <p className="muted qr-lead">Escanea la etiqueta de cada colchón: el sistema reconoce el modelo y lo compara con el programa de hoy. Cada etiqueta se registra una sola vez con la hora exacta.</p>
     <QrScanStation stage="PACK" catalog={catalog} initialScans={scans} progress={progress} closure={progress.closures.find(c => c.stage === 'PACK') ?? null}/>
   </>;
 }
