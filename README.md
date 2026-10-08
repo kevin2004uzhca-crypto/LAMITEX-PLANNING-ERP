@@ -52,11 +52,11 @@ No se ha contratado ni publicado un hosting en esta fase. Un build correcto conf
 Desarrollo: **DOBLE CLIC → ERP**.
 Producción, tras desplegar: **LINK HTTPS → LOGIN → ERP**.
 
-## Control de colchones con QR (empaque, bodega, etiquetas, producción y programa diario)
+## Control de colchones con QR (empaque, bodega, etiquetas y producción)
 
 - Entrada: `/control`. Empacador, bodega y oficina entran directo a su módulo y no ven el resto del ERP. Los ADMIN ven todo (también desde el menú del ERP).
 - Cada etiqueta tiene un código único `LMX-…`; la base de datos acepta un solo escaneo en empaque y uno en bodega (sin importar el celular o la cuenta). Bodega solo acepta etiquetas ya empacadas; el empaque valida el modelo.
-- Programa diario: se trae del plan maestro guardado, se pega desde Excel o se escribe. Empaque, bodega y producción ven el avance contra el programa. "Terminar el día" avisa a producción.
+- Programa del día: se carga en el ERP, módulo **Producción real** (`/production`): Excel con el formato de Entrenamiento, plan maestro guardado o manual. Empaque, bodega y el Panel de producción (`/`) ven el avance contra ese programa. "Terminar el día" avisa a producción.
 - PDF de etiquetas: una por página del tamaño del sticker; "Bajar contenido (mm)" corrige el corte entre stickers de la Zebra.
 - Tablas propias `lmx_qr_*` (migraciones aditivas). Cuentas: `scripts/qr-accounts.cjs` (o `INSTALAR_CONTROL_QR.cmd`).
 
@@ -64,5 +64,5 @@ Producción, tras desplegar: **LINK HTTPS → LOGIN → ERP**.
 
 1. Nuevo proyecto → Deploy from GitHub → este repositorio (rama `main`).
 2. Variables: `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (las mismas de `.env.local`; nunca la clave secreta).
-3. Build `npm run build`, Start `npm run start` (Railway define `PORT`). Node 22+.
+3. Build `npm run build`, Start `npm run start` (Railway define `PORT`). Node 22+. `railway.json` ya fija estos comandos y el chequeo de salud `/api/health`.
 4. Settings → Networking → Generate Domain. Con HTTPS la cámara del celular funciona.
